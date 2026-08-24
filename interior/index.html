@@ -1,0 +1,140 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>숨 인테리어</title></head><body>
+<style>
+.it{--bg:#FAFAF8;--card:#F0EFEA;--line:rgba(20,20,20,.1);--text:#1C1C1A;--muted:#726F66;--warm:#C08A45;font-family:'Pretendard Variable','Noto Sans KR',sans-serif;color:var(--text);background:var(--bg);line-height:1.65;font-size:16px}
+.it *{margin:0;padding:0;box-sizing:border-box}
+.it a{color:inherit;text-decoration:none}
+.it .serif{font-family:'Noto Serif KR',serif}
+.it .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.it .accent{color:var(--warm)}
+.it nav{display:flex;justify-content:space-between;align-items:center;padding:26px 28px}
+.it nav b{font-size:20px;letter-spacing:.1em;font-weight:600;font-family:'Noto Serif KR',serif}
+.it nav .m{display:flex;gap:26px;font-size:14.5px;color:var(--muted);font-weight:500}
+.it nav .m a:hover{color:var(--text)}
+.it nav .nav-cta{background:var(--text);color:#fff;font-weight:700;font-size:13.5px;padding:11px 20px;border-radius:2px;white-space:nowrap}
+.it .hero{position:relative;height:640px;overflow:hidden}
+.it .hero .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:heroFade 20s infinite}
+.it .hero .slide:nth-child(1){animation-delay:0s}
+.it .hero .slide:nth-child(2){animation-delay:5s}
+.it .hero .slide:nth-child(3){animation-delay:10s}
+.it .hero .slide:nth-child(4){animation-delay:15s}
+@keyframes heroFade{0%{opacity:0}4%{opacity:1}21%{opacity:1}25%{opacity:0}100%{opacity:0}}
+.it .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(10,8,5,.88) 0%,rgba(10,8,5,.4) 42%,rgba(10,8,5,.05) 70%,rgba(10,8,5,.25) 100%)}
+.it .hero .dust{position:absolute;border-radius:50%;background:radial-gradient(circle,#F3DFA8,transparent 70%);opacity:0;z-index:1;pointer-events:none;animation:dustDrift 13s ease-in infinite}
+@keyframes dustDrift{0%{opacity:0;transform:translateY(0) translateX(0)}12%{opacity:.85}88%{opacity:.25}100%{opacity:0;transform:translateY(-170px) translateX(24px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.it .hero .cap{position:absolute;left:7%;top:40%;font-family:'Noto Serif KR',serif;font-style:italic;font-size:16px;letter-spacing:.08em;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.4);z-index:2;opacity:0;animation:fadeUp 1s ease-out .3s forwards}
+.it .hero h1{position:absolute;left:7%;bottom:15%;color:#fff;font-size:clamp(32px,5vw,54px);font-weight:300;letter-spacing:.01em;line-height:1.4;z-index:2;opacity:0;animation:fadeUp 1.1s ease-out .55s forwards}
+.it .hero h1 b{font-weight:700;display:block;margin-top:4px}
+.it .hero .btn{position:absolute;right:7%;bottom:16%;background:#fff;color:#1c1c1a;font-weight:700;font-size:14.5px;padding:15px 28px;border-radius:2px;z-index:2;opacity:0;animation:fadeUp 1s ease-out .85s forwards}
+.it section{padding:96px 0}
+.it h2{font-size:30px;font-weight:700;margin-bottom:26px;letter-spacing:-.01em;font-family:'Noto Serif KR',serif}
+.it .about{text-align:center}
+.it .about p{color:var(--muted);font-size:16.5px;max-width:600px;line-height:1.85;margin:0 auto}
+.it .mission{text-align:center}
+.it .mission p{font-family:'Noto Serif KR',serif;font-size:23px;font-weight:500;line-height:2;color:var(--text)}
+.it .process-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+.it .process-ph{aspect-ratio:3/4;border-radius:6px;background-size:cover;background-position:center}
+.it .steps{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.it .steps div{border-top:2px solid var(--warm);padding-top:16px}
+.it .steps b{display:block;font-size:15.5px;margin-bottom:6px}
+.it .steps span{font-size:13.5px;color:var(--muted)}
+.it .work-slide{position:relative;height:480px;border-radius:6px;overflow:hidden}
+.it .work-slide .ws{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:heroFade 20s infinite}
+.it .wscrim{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(10,8,5,.78) 0%,transparent 46%)}
+.it .work-cap{position:absolute;left:36px;bottom:30px;z-index:2;color:#fff;opacity:0;animation:heroFade 20s infinite}
+.it .work-cap b{font-size:21px;display:block;font-family:'Noto Serif KR',serif;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.it .work-cap span{font-size:13.5px;color:#E3DED2}
+.it .feature-photo{margin-top:44px;border-radius:6px;overflow:hidden}
+.it .feature-photo .ph{aspect-ratio:21/9;background-size:cover;background-position:center}
+.it .quote-cta{text-align:center;margin-top:30px}
+.it .quote-cta a{display:inline-block;border:1px solid var(--text);color:var(--text);font-weight:700;font-size:14px;padding:13px 30px;border-radius:2px}
+.it .quote-cta a:hover{background:var(--text);color:#fff}
+.it .info-bar{background:var(--card);border-radius:10px;padding:52px 36px;text-align:center;margin-top:8px}
+.it .info-bar div{margin-top:10px;color:var(--muted);font-size:14.5px}
+.it .cta{background:#1C1C1A;color:#fff;text-align:center;padding:88px 24px}
+.it .cta h2{color:#fff}
+.it .cta p{color:#B8B6AE;font-size:15.5px;margin-bottom:24px}
+.it .cta .btn{display:inline-block;background:var(--warm);color:#1c1c1a;font-weight:700;font-size:14.5px;padding:15px 32px;border-radius:2px}
+.it footer{padding:26px 0;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:760px){.it .steps{grid-template-columns:1fr}.it .process-wrap{grid-template-columns:1fr}.it .hero{height:520px}.it .hero .btn{display:none}.it nav .m{display:none}.it .work-slide{height:360px}}
+</style>
+<div class="it">
+<nav class="wrap">
+<b>숨 · INTERIOR</b>
+<div class="m"><a href="#about">소개</a><a href="#process">프로세스</a><a href="#work">시공사례</a><a href="#contact">문의</a><a href="#visit">오시는 길</a></div>
+<a href="#contact" class="nav-cta">견적내보기</a>
+</nav>
+<div class="hero">
+<div class="slide" style="background-image:url('https://myeongundang.netlify.app/images/interior-hero.jpg')"></div>
+<div class="slide" style="background-image:url('https://myeongundang.netlify.app/images/interior-feature.jpg')"></div>
+<div class="slide" style="background-image:url('https://myeongundang.netlify.app/images/interior-bath.jpg')"></div>
+<div class="slide" style="background-image:url('https://myeongundang.netlify.app/images/interior-desk.jpg')"></div>
+<div class="scrim"></div>
+<div class="dust" style="left:12%;bottom:10%;width:3px;height:3px;animation-delay:0s"></div>
+<div class="dust" style="left:22%;bottom:5%;width:4px;height:4px;animation-delay:1.5s"></div>
+<div class="dust" style="left:35%;bottom:15%;width:2px;height:2px;animation-delay:3s"></div>
+<div class="dust" style="left:48%;bottom:8%;width:3px;height:3px;animation-delay:4.5s"></div>
+<div class="dust" style="left:58%;bottom:20%;width:3px;height:3px;animation-delay:2s"></div>
+<div class="dust" style="left:68%;bottom:6%;width:4px;height:4px;animation-delay:6s"></div>
+<div class="dust" style="left:76%;bottom:14%;width:2px;height:2px;animation-delay:7.5s"></div>
+<div class="dust" style="left:85%;bottom:9%;width:3px;height:3px;animation-delay:5s"></div>
+<div class="dust" style="left:30%;bottom:25%;width:2px;height:2px;animation-delay:9s"></div>
+<div class="dust" style="left:64%;bottom:28%;width:3px;height:3px;animation-delay:10.5s"></div>
+<div class="cap">Space to breathe</div>
+<h1>비우고, 다시 채우는<br><b>공간의 언어, 숨</b></h1>
+<a href="#contact" class="btn">상담 신청</a>
+</div>
+<section id="about"><div class="wrap about">
+<h2>여백이 있는 공간을 만듭니다</h2>
+<p>숨 인테리어는 채우기보다 비우는 설계를 먼저 고민합니다. 주거부터 상업 공간까지, 빛과 동선을 중심으로 오래 머물고 싶은 공간을 완성합니다.</p>
+</div></section>
+<section><div class="wrap mission">
+<p>비움에서 시작해,<br>경험으로 채우고,<br>오래 남는 공간으로 완성합니다.</p>
+</div></section>
+<section id="process"><div class="wrap">
+<div class="process-wrap">
+<div class="process-ph" style="background-image:url('https://myeongundang.netlify.app/images/interior-desk.jpg')"></div>
+<div>
+<h2>진행 프로세스</h2>
+<div class="steps">
+<div><b>01 · 상담</b><span>공간과 라이프스타일 진단</span></div>
+<div><b>02 · 설계</b><span>도면 및 3D 시안 제작</span></div>
+<div><b>03 · 시공</b><span>전담 매니저 상시 관리</span></div>
+<div><b>04 · 사후관리</b><span>하자보수 1년 보장</span></div>
+</div>
+</div>
+</div>
+</div></section>
+<section id="work"><div class="wrap">
+<h2>시공 사례</h2>
+<div class="work-slide">
+<div class="ws" style="background-image:url('https://myeongundang.netlify.app/images/interior-cafe.jpg');animation-delay:0s"></div>
+<div class="ws" style="background-image:url('https://myeongundang.netlify.app/images/interior-onsen.jpg');animation-delay:5s"></div>
+<div class="ws" style="background-image:url('https://myeongundang.netlify.app/images/interior-flagship.jpg');animation-delay:10s"></div>
+<div class="ws" style="background-image:url('https://myeongundang.netlify.app/images/interior-kitchen1.jpg');animation-delay:15s"></div>
+<div class="wscrim"></div>
+<div class="work-cap" style="animation-delay:0s"><b>성수 카페 인테리어</b><span>상업 · 24평</span></div>
+<div class="work-cap" style="animation-delay:5s"><b>논현 스파 하우스</b><span>주거 · 52평</span></div>
+<div class="work-cap" style="animation-delay:10s"><b>청담 플래그십 스토어</b><span>상업 · 68평</span></div>
+<div class="work-cap" style="animation-delay:15s"><b>한남동 주방 리노베이션</b><span>주거 · 41평</span></div>
+</div>
+<div class="feature-photo"><div class="ph" style="background-image:url('https://myeongundang.netlify.app/images/interior-feature.jpg')"></div></div>
+<div class="quote-cta"><a href="#contact">견적 확인해보기 →</a></div>
+</div></section>
+<section id="visit"><div class="wrap">
+<h2>오시는 길</h2>
+<div class="info-bar">
+<b class="serif" style="font-size:19px">숨 인테리어 스튜디오</b>
+<div>서울 성동구 연무장길 24, 3층 · 성수역 2번 출구 도보 6분</div>
+<div>상담 예약제 운영 · 평일 10:00–19:00 · 주말 사전예약</div>
+</div>
+</div></section>
+<div class="cta" id="contact">
+<h2>공간 상담, 지금 시작하세요</h2>
+<p>평형과 예산만 알려주시면 대략적인 견적을 먼저 안내해드립니다.</p>
+<a href="#" class="btn">무료 견적 문의</a>
+</div>
+<footer>© 숨 인테리어 스튜디오 · 서울 성동구</footer>
+</div>
+
+</body></html>

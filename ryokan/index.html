@@ -1,0 +1,734 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>静寂庵</title></head><body>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>静寂庵 | Seijaku-an Ryokan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  .ryk{
+    --void:#05070c;
+    --navy-900:#080d18;
+    --navy-800:#0d1526;
+    --navy-700:#131f38;
+    --navy-600:#1a2a4a;
+    --ink:#f3efe4;
+    --ink-dim:#b7bfd0;
+    --ink-faint:#7d879b;
+    --gold:#c9a769;
+    --gold-soft:#8d7749;
+    --line:rgba(243,239,228,0.14);
+    --line-strong:rgba(201,167,105,0.35);
+    --font-disp:'Noto Serif KR',serif;
+    --font-body:'Noto Sans KR',sans-serif;
+    --font-accent:'Cormorant Garamond',serif;
+  }
+  .ryk *{margin:0;padding:0;box-sizing:border-box;}
+  .ryk{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    .ryk{scroll-behavior:auto;}
+    .ryk *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;}
+  }
+  .ryk{
+    background:var(--void) !important;
+    color:var(--ink) !important;
+    font-family:var(--font-body);
+    font-weight:300;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .ryk h1,.ryk h2,.ryk h3{color:var(--ink) !important;}
+  .ryk p,.ryk span,.ryk li,.ryk div,.ryk a,.ryk label{color:inherit;}
+  .ryk img{display:block;width:100%;height:100%;object-fit:cover;font-size:0;color:transparent;}
+  .ryk a{color:inherit;text-decoration:none;}
+  .ryk ul{list-style:none;}
+  .ryk .container{max-width:1240px;margin:0 auto;padding:0 40px;}
+  .ryk .eyebrow{
+    font-family:var(--font-accent);
+    font-style:italic;
+    font-size:14px;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+  }
+  .ryk .eyebrow::before{content:"";width:28px;height:1px;background:var(--gold);}
+  .ryk h1,.ryk h2,.ryk h3{font-family:var(--font-disp);font-weight:400;letter-spacing:0.01em;}
+  .ryk .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 34px;
+    font-family:var(--font-body);
+    font-size:13.5px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    border:1px solid var(--line-strong);
+    color:var(--ink);
+    background:transparent;
+    cursor:pointer;
+    transition:all .5s cubic-bezier(.16,.84,.44,1);
+    position:relative;
+    overflow:hidden;
+  }
+  .ryk .btn.primary{background:linear-gradient(120deg,var(--gold),#e2c68a);color:#0b0d10;border-color:transparent;font-weight:500;}
+  .ryk .btn.primary:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(201,167,105,.55);}
+  .ryk .btn.ghost:hover{background:rgba(243,239,228,0.06);border-color:var(--ink-dim);}
+
+  
+  .ryk header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:26px 0;
+    transition:all .5s ease;
+    background:transparent;
+  }
+  .ryk header.nav.scrolled{
+    padding:16px 0;
+    background:rgba(5,7,12,0.86);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .ryk .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 40px;}
+  .ryk .brand-mark{display:flex;align-items:center;gap:12px;}
+  .ryk .brand-mark .kanji{font-family:var(--font-disp);font-size:22px;letter-spacing:0.08em;color:var(--ink);}
+  .ryk .brand-mark .romaji{font-family:var(--font-accent);font-style:italic;font-size:12px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;}
+  .ryk nav.links{display:flex;gap:44px;}
+  .ryk nav.links a{
+    font-size:13.5px;letter-spacing:0.1em;color:var(--ink-dim);
+    position:relative;padding-bottom:4px;transition:color .3s ease;
+  }
+  .ryk nav.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .4s ease;}
+  .ryk nav.links a:hover{color:var(--ink);}
+  .ryk nav.links a:hover::after{width:100%;}
+  .ryk .nav-cta{display:flex;align-items:center;gap:26px;}
+  .ryk .nav-cta .btn{padding:11px 24px;font-size:12px;}
+  .ryk .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+  .ryk .burger span{width:24px;height:1px;background:var(--ink);display:block;}
+
+  
+  .ryk .hero{
+    position:relative;height:100vh;min-height:680px;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .ryk .hero .bg{position:absolute;inset:0;z-index:0;background:linear-gradient(160deg,#1a2a4a,#05070c) !important;}
+  .ryk .hero .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:heroZoom 22s ease-out forwards;}
+  @keyframes heroZoom{to{transform:scale(1);}}
+  .ryk .hero .scrim{
+    position:absolute;inset:0;z-index:1;
+    background:
+      linear-gradient(180deg, rgba(5,7,12,.55) 0%, rgba(5,7,12,.35) 34%, rgba(5,7,12,.72) 78%, rgba(5,7,12,.95) 100%),
+      linear-gradient(90deg, rgba(5,7,12,.55) 0%, rgba(5,7,12,0) 30%, rgba(5,7,12,0) 70%, rgba(5,7,12,.55) 100%);
+  }
+  .ryk .mist{position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:screen;opacity:.5;
+    background:radial-gradient(ellipse 60% 40% at 30% 80%, rgba(243,239,228,.10), transparent 60%),
+               radial-gradient(ellipse 50% 30% at 75% 90%, rgba(243,239,228,.08), transparent 60%);
+    animation:mistDrift 16s ease-in-out infinite alternate;
+  }
+  @keyframes mistDrift{from{transform:translateX(-2%) translateY(0);}to{transform:translateX(2%) translateY(-1%);}}
+  .ryk .hero-content{position:relative;z-index:3;text-align:center;padding:0 24px;}
+  .ryk .hero .eyebrow{margin-bottom:26px;justify-content:center;}
+  .ryk .hero .eyebrow::before{display:none;}
+  .ryk .hero .noren{
+    font-family:var(--font-disp);
+    font-size:clamp(56px,11vw,132px);
+    line-height:1;
+    letter-spacing:0.06em;
+    color:var(--ink);
+    text-shadow:0 4px 40px rgba(0,0,0,.5);
+    font-weight:300;
+    margin-bottom:18px;
+    opacity:0;
+    animation:riseIn 1.4s .3s cubic-bezier(.16,.84,.44,1) forwards;
+  }
+  .ryk .hero .romaji-line{
+    font-family:var(--font-accent);
+    font-style:italic;
+    font-size:clamp(15px,2.2vw,20px);
+    letter-spacing:0.5em;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin-bottom:34px;
+    opacity:0;
+    animation:riseIn 1.4s .6s cubic-bezier(.16,.84,.44,1) forwards;
+  }
+  .ryk .hero .tagline{
+    font-family:var(--font-disp);
+    font-size:clamp(17px,2vw,22px);
+    color:var(--ink-dim);
+    font-weight:300;
+    margin:0 auto 46px;
+    max-width:560px;
+    opacity:0;
+    animation:riseIn 1.4s .9s cubic-bezier(.16,.84,.44,1) forwards;
+  }
+  .ryk .hero .hero-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;opacity:0;animation:riseIn 1.4s 1.2s cubic-bezier(.16,.84,.44,1) forwards;}
+  @keyframes riseIn{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+  .ryk .scroll-cue{
+    position:absolute;bottom:38px;left:50%;transform:translateX(-50%);z-index:3;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+    font-size:11px;letter-spacing:0.3em;color:var(--ink-faint);
+    opacity:0;animation:riseIn 1s 1.6s ease forwards;
+  }
+  .ryk .scroll-cue .line{width:1px;height:44px;background:linear-gradient(180deg,var(--gold),transparent);animation:scrollLine 2s ease-in-out infinite;}
+  @keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+  
+  .ryk .reveal{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.16,.84,.44,1), transform 1s cubic-bezier(.16,.84,.44,1);}
+  .ryk .reveal.is-visible{opacity:1;transform:translateY(0);}
+  .ryk .reveal-delay1.is-visible{transition-delay:.12s;}
+  .ryk .reveal-delay2.is-visible{transition-delay:.24s;}
+  .ryk .reveal-delay3.is-visible{transition-delay:.36s;}
+
+  .ryk section{position:relative;}
+  .ryk .section-pad{padding:150px 0;}
+  @media(max-width:800px){.ryk .section-pad{padding:100px 0;}}
+
+  
+  .ryk .intro{background:var(--navy-900) !important;}
+  .ryk .intro-grid{display:flex;flex-wrap:wrap;gap:60px;align-items:center;}
+  .ryk .intro-grid>*{flex:1 1 420px;}
+  .ryk .intro-text h2{font-size:clamp(30px,3.6vw,44px);line-height:1.4;margin:22px 0 30px;font-weight:300;}
+  .ryk .intro-text p{color:var(--ink-dim);font-size:16px;line-height:2;margin-bottom:36px;max-width:480px;}
+  .ryk .pull-quote{
+    font-family:var(--font-disp);font-style:normal;font-weight:300;
+    font-size:clamp(20px,2vw,25px);line-height:1.7;color:var(--ink);
+    border-left:1px solid var(--line-strong);padding-left:26px;margin-bottom:16px;
+  }
+  .ryk .pull-quote-cap{font-family:var(--font-accent);font-style:italic;color:var(--gold);font-size:13px;letter-spacing:0.15em;padding-left:27px;}
+  .ryk .intro-media{position:relative;}
+  .ryk .intro-media .frame{position:relative;border:1px solid var(--line-strong);padding:16px;}
+  .ryk .intro-media .frame .img-wrap{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#1a2a4a,#0d1526) !important;}
+  .ryk .fact-row{
+    display:flex;gap:0;margin-top:64px;border-top:1px solid var(--line);padding-top:36px;
+    flex-wrap:wrap;
+  }
+  .ryk .fact-row .fact{flex:1;min-width:180px;padding:0 34px;border-left:1px solid var(--line);}
+  .ryk .fact-row .fact:first-child{border-left:none;padding-left:0;}
+  .ryk .fact-row .fact .num{font-family:var(--font-disp);font-size:26px;color:var(--gold) !important;display:block;margin-bottom:8px;white-space:nowrap !important;writing-mode:horizontal-tb !important;}
+  .ryk .fact-row .fact .num *{display:inline !important;writing-mode:horizontal-tb !important;white-space:nowrap !important;color:inherit !important;background:none !important;}
+  .ryk .fact-row .fact .label{font-size:13px;color:var(--ink-faint) !important;letter-spacing:0.05em;white-space:normal !important;writing-mode:horizontal-tb !important;}
+  .ryk .fact-row .fact .label *{display:inline !important;writing-mode:horizontal-tb !important;color:inherit !important;background:none !important;}
+
+  
+  .ryk .divider-signature{
+    background:var(--navy-800) !important;
+    padding:190px 0;
+    display:flex;align-items:center;justify-content:center;
+    position:relative;overflow:hidden;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .ryk .divider-signature .kanji-bg{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    font-family:var(--font-disp);font-size:min(60vw,780px);color:var(--ink);
+    opacity:0.035;line-height:1;pointer-events:none;white-space:nowrap;
+  }
+  .ryk .divider-signature .center-text{
+    position:relative;z-index:2;text-align:center;max-width:640px;padding:0 30px;
+  }
+  .ryk .divider-signature .center-text p{
+    font-family:var(--font-disp);font-size:clamp(20px,2.6vw,30px);font-weight:300;line-height:1.75;color:var(--ink);
+  }
+  .ryk .noren-strip{
+    position:absolute;top:0;bottom:0;right:8%;width:min(9vw,86px);
+    background:linear-gradient(180deg,#101a30,#0a1122);
+    border-left:1px solid var(--line-strong);border-right:1px solid var(--line-strong);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 30px 80px rgba(0,0,0,.45);
+  }
+  .ryk .noren-strip span{
+    writing-mode:vertical-rl;font-family:var(--font-disp);font-size:clamp(20px,2.4vw,30px);
+    letter-spacing:0.5em;color:var(--ink);
+  }
+  @media(max-width:800px){.ryk .noren-strip{display:none;}}
+
+  
+  .ryk .rooms{background:var(--navy-900) !important;}
+  .ryk .section-head{max-width:680px;margin:0 auto 90px;text-align:center;}
+  .ryk .section-head h2{font-size:clamp(30px,3.8vw,46px);font-weight:300;margin:20px 0 22px;}
+  .ryk .section-head p{color:var(--ink-dim);font-size:16px;}
+  .ryk .room-row{display:flex;flex-wrap:wrap;gap:50px;align-items:center;margin-bottom:100px;}
+  .ryk .room-row>*{flex:1 1 400px;}
+  .ryk .room-row:last-child{margin-bottom:0;}
+  .ryk .room-row.reverse .room-media{order:2;}
+  .ryk .room-row.reverse .room-copy{order:1;}
+  .ryk .room-media{position:relative;aspect-ratio:5/4;overflow:hidden;background:linear-gradient(160deg,#1a2a4a,#0d1526) !important;}
+  .ryk .room-media::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--line-strong);pointer-events:none;}
+  .ryk .room-media img{transition:transform 1.2s cubic-bezier(.16,.84,.44,1);}
+  .ryk .room-row:hover .room-media img{transform:scale(1.05);}
+  .ryk .room-idx{font-family:var(--font-accent);font-style:italic;color:var(--gold);font-size:14px;letter-spacing:.2em;margin-bottom:20px;display:block;}
+  .ryk .room-copy h3{font-size:clamp(24px,2.6vw,32px);font-weight:400;margin-bottom:8px;}
+  .ryk .room-copy .en-name{font-family:var(--font-accent);font-style:italic;color:var(--ink-faint);font-size:14px;margin-bottom:26px;display:block;}
+  .ryk .room-copy p{color:var(--ink-dim);font-size:15.5px;line-height:1.95;margin-bottom:28px;}
+  .ryk .room-tags{display:flex;gap:0;flex-wrap:wrap;margin-bottom:28px;}
+  .ryk .room-tags span{font-size:12.5px;color:var(--ink-dim);letter-spacing:.03em;padding:0 18px;border-left:1px solid var(--line);}
+  .ryk .room-tags span:first-child{padding-left:0;border-left:none;}
+  .ryk .room-price{font-family:var(--font-disp);color:var(--gold);font-size:18px;margin-bottom:26px;}
+  .ryk .room-price small{color:var(--ink-faint);font-family:var(--font-body);font-size:12.5px;font-weight:300;margin-left:6px;}
+
+  
+  .ryk .onsen{background:var(--navy-800) !important;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .ryk .onsen-gallery{display:flex;flex-direction:column;gap:24px;}
+  .ryk .onsen-gallery .g-item{position:relative;overflow:hidden;height:420px;border-radius:2px;background:linear-gradient(160deg,#1a2a4a,#0d1526) !important;}
+  .ryk .onsen-gallery .g-item img{transition:transform 1.3s cubic-bezier(.16,.84,.44,1);}
+  .ryk .onsen-gallery .g-item:hover img{transform:scale(1.06);}
+  .ryk .g-cap{
+    position:absolute;left:0;right:0;bottom:0;padding:26px 28px;
+    background:linear-gradient(0deg,rgba(5,7,12,.85),transparent);
+  }
+  .ryk .g-cap .g-title{font-family:var(--font-disp);font-size:19px;color:#f3efe4;margin-bottom:4px;}
+  .ryk .g-cap .g-sub{font-size:12.5px;color:var(--ink-faint);letter-spacing:.03em;}
+  @media(max-width:900px){.ryk .onsen-gallery .g-item{height:300px;}}
+
+  .ryk .onsen-head{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-end;margin-bottom:70px;}
+  .ryk .onsen-head>*{flex:1 1 380px;}
+  .ryk .onsen-head .eyebrow{margin-bottom:22px;}
+  .ryk .onsen-head h2{font-size:clamp(30px,3.6vw,44px);font-weight:300;}
+  .ryk .onsen-head p{color:var(--ink-dim);font-size:15.5px;line-height:1.95;}
+  @media(max-width:800px){.ryk .onsen-head{grid-template-columns:1fr;gap:24px;}}
+
+  
+  .ryk .dining{background:var(--navy-900) !important;}
+  .ryk .dining-main{position:relative;overflow:hidden;aspect-ratio:16/9;max-width:900px;margin:0 auto 44px;border-radius:2px;background:linear-gradient(160deg,#1a2a4a,#0d1526) !important;}
+  .ryk .dining-copy{max-width:640px;margin:0 auto 48px;text-align:center;}
+  .ryk .dining-copy .eyebrow{margin-bottom:22px;justify-content:center;}
+  .ryk .dining-copy h2{font-size:clamp(28px,3.2vw,40px);font-weight:300;margin-bottom:24px;}
+  .ryk .dining-copy p{color:var(--ink-dim);font-size:15.5px;line-height:2;margin-bottom:18px;}
+  .ryk .dining-side{max-width:640px;margin:0 auto;}
+  .ryk .dining-side .img-box{position:relative;overflow:hidden;aspect-ratio:16/9;margin-bottom:26px;border-radius:2px;background:linear-gradient(160deg,#1a2a4a,#0d1526) !important;}
+  .ryk .dining-side p{text-align:center;}
+
+  
+  .ryk .garden{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden;}
+  .ryk .garden .bg{position:absolute;inset:0;background:linear-gradient(160deg,#1a2a4a,#05070c) !important;}
+  .ryk .garden .bg img{filter:saturate(1.05);}
+  .ryk .garden .scrim{position:absolute;inset:0;background:linear-gradient(90deg, rgba(5,7,12,.92) 0%, rgba(5,7,12,.62) 40%, rgba(5,7,12,.2) 68%, rgba(5,7,12,.05) 100%);}
+  .ryk .garden-copy{position:relative;z-index:2;max-width:480px;padding:0 40px;}
+  .ryk .garden-copy h2{font-size:clamp(30px,3.8vw,46px);font-weight:300;margin:22px 0 26px;}
+  .ryk .garden-copy p{color:var(--ink-dim);font-size:15.5px;line-height:2;}
+
+  
+  .ryk .reservation{background:var(--navy-800) !important;border-top:1px solid var(--line);}
+  .ryk .res-inner{display:flex;flex-wrap:wrap;gap:60px;}
+  .ryk .res-info{flex:1 1 320px;}
+  .ryk form.res-form{flex:2 1 460px;}
+  .ryk .res-info .eyebrow{margin-bottom:24px;}
+  .ryk .res-info h2{font-size:clamp(30px,3.6vw,42px);font-weight:300;margin-bottom:22px;}
+  .ryk .res-info p{color:var(--ink-dim);font-size:15px;line-height:2;margin-bottom:40px;max-width:380px;}
+  .ryk .res-detail{border-top:1px solid var(--line);padding-top:26px;margin-bottom:20px;}
+  .ryk .res-detail .k{font-size:12px;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;}
+  .ryk .res-detail .v{font-size:15px;color:var(--ink);font-family:var(--font-disp);}
+  .ryk form.res-form{display:flex;flex-wrap:wrap;gap:26px;}
+  .ryk .field{display:flex;flex-direction:column;gap:10px;flex:1 1 200px;}
+  .ryk .field.full{flex-basis:100%;}
+  .ryk .field label{font-size:12px;letter-spacing:.12em;color:var(--ink-faint);text-transform:uppercase;}
+  .ryk .field input,.ryk .field select,.ryk .field textarea{
+    background:transparent;border:none;border-bottom:1px solid var(--line);
+    color:var(--ink);font-family:var(--font-body);font-size:15px;font-weight:300;
+    padding:10px 2px;outline:none;transition:border-color .3s ease;
+  }
+  .ryk .field select option{background:var(--navy-900);color:var(--ink);}
+  .ryk .field input::placeholder,.ryk .field textarea::placeholder{color:var(--ink-faint);}
+  .ryk .field input:focus,.ryk .field select:focus,.ryk .field textarea:focus{border-color:var(--gold);}
+  .ryk .field textarea{resize:vertical;min-height:90px;font-family:var(--font-body);}
+  .ryk .res-form .submit-row{grid-column:1/-1;display:flex;align-items:center;gap:24px;margin-top:10px;flex-wrap:wrap;}
+  .ryk .form-msg{font-size:13.5px;color:var(--gold);letter-spacing:.02em;opacity:0;transition:opacity .4s ease;}
+  .ryk .form-msg.show{opacity:1;}
+  .ryk footer{background:var(--void) !important;padding:90px 0 34px;border-top:1px solid var(--line);}
+  .ryk .foot-top{display:flex;flex-wrap:wrap;gap:40px;margin-bottom:80px;}
+  .ryk .foot-brand{flex:2 1 280px;}
+  .ryk .foot-col{flex:1 1 150px;}
+  .ryk .foot-brand .kanji{font-family:var(--font-disp);font-size:30px;margin-bottom:10px;}
+  .ryk .foot-brand .romaji{font-family:var(--font-accent);font-style:italic;color:var(--gold);letter-spacing:.2em;font-size:12.5px;text-transform:uppercase;margin-bottom:22px;display:block;}
+  .ryk .foot-brand p{color:var(--ink-faint);font-size:13.5px;line-height:1.9;max-width:280px;}
+  .ryk .foot-col h4{font-size:12px;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:22px;}
+  .ryk .foot-col ul li{margin-bottom:13px;}
+  .ryk .foot-col ul li a,.ryk .foot-col ul li{font-size:14px;color:var(--ink-dim);}
+  .ryk .foot-col ul li a:hover{color:var(--ink);}
+  .ryk .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:30px;border-top:1px solid var(--line);flex-wrap:wrap;gap:14px;}
+  .ryk .foot-bottom p{font-size:12px;color:var(--ink-faint);letter-spacing:.03em;}
+  @media(max-width:900px){.ryk .foot-top{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.ryk .foot-top{grid-template-columns:1fr;}}
+
+  
+  @media(max-width:900px){
+    .ryk nav.links{display:none;}
+    .ryk .burger{display:flex;}
+    .ryk .nav-cta .btn.ghost{display:none;}
+    .ryk .intro-grid{grid-template-columns:1fr;gap:50px;}
+    .ryk .intro-media{order:-1;}
+    .ryk .room-row,.ryk .room-row.reverse{grid-template-columns:1fr;gap:34px;}
+    .ryk .room-row.reverse .room-media,.ryk .room-row.reverse .room-copy{order:initial;}
+    .ryk .fact-row{gap:20px;}
+    .ryk .fact-row .fact{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:20px;flex:1 1 45%;}
+  }
+  @media(max-width:600px){
+    .ryk .container{padding:0 24px;}
+    .ryk .section-pad{padding:90px 0;}
+  }
+
+  /* ---------- floating quick CTA ---------- */
+  .ryk-quickcta{
+    position:fixed; right:30px; bottom:30px; z-index:200;
+    display:flex; align-items:center; gap:10px;
+    padding:16px 26px;
+    font-family:'Noto Serif KR',serif; font-size:14.5px; letter-spacing:.06em; font-weight:500;
+    color:#0b0d10;
+    background:linear-gradient(120deg,#c9a769,#e2c68a);
+    border-radius:100px;
+    box-shadow:0 14px 34px -8px rgba(0,0,0,.55), 0 0 0 1px rgba(201,167,105,.35);
+    transition:transform .35s cubic-bezier(.16,.84,.44,1), box-shadow .35s ease;
+  }
+  .ryk-quickcta:hover{transform:translateY(-3px); box-shadow:0 20px 40px -8px rgba(0,0,0,.6), 0 0 0 1px rgba(201,167,105,.5);}
+  .ryk-quickcta-dot{width:7px;height:7px;border-radius:50%;background:#0b0d10;box-shadow:0 0 0 4px rgba(11,13,16,.14);}
+  @media(max-width:600px){.ryk-quickcta{right:18px;bottom:18px;padding:14px 20px;font-size:13.5px;}}
+</style>
+</head>
+<body>
+<div class="ryk" style="background:#05070c;color:#f3efe4;font-family:'Noto Sans KR',sans-serif;">
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#top" class="brand-mark">
+      <span class="kanji">静寂庵</span>
+      <span class="romaji">Seijaku-an</span>
+    </a>
+    <nav class="links">
+      <a href="#intro">소개</a>
+      <a href="#rooms">객실</a>
+      <a href="#onsen">온천</a>
+      <a href="#dining">다이닝</a>
+      <a href="#garden">정원</a>
+      <a href="#reservation">예약</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#reservation" class="btn ghost">문의</a>
+      <a href="#reservation" class="btn primary">예약하기</a>
+      <button class="burger" id="burgerBtn" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<section class="hero">
+  <div class="bg"><img src="https://myeongundang.vercel.app/ryokan-images/ryokan1.jpg" alt="静寂庵 입구, 저녁 안개 속 산문과 등롱"></div>
+  <div class="scrim"></div>
+  <div class="mist"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Kyoto Northern Mountains · Onsen Ryokan</span>
+    <h1 class="noren" style="color:#f3efe4">静寂庵</h1>
+    <p class="romaji-line">S E I J A K U &nbsp; A N</p>
+    <p class="tagline">안개 낀 산자락, 아홉 개의 방만이 머무는 고요</p>
+    <div class="hero-btns">
+      <a href="#reservation" class="btn primary">예약 문의</a>
+      <a href="#rooms" class="btn ghost">객실 둘러보기</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><span class="line"></span></div>
+</section>
+
+<section class="intro section-pad" id="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text reveal">
+        <span class="eyebrow">Philosophy</span>
+        <h2 style="color:#f3efe4">머무는 것이 아니라,<br>스며드는 것</h2>
+        <p>교토 북쪽, 삼나무 숲이 안개를 머금은 산자락에 静寂庵이 있습니다. 백 년 넘은 목조 가옥의 결을 그대로 살려 객실은 단 아홉 개만을 두었습니다. 손님을 맞이하는 방식이 아니라, 손님이 산의 시간에 조용히 스며드는 방식을 오래 고민했습니다.</p>
+        <p class="pull-quote">“계절은 창밖에 있고,<br>고요는 방 안에 있습니다.”</p>
+        <p class="pull-quote-cap">— 静寂庵 오카미(女将)</p>
+
+        <div class="fact-row">
+          <div class="fact"><span class="num">9</span><span class="label">객실, 그 이상을 두지 않습니다</span></div>
+          <div class="fact"><span class="num">100%</span><span class="label">원천 온천수, 가열·순환 없이</span></div>
+          <div class="fact"><span class="num">1일 1조</span><span class="label">코스로 짓는 가이세키</span></div>
+        </div>
+      </div>
+      <div class="intro-media reveal reveal-delay2">
+        <div class="frame">
+          <div class="img-wrap"><img src="https://myeongundang.vercel.app/ryokan-images/ryokan2.jpg" alt="객실 툇마루에서 바라본 정원과 단풍나무"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="divider-signature">
+  <div class="kanji-bg">静</div>
+  <div class="noren-strip"><span>静寂庵</span></div>
+  <div class="center-text reveal">
+    <p>바람이 산을 지나가고, 낙엽이 이끼 위에 내려앉는 소리마저<br>이곳에서는 손님의 것이 됩니다.</p>
+  </div>
+</section>
+
+<section class="rooms section-pad" id="rooms">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Rooms</span>
+      <h2 style="color:#f3efe4">아홉 개의 방, 아홉 개의 계절</h2>
+      <p>모든 객실은 다다미와 전통 목조 구조를 그대로 유지하며, 산을 향한 방향에 따라 서로 다른 풍경을 담습니다.</p>
+    </div>
+
+    <div class="room-row reveal">
+      <div class="room-media"><img src="https://myeongundang.vercel.app/ryokan-images/ryokan3.jpg" alt="산영실, 안개 낀 산등성이가 보이는 낮은 다다미 침상"></div>
+      <div class="room-copy">
+        <span class="room-idx">Room · 山影室</span>
+        <h3 style="color:#f3efe4">산영실</h3>
+        <span class="en-name">Mountain Shadow Room</span>
+        <p>동틀 무렵 안개가 걷히는 산등성이를 침상에 누운 채로 마주합니다. 낮은 다다미 베드와 무쇠 화병 하나만이 방 안의 전부이며, 나머지는 창밖의 산이 채웁니다.</p>
+        <div class="room-tags"><span>39㎡</span><span>전용 노천탕</span><span>최대 2인</span></div>
+        <p class="room-price">₩420,000<small>~ / 1박 2식 기준</small></p>
+        <a href="#reservation" class="btn ghost">이 객실 문의하기</a>
+      </div>
+    </div>
+
+    <div class="room-row reverse reveal">
+      <div class="room-media"><img src="https://myeongundang.vercel.app/ryokan-images/ryokan4.jpg" alt="월견실 테라스에서 바라본 계곡과 다리, 다구가 놓인 툇마루"></div>
+      <div class="room-copy">
+        <span class="room-idx">Room · 月見室</span>
+        <h3 style="color:#f3efe4">월견실</h3>
+        <span class="en-name">Moon-Viewing Terrace</span>
+        <p>다리와 계곡이 내려다보이는 전용 테라스에서 차를 우립니다. 손을 씻는 작은 돌수반과 등롱은 백 년 전 그대로의 것으로, 저녁이면 은은히 불을 밝힙니다.</p>
+        <div class="room-tags"><span>49㎡</span><span>전용 테라스 · 다구</span><span>최대 3인</span></div>
+        <p class="room-price">₩480,000<small>~ / 1박 2식 기준</small></p>
+        <a href="#reservation" class="btn ghost">이 객실 문의하기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="onsen section-pad" id="onsen">
+  <div class="container">
+    <div class="onsen-head">
+      <div class="reveal">
+        <span class="eyebrow">Onsen</span>
+        <h2 style="color:#f3efe4">산의 온천수,<br>객실 밖으로 한 걸음</h2>
+      </div>
+      <div class="reveal reveal-delay1">
+        <p>지하 900미터에서 끌어올린 원천을 그대로 사용하며, 가열이나 순환 없이 매일 새로 채웁니다. 아홉 개의 객실 중 여섯 곳은 전용 노천탕을, 나머지는 정원과 맞닿은 실내탕을 갖추고 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="onsen-gallery">
+      <div class="g-item reveal">
+        <img src="https://myeongundang.vercel.app/ryokan-images/ryokan5.jpg" alt="단풍나무 아래 자리한 야외 노천탕, 정원탕">
+        <div class="g-cap"><div class="g-title">정원탕</div><div class="g-sub">단풍나무 아래, 사계절 야외 노천탕</div></div>
+      </div>
+      <div class="g-item reveal reveal-delay1">
+        <img src="https://myeongundang.vercel.app/ryokan-images/ryokan6.jpg" alt="편백나무로 만든 실내 노천탕, 정원이 보이는 창">
+        <div class="g-cap"><div class="g-title">히노키탕</div><div class="g-sub">편백나무 향이 은은한 실내 노천탕</div></div>
+      </div>
+      <div class="g-item reveal reveal-delay2">
+        <img src="https://myeongundang.vercel.app/ryokan-images/ryokan7.jpg" alt="객실과 바로 이어지는 전용 노천탕, 이부자리가 보이는 방">
+        <div class="g-cap"><div class="g-title">객실 직결탕</div><div class="g-sub">이부자리에서 탕까지, 세 걸음</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dining section-pad" id="dining">
+  <div class="container">
+    <div class="dining-main reveal">
+      <img src="https://myeongundang.vercel.app/ryokan-images/ryokan8.jpg" alt="아홉 개의 코스로 차려진 가이세키 저녁상, 사시미와 튀김, 생선구이">
+    </div>
+    <div class="dining-copy reveal reveal-delay1">
+      <span class="eyebrow">Kaiseki</span>
+      <h2 style="color:#f3efe4">산이 내어주는<br>계절의 상</h2>
+      <p>료칸 인근 농가에서 그날 아침 거둔 재료로 짓는 가이세키입니다. 제철 사시미와 튀김, 화로에 구운 생선까지 아홉 개의 코스가 소란 없이 방으로 들어옵니다.</p>
+    </div>
+    <div class="dining-side">
+      <div class="img-box reveal reveal-delay2">
+        <img src="https://myeongundang.vercel.app/ryokan-images/ryokan9.jpg" alt="갓 지은 밥과 된장국으로 차려진 정갈한 아침상">
+      </div>
+      <p style="color:var(--ink-dim);font-size:14.5px;line-height:1.9;" class="reveal reveal-delay2">아침 상 — 갓 지은 밥과 된장국, 구운 생선으로 시작하는 하루.</p>
+    </div>
+  </div>
+</section>
+
+<section class="garden" id="garden">
+  <div class="bg"><img src="https://myeongundang.vercel.app/ryokan-images/ryokan10.jpg" alt="이끼와 돌, 단풍나무 한 그루로 이루어진 정원"></div>
+  <div class="scrim"></div>
+  <div class="garden-copy reveal">
+    <span class="eyebrow">Garden</span>
+    <h2 style="color:#f3efe4">손대지 않은 정원</h2>
+    <p>이끼와 돌, 단풍나무 한 그루가 전부인 정원입니다. 정원사는 나무를 다듬지 않고, 계절이 흐르는 모습을 그대로 둡니다. 비 온 다음 날 아침, 이끼는 가장 짙은 빛을 냅니다.</p>
+  </div>
+</section>
+
+<section class="reservation section-pad" id="reservation">
+  <div class="container">
+    <div class="res-inner">
+      <div class="res-info reveal">
+        <span class="eyebrow">Reservation</span>
+        <h2 style="color:#f3efe4">머무름을 청하다</h2>
+        <p>하루 최대 아홉 팀만을 모십니다. 원하시는 날짜에 방이 없을 수 있으니 미리 문의를 부탁드립니다.</p>
+
+        <div class="res-detail">
+          <div class="k">Check-in / Check-out</div>
+          <div class="v">15:00 입실 · 11:00 퇴실</div>
+        </div>
+        <div class="res-detail">
+          <div class="k">Contact</div>
+          <div class="v">+81&nbsp;75&nbsp;000&nbsp;0000</div>
+        </div>
+        <div class="res-detail">
+          <div class="k">Location</div>
+          <div class="v">교토부 사쿄구 산간, 静寂庵</div>
+        </div>
+      </div>
+
+      <form class="res-form reveal reveal-delay1" id="resForm">
+        <div class="field">
+          <label for="checkin">체크인</label>
+          <input type="date" id="checkin" name="checkin" required>
+        </div>
+        <div class="field">
+          <label for="checkout">체크아웃</label>
+          <input type="date" id="checkout" name="checkout" required>
+        </div>
+        <div class="field">
+          <label for="guests">인원</label>
+          <select id="guests" name="guests">
+            <option>1인</option>
+            <option selected>2인</option>
+            <option>3인</option>
+            <option>4인 이상</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="room">희망 객실</label>
+          <select id="room" name="room">
+            <option>산영실 (山影室)</option>
+            <option>월견실 (月見室)</option>
+            <option>추천에 맡김</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="name">성함</label>
+          <input type="text" id="name" name="name" placeholder="이름을 입력해 주세요" required>
+        </div>
+        <div class="field">
+          <label for="phone">연락처</label>
+          <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+        </div>
+        <div class="field full">
+          <label for="email">이메일</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com">
+        </div>
+        <div class="field full">
+          <label for="message">문의 사항</label>
+          <textarea id="message" name="message" placeholder="궁금하신 점이나 요청 사항을 남겨 주세요"></textarea>
+        </div>
+        <div class="submit-row">
+          <button type="submit" class="btn primary">예약 문의 보내기</button>
+          <span class="form-msg" id="formMsg">문의가 접수되었습니다. 24시간 내로 연락드리겠습니다.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="kanji">静寂庵</div>
+        <span class="romaji">Seijaku-an Ryokan</span>
+        <p>교토 북쪽 산자락, 아홉 개의 방이 전부인 온천료칸입니다. 계절과 고요를 그대로 내어드립니다.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#intro">소개</a></li>
+          <li><a href="#rooms">객실</a></li>
+          <li><a href="#onsen">온천</a></li>
+          <li><a href="#dining">다이닝</a></li>
+          <li><a href="#garden">정원</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>+81 75 000 0000</li>
+          <li>info@seijaku-an.jp</li>
+          <li>교토부 사쿄구 산간</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Hours</h4>
+        <ul>
+          <li>체크인 15:00</li>
+          <li>체크아웃 11:00</li>
+          <li>1일 9팀 한정</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 Seijaku-an Ryokan. All rights reserved.</p>
+      <p>Design &amp; Development — 静寂庵</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // nav scroll state
+  const navEl = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => {
+    navEl.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // mobile burger -> simple toggle of links as overlay list
+  const burger = document.getElementById('burgerBtn');
+  const linksEl = document.querySelector('nav.links');
+  burger.addEventListener('click', () => {
+    const open = linksEl.style.display === 'flex';
+    if(open){
+      linksEl.style.display = '';
+    } else {
+      linksEl.style.cssText = 'display:flex;position:fixed;top:0;left:0;right:0;bottom:0;flex-direction:column;align-items:center;justify-content:center;gap:40px;background:rgba(5,7,12,0.98);z-index:99;';
+      linksEl.querySelectorAll('a').forEach(a=>a.style.fontSize='20px');
+    }
+  });
+  linksEl && linksEl.addEventListener('click', (e)=>{
+    if(e.target.tagName === 'A' && window.innerWidth <= 900){
+      linksEl.style.display = '';
+    }
+  });
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  // reservation form (front-end only demo)
+  const form = document.getElementById('resForm');
+  const msg = document.getElementById('formMsg');
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    msg.classList.add('show');
+    form.reset();
+    setTimeout(()=>msg.classList.remove('show'), 6000);
+  });
+</script>
+
+<a href="#reservation" class="ryk-quickcta">
+  <span class="ryk-quickcta-dot"></span>예약하기
+</a>
+
+</div>
+</body>
+</html>
+
+</body></html>
