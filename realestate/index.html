@@ -44,12 +44,11 @@ header.nav.scrolled{background:rgba(10,13,18,.9);backdrop-filter:blur(14px);bord
 
 /* hero slideshow */
 .hero{position:relative;height:100vh;min-height:680px;overflow:hidden;display:flex;align-items:center}
-.hero .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:heroFade 20s infinite}
+.hero .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:heroFade 18s infinite}
 .hero .slide:nth-child(1){animation-delay:0s}
-.hero .slide:nth-child(2){animation-delay:5s}
-.hero .slide:nth-child(3){animation-delay:10s}
-.hero .slide:nth-child(4){animation-delay:15s}
-@keyframes heroFade{0%{opacity:0}4%{opacity:1}21%{opacity:1}25%{opacity:0}100%{opacity:0}}
+.hero .slide:nth-child(2){animation-delay:6s}
+.hero .slide:nth-child(3){animation-delay:12s}
+@keyframes heroFade{0%{opacity:0}5%{opacity:1}28%{opacity:1}33%{opacity:0}100%{opacity:0}}
 .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(10,13,18,.92) 0%,rgba(10,13,18,.45) 46%,rgba(10,13,18,.15) 100%)}
 .hero-content{position:relative;z-index:2;text-align:center;max-width:820px;margin:0 auto;padding:0 24px}
 .hero h1{font-size:clamp(32px,5.6vw,58px);line-height:1.4;margin-bottom:24px}
@@ -75,7 +74,7 @@ header.nav.scrolled{background:rgba(10,13,18,.9);backdrop-filter:blur(14px);bord
 .prop-grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
 .prop-card{flex:1 1 320px;max-width:360px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--card);transition:transform .3s ease,border-color .3s ease}
 .prop-card:hover{transform:translateY(-4px);border-color:rgba(201,164,104,.45)}
-.prop-card .ph{aspect-ratio:4/3}
+.prop-card .ph{aspect-ratio:4/3;background-size:cover;background-position:center}
 .prop-card .body{padding:22px 24px}
 .prop-card .type{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:8px;display:block}
 .prop-card h3{font-size:18px;margin-bottom:8px}
@@ -133,10 +132,9 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
 <div id="top"></div>
 
 <section class="hero">
-  <div class="slide" style="background:linear-gradient(170deg,#8FA9C4 0%,#C9B896 38%,#1a222c 75%,#0a0d12 100%)"></div>
-  <div class="slide" style="background:linear-gradient(170deg,#7C93B8 0%,#D9A45C 40%,#161c26 78%,#0a0d12 100%)"></div>
-  <div class="slide" style="background:linear-gradient(170deg,#94A8B0 0%,#3fb8a6 42%,#141a22 80%,#0a0d12 100%)"></div>
-  <div class="slide" style="background:linear-gradient(170deg,#A6B6C6 0%,#c9a468 40%,#181f28 78%,#0a0d12 100%)"></div>
+  <div class="slide" style="background-image:url('https://myeongundang.vercel.app/realestate-images/hero1.jpg')"></div>
+  <div class="slide" style="background-image:url('https://myeongundang.vercel.app/realestate-images/hero2.jpg')"></div>
+  <div class="slide" style="background-image:url('https://myeongundang.vercel.app/realestate-images/hero3.jpg')"></div>
   <div class="scrim"></div>
   <div class="hero-content">
     <div class="eyebrow">Premium Real Estate</div>
@@ -176,11 +174,11 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
     </div>
     <div class="prop-grid">
       <div class="prop-card">
-        <div class="ph" style="background:linear-gradient(150deg,#2A3644,#10151D)"></div>
+        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/office1.jpg')"></div>
         <div class="body"><span class="type">사무실 · 임대</span><h3>강남대로 프라임 오피스</h3><div class="info"><span>42평</span><span>9층</span><span>즉시입주</span></div><div class="price">보증금 5,000 / 월 380만</div></div>
       </div>
       <div class="prop-card">
-        <div class="ph" style="background:linear-gradient(150deg,#3A2E24,#10151D)"></div>
+        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/office2.jpg')"></div>
         <div class="body"><span class="type">상가 · 분양</span><h3>역세권 1층 코너 상가</h3><div class="info"><span>28평</span><span>1층</span><span>코너입지</span></div><div class="price">분양가 9억 5,000</div></div>
       </div>
     </div>
@@ -196,11 +194,11 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
     </div>
     <div class="prop-grid">
       <div class="prop-card">
-        <div class="ph" style="background:linear-gradient(150deg,#26313E,#10151D)"></div>
+        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/apt1.jpg')"></div>
         <div class="body"><span class="type">신축 · 분양</span><h3>라움 더 스카이 84㎡</h3><div class="info"><span>34평</span><span>25층</span><span>남향</span></div><div class="price">분양가 14억 8,000</div></div>
       </div>
       <div class="prop-card">
-        <div class="ph" style="background:linear-gradient(150deg,#20303A,#10151D)"></div>
+        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/apt2.jpg')"></div>
         <div class="body"><span class="type">준신축 · 매매</span><h3>한강뷰 리버파크 59㎡</h3><div class="info"><span>25평</span><span>18층</span><span>리모델링</span></div><div class="price">매매가 11억 2,000</div></div>
       </div>
     </div>
@@ -216,11 +214,11 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
     </div>
     <div class="prop-grid">
       <div class="prop-card">
-        <div class="ph" style="background:linear-gradient(150deg,#2E2A24,#10151D)"></div>
+        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/villa1.jpg')"></div>
         <div class="body"><span class="type">신축 빌라</span><h3>성북동 테라스 하우스</h3><div class="info"><span>32평</span><span>3층</span><span>테라스</span></div><div class="price">매매가 8억 3,000</div></div>
       </div>
       <div class="prop-card">
-        <div class="ph" style="background:linear-gradient(150deg,#243028,#10151D)"></div>
+        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/villa2.jpg')"></div>
         <div class="body"><span class="type">단독주택</span><h3>정원 딸린 2층 단독주택</h3><div class="info"><span>48평</span><span>2층</span><span>마당 포함</span></div><div class="price">매매가 13억</div></div>
       </div>
     </div>
@@ -236,15 +234,15 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
     </div>
     <div class="prop-grid">
       <div class="prop-card">
-        <div class="ph" style="background:linear-gradient(150deg,#2A2A38,#10151D)"></div>
+        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/room1.jpg')"></div>
         <div class="body"><span class="type">원룸</span><h3>신축 풀옵션 원룸</h3><div class="info"><span>8평</span><span>5층</span><span>즉시입주</span></div><div class="price">보증금 1,000 / 월 55만</div></div>
       </div>
       <div class="prop-card">
-        <div class="ph" style="background:linear-gradient(150deg,#243244,#10151D)"></div>
+        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/room2.jpg')"></div>
         <div class="body"><span class="type">투룸</span><h3>역세권 신혼 투룸</h3><div class="info"><span>16평</span><span>3층</span><span>주차가능</span></div><div class="price">보증금 3,000 / 월 90만</div></div>
       </div>
       <div class="prop-card">
-        <div class="ph" style="background:linear-gradient(150deg,#302838,#10151D)"></div>
+        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/villa1.jpg');background-position:60% center"></div>
         <div class="body"><span class="type">쓰리룸</span><h3>패밀리형 쓰리룸</h3><div class="info"><span>24평</span><span>7층</span><span>남향</span></div><div class="price">전세 3억 8,000</div></div>
       </div>
     </div>
