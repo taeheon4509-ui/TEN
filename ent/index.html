@@ -1,0 +1,255 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>라온이비인후과</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="entc">
+<style>
+.entc{
+  --bg:#ffffff; --bg2:#f2f9fa; --ink:#1c2327; --ink-dim:#5b6a6f; --muted:#8a9599;
+  --line:#e2edee; --teal:#12a89a; --teal-dark:#0c8577; --blue:#4f7cff;
+  --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.entc *{box-sizing:border-box}
+.entc a{color:inherit;text-decoration:none}
+.entc img{max-width:100%;display:block}
+.entc .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.entc .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--teal) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.entc .eyebrow::before{content:"";width:22px;height:2px;background:var(--teal)}
+.entc h1,.entc h2,.entc h3{font-family:var(--sans);font-weight:800;color:var(--ink) !important;margin:0}
+.entc p{margin:0}
+.entc .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:30px;transition:transform .2s ease,box-shadow .2s ease;background:transparent !important}
+.entc .btn-p{background:var(--teal) !important;color:#fff !important}
+.entc .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(18,168,154,.5)}
+.entc .btn-g{border:1.5px solid var(--teal);color:var(--teal) !important;background:#fff !important}
+.entc .btn-g:hover{background:var(--teal) !important;color:#fff !important}
+.entc section{padding:96px 0;background:var(--bg)}
+@media(max-width:760px){.entc section{padding:60px 0}}
+
+/* placeholder photo gradients (class-based, never inline style) */
+.entc .ph{background-size:cover;background-position:center;position:relative;overflow:hidden}
+.entc .ph:empty::after{content:"사진 영역";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:rgba(255,255,255,.75);letter-spacing:.08em;font-weight:600}
+.entc .ph1{background:linear-gradient(150deg,#bfe3e0,#12a89a)}
+.entc .ph2{background:linear-gradient(150deg,#cfe0ff,#4f7cff)}
+.entc .ph3{background:linear-gradient(150deg,#d8ecea,#5fb8ac)}
+.entc .ph4{background:linear-gradient(150deg,#e4eefc,#8fb0f5)}
+.entc .ph5{background:linear-gradient(150deg,#c9ece6,#1c9b8d)}
+
+.entc header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.entc .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.entc .brand{font-size:19px;font-weight:800;color:var(--ink) !important;display:flex;align-items:center;gap:9px}
+.entc .brand .mark{width:32px;height:32px;border-radius:10px;background:var(--teal) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900}
+.entc .nav-links{display:flex;gap:28px}
+.entc .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.entc .nav-links a:hover{color:var(--teal) !important}
+.entc .nav-links a.active{color:var(--teal) !important}
+@media(max-width:980px){.entc .nav-links{display:none}}
+.entc .nav-cta{background:var(--teal) !important;color:#fff !important;padding:11px 22px;border-radius:30px;font-weight:700;font-size:14px}
+
+/* 히어로 슬라이드 */
+.entc .hero{position:relative;height:92vh;min-height:600px;overflow:hidden;display:flex;align-items:center;margin-top:0}
+.entc .hero .slide{position:absolute;inset:0;opacity:0;animation:entcHeroFade 18s infinite;overflow:hidden}
+.entc .hero .slide img{width:100%;height:100%;object-fit:cover;display:block}
+.entc .hero .slide:nth-child(1){animation-delay:0s}
+.entc .hero .slide:nth-child(2){animation-delay:6s}
+.entc .hero .slide:nth-child(3){animation-delay:12s}
+@keyframes entcHeroFade{0%{opacity:0}5%{opacity:1}28%{opacity:1}33%{opacity:0}100%{opacity:0}}
+.entc .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(10,20,22,.62) 0%,rgba(10,20,22,.4) 45%,rgba(10,20,22,.12) 100%)}
+.entc .hero-content{position:relative;z-index:2;max-width:640px;padding:0 32px;margin:0 auto;width:100%}
+.entc .hero h1{font-size:clamp(30px,4.6vw,48px);line-height:1.45;color:#fff !important;margin-bottom:20px}
+.entc .hero h1 .hl{color:#7fe8db !important}
+.entc .hero p{color:#eef6f5 !important;font-size:16px;line-height:1.9;max-width:520px;margin-bottom:30px}
+.entc .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+.entc .hero .btn-g{border-color:#fff;color:#fff !important;background:transparent !important}
+.entc .hero .btn-g:hover{background:#fff !important;color:var(--ink) !important}
+.entc .hero-tags{display:flex;gap:10px;flex-wrap:wrap}
+.entc .hero-tags span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff !important;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:20px}
+
+.entc .section-head{max-width:640px;margin:0 auto 52px;text-align:center}
+.entc .section-head h2{font-size:clamp(24px,3.2vw,32px);margin-bottom:12px}
+.entc .section-head p{color:var(--muted) !important;font-size:14.5px}
+
+/* 전문분야 */
+.entc .specialty-row{display:flex;flex-wrap:wrap;gap:18px}
+.entc .specialty-card{flex:1 1 220px;background:var(--bg2) !important;border-radius:14px;padding:28px 24px;text-align:center}
+.entc .specialty-card .ico{width:48px;height:48px;border-radius:50%;background:var(--teal) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin:0 auto 14px}
+.entc .specialty-card h3{font-size:15.5px;margin-bottom:6px}
+.entc .specialty-card p{font-size:12.5px;color:var(--muted) !important;line-height:1.7}
+
+/* 병원 사명 */
+.entc .mission{background:var(--bg2) !important;text-align:center}
+.entc .mission p{font-size:clamp(16px,1.9vw,20px);font-weight:500;line-height:2.15;color:var(--ink) !important}
+.entc .mission .hl{color:var(--teal) !important;font-weight:800}
+
+/* 진료순서 */
+.entc .process-strip{display:flex;flex-wrap:wrap;gap:20px}
+.entc .proc-step{flex:1 1 220px;text-align:center;padding:26px 18px;background:#fff !important;border-radius:14px;border:1px solid var(--line)}
+.entc .proc-step .pnum{width:34px;height:34px;border-radius:50%;background:var(--teal) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-weight:800;margin:0 auto 12px}
+.entc .proc-step h3{font-size:15px;margin-bottom:6px}
+.entc .proc-step p{font-size:12.5px;color:var(--muted) !important;line-height:1.7}
+
+/* 하루 방문율 통계 */
+.entc .stats-band{background:var(--ink) !important;padding:56px 0}
+.entc .stats-row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-around;text-align:center}
+.entc .stat b{display:block;font-size:clamp(30px,4vw,44px);font-weight:900;color:#7fe8db !important;margin-bottom:6px}
+.entc .stat span{font-size:13.5px;color:#cfcfcf !important;letter-spacing:.02em}
+
+/* 간단 진료과목 */
+.entc .clinic-tags{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.entc .clinic-tag{flex:1 1 180px;max-width:200px;text-align:center;border:1px solid var(--line);border-radius:14px;padding:26px 18px;transition:transform .2s ease,box-shadow .2s ease}
+.entc .clinic-tag:hover{transform:translateY(-3px);box-shadow:0 18px 30px -18px rgba(0,0,0,.18);border-color:var(--teal)}
+.entc .clinic-tag .tag-ico{font-size:12px;font-weight:800;color:var(--teal) !important;letter-spacing:.08em;margin-bottom:8px;display:block}
+.entc .clinic-tag h3{font-size:15px}
+
+/* 예약 CTA */
+.entc .cta-band{background:linear-gradient(120deg,var(--teal),var(--teal-dark)) !important;text-align:center}
+.entc .cta-band .eyebrow{color:#d6fff8 !important;justify-content:center}
+.entc .cta-band .eyebrow::before{background:#d6fff8}
+.entc .cta-band h2{color:#fff !important;font-size:clamp(22px,3vw,30px);margin-bottom:14px}
+.entc .cta-band p{color:#e3fbf6 !important;font-size:14.5px;margin-bottom:28px}
+.entc .cta-band .btn-p{background:#fff !important;color:var(--teal-dark) !important}
+.entc .cta-band .btn-p:hover{box-shadow:0 14px 26px -10px rgba(0,0,0,.3)}
+
+.entc footer{padding:34px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+
+.entc .quick-cta{position:fixed;right:26px;bottom:26px;z-index:200;display:flex;align-items:center;gap:9px;padding:15px 24px;font-weight:800;font-size:13.5px;color:#fff !important;background:var(--teal) !important;border-radius:30px;box-shadow:0 16px 30px -10px rgba(18,168,154,.55)}
+.entc .quick-cta:hover{transform:translateY(-3px)}
+.entc .quick-cta .dot{width:7px;height:7px;border-radius:50%;background:#fff}
+</style>
+
+<header class="nav" id="entcNav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand"><span class="mark">라</span>라온이비인후과</a>
+    <nav class="nav-links">
+      <a href="/about">병원소개</a>
+      <a href="/clinic">진료과목</a>
+      <a href="/price">비급여진료비</a>
+      <a href="/reserve">온라인예약</a>
+    </nav>
+    <a href="/reserve" class="nav-cta">온라인예약</a>
+  </div>
+</header>
+
+<!-- 1. 히어로 슬라이드 -->
+<section class="hero">
+  <div class="slide"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/ent-images/hero1.jpg" alt=""></div>
+  <div class="slide"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/ent-images/hero2.jpg" alt=""></div>
+  <div class="slide"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/ent-images/hero3.jpg" alt=""></div>
+  <div class="scrim"></div>
+  <div class="hero-content">
+    <div class="eyebrow" style="color:#8fe8db">Raon ENT Clinic</div>
+    <h1>귀·코·목,<br>한 곳에서 <span class="hl">정확하게</span></h1>
+    <p>이비인후과 전문의가 귀, 코, 목의 증상을 정밀 검사부터 치료까지 한 번에 진행합니다. 아이부터 어르신까지, 편안하게 찾을 수 있는 동네 이비인후과입니다.</p>
+    <div class="hero-btns">
+      <a href="/reserve" class="btn btn-p">온라인예약 →</a>
+      <a href="/clinic" class="btn btn-g">진료과목 보기</a>
+    </div>
+    <div class="hero-tags">
+      <span>이(귀) 클리닉</span>
+      <span>비(코) 클리닉</span>
+      <span>인후(목) 클리닉</span>
+      <span>알레르기</span>
+      <span>소아이비인후과</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2. 어떤 것이 전문인지 -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Specialty</div>
+      <h2>라온이비인후과가 전문으로 하는 것</h2>
+      <p>흔한 감기 진료를 넘어, 정밀 검사가 필요한 영역까지 폭넓게 다룹니다.</p>
+    </div>
+    <div class="specialty-row">
+      <div class="specialty-card"><div class="ico">✓</div><h3>비염·수면호흡</h3><p>만성 비염과 코골이·수면무호흡 정밀 진단</p></div>
+      <div class="specialty-card"><div class="ico">✓</div><h3>알레르기 정밀검사</h3><p>원인물질을 찾는 정밀 알레르기 검사</p></div>
+      <div class="specialty-card"><div class="ico">✓</div><h3>소아 이비인후과</h3><p>아이 눈높이에 맞춘 편안한 진료</p></div>
+      <div class="specialty-card"><div class="ico">✓</div><h3>이명·난청 케어</h3><p>정밀 청력검사와 보청기 상담 연계</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 병원 사명 5줄 -->
+<section class="mission">
+  <div class="wrap">
+    <p>
+      증상보다 <span class="hl">원인</span>을 먼저 봅니다,<br>
+      설명보다 <span class="hl">이해</span>를 먼저 구합니다,<br>
+      치료보다 <span class="hl">예방</span>을 먼저 생각합니다,<br>
+      어른보다 <span class="hl">아이</span>의 눈높이를 먼저 맞춥니다,<br>
+      그렇게 완성되는 것이 라온이비인후과의 진료입니다.
+    </p>
+  </div>
+</section>
+
+<!-- 4. 진료순서 -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Process</div>
+      <h2>진료 순서</h2>
+      <p>상담부터 치료까지, 네 단계로 진행됩니다.</p>
+    </div>
+    <div class="process-strip">
+      <div class="proc-step"><span class="pnum">1</span><h3>상담 접수</h3><p>온라인예약 또는 전화로 증상을 먼저 안내해주세요.</p></div>
+      <div class="proc-step"><span class="pnum">2</span><h3>정밀 검사</h3><p>내시경·청력·알레르기 등 필요한 검사를 진행합니다.</p></div>
+      <div class="proc-step"><span class="pnum">3</span><h3>진단 상담</h3><p>검사 결과를 바탕으로 원인과 치료 방향을 설명드립니다.</p></div>
+      <div class="proc-step"><span class="pnum">4</span><h3>치료·관리</h3><p>치료 이후에도 재발 방지를 위한 후속 관리를 진행합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 하루 방문율 -->
+<div class="stats-band">
+  <div class="wrap stats-row">
+    <div class="stat"><b>80+</b><span>일 평균 방문 환자수</span></div>
+    <div class="stat"><b>92%</b><span>당일 검사·진료 가능률</span></div>
+    <div class="stat"><b>4.9</b><span>환자 만족도 (5점 만점)</span></div>
+  </div>
+</div>
+
+<!-- 6. 간단한 진료과목 -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Practice Areas</div>
+      <h2>진료과목</h2>
+      <p>다섯 개 전문 클리닉으로 나누어 진료합니다.</p>
+    </div>
+    <div class="clinic-tags">
+      <a href="/clinic" class="clinic-tag"><span class="tag-ico">EAR</span><h3>이(귀) 클리닉</h3></a>
+      <a href="/clinic" class="clinic-tag"><span class="tag-ico">NOSE</span><h3>비(코) 클리닉</h3></a>
+      <a href="/clinic" class="clinic-tag"><span class="tag-ico">THROAT</span><h3>인후(목) 클리닉</h3></a>
+      <a href="/clinic" class="clinic-tag"><span class="tag-ico">ALLERGY</span><h3>알레르기 클리닉</h3></a>
+      <a href="/clinic" class="clinic-tag"><span class="tag-ico">KIDS</span><h3>소아이비인후과</h3></a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 예약 유도 CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="eyebrow">Book Now</div>
+    <h2>미리 예약하면, 대기 없이 더 빠르게 진료받을 수 있어요</h2>
+    <p>온라인예약으로 희망 날짜와 진료과를 남겨주시면 우선 안내해드립니다.</p>
+    <a href="/reserve" class="btn btn-p">예약하기 →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 라온이비인후과 · RAON ENT CLINIC</div>
+</footer>
+
+<a href="/reserve" class="quick-cta"><span class="dot"></span>빠른예약</a>
+
+<script>
+(function(){
+  var navEl = document.getElementById('entcNav');
+  window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+})();
+</script>
+
+</div>
+</body></html>

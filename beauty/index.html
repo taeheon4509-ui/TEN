@@ -1,0 +1,203 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>글로우아뜰리에</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="bty">
+<style>
+.bty{
+  --bg:#fffaf8; --bg2:#faf0ed; --ink:#2b2220; --ink-dim:#6b5b57; --muted:#9a8a86;
+  --line:#ede0dc; --rose:#c96b7a; --rose-dark:#a8515f;
+  --serif:'Noto Serif KR',serif; --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.bty *{box-sizing:border-box}
+.bty a{color:inherit;text-decoration:none}
+.bty img{max-width:100%;display:block}
+.bty .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.bty .eyebrow{font-family:var(--serif);font-style:italic;font-size:14px;letter-spacing:.12em;color:var(--rose) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.bty .eyebrow::before{content:"";width:22px;height:1px;background:var(--rose)}
+.bty h1,.bty h2,.bty h3{font-family:var(--serif);font-weight:700;color:var(--ink) !important;margin:0}
+.bty p{margin:0}
+.bty .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:2px;transition:transform .2s ease,box-shadow .2s ease;background:transparent !important}
+.bty .btn-p{background:var(--rose) !important;color:#fff !important}
+.bty .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(201,107,122,.5)}
+.bty .btn-g{border:1.5px solid var(--rose);color:var(--rose) !important;background:#fff !important}
+.bty .btn-g:hover{background:var(--rose) !important;color:#fff !important}
+.bty section{padding:96px 0;background:var(--bg)}
+@media(max-width:760px){.bty section{padding:60px 0}}
+
+.bty .ph{background-size:cover;background-position:center;position:relative;overflow:hidden}
+.bty .ph:empty::after{content:"사진 영역";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:rgba(255,255,255,.75);letter-spacing:.08em;font-weight:600}
+.bty .ph1{background:linear-gradient(150deg,#f3d9d0,#c96b7a)}
+.bty .ph2{background:linear-gradient(150deg,#f7e3dd,#d98b96)}
+.bty .ph3{background:linear-gradient(150deg,#f0d6cf,#b85566)}
+.bty .ph4{background:linear-gradient(150deg,#f5ddd6,#c47a86)}
+
+.bty header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.bty .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.bty .brand{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink) !important;display:flex;align-items:center;gap:9px}
+.bty .brand .mark{width:32px;height:32px;border-radius:50%;background:var(--rose) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;font-family:var(--serif)}
+.bty .nav-links{display:flex;gap:26px}
+.bty .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.bty .nav-links a:hover{color:var(--rose) !important}
+.bty .nav-links a.active{color:var(--rose) !important}
+@media(max-width:1040px){.bty .nav-links{display:none}}
+.bty .nav-cta{background:var(--rose) !important;color:#fff !important;padding:11px 20px;border-radius:2px;font-weight:700;font-size:13.5px}
+
+.bty .hero{position:relative;height:92vh;min-height:600px;overflow:hidden;display:flex;align-items:center;margin-top:0}
+.bty .hero .slide{position:absolute;inset:0;opacity:0;animation:btyHeroFade 18s infinite;overflow:hidden}
+.bty .hero .slide img{width:100%;height:100%;object-fit:cover;display:block}
+.bty .hero .slide:nth-child(1){animation-delay:0s}
+.bty .hero .slide:nth-child(2){animation-delay:6s}
+.bty .hero .slide:nth-child(3){animation-delay:12s}
+@keyframes btyHeroFade{0%{opacity:0}5%{opacity:1}28%{opacity:1}33%{opacity:0}100%{opacity:0}}
+.bty .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(30,16,18,.6) 0%,rgba(30,16,18,.36) 45%,rgba(30,16,18,.1) 100%)}
+.bty .hero-content{position:relative;z-index:2;max-width:640px;padding:0 32px;margin:0 auto;width:100%}
+.bty .hero h1{font-size:clamp(30px,4.6vw,48px);line-height:1.45;color:#fff !important;margin-bottom:20px;font-weight:400}
+.bty .hero h1 b{font-weight:700;display:block;color:#f2c9cf !important}
+.bty .hero p{color:#f6ece9 !important;font-size:16px;line-height:1.9;max-width:520px;margin-bottom:30px}
+.bty .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.bty .hero .btn-g{border-color:#fff;color:#fff !important;background:transparent !important}
+.bty .hero .btn-g:hover{background:#fff !important;color:var(--ink) !important}
+
+.bty .section-head{max-width:640px;margin:0 auto 52px;text-align:center}
+.bty .section-head h2{font-size:clamp(24px,3.2vw,32px);margin-bottom:12px;font-weight:400}
+.bty .section-head p{color:var(--muted) !important;font-size:14.5px}
+
+/* 사명 10줄 */
+.bty .mission{background:var(--bg2) !important;text-align:center}
+.bty .mission p{font-family:var(--serif);font-size:clamp(15px,1.7vw,18px);font-weight:400;line-height:2.3;color:var(--ink) !important}
+.bty .mission .hl{color:var(--rose) !important;font-weight:700}
+
+/* 방문시 절차 */
+.bty .process-strip{display:flex;flex-wrap:wrap;gap:20px}
+.bty .proc-step{flex:1 1 220px;text-align:center;padding:26px 18px;background:#fff !important;border-radius:4px;border:1px solid var(--line)}
+.bty .proc-step .pnum{width:34px;height:34px;border-radius:50%;background:var(--rose) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 12px;font-family:var(--serif)}
+.bty .proc-step h3{font-size:15px;margin-bottom:6px;font-weight:700}
+.bty .proc-step p{font-size:12.5px;color:var(--muted) !important;line-height:1.7}
+
+/* 추후관리법 */
+.bty .care-grid{display:flex;flex-wrap:wrap;gap:16px}
+.bty .care-card{flex:1 1 260px;background:var(--bg2) !important;border-radius:4px;padding:22px 24px;display:flex;gap:14px;align-items:flex-start}
+.bty .care-card .num{font-family:var(--serif);font-size:20px;color:var(--rose) !important;flex-shrink:0}
+.bty .care-card p{font-size:13.5px;color:var(--ink-dim) !important;line-height:1.8}
+
+/* 후기 통계 */
+.bty .stats-band{background:var(--ink) !important;padding:56px 0}
+.bty .stats-row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-around;text-align:center}
+.bty .stat b{display:block;font-family:var(--serif);font-size:clamp(30px,4vw,44px);font-weight:700;color:#f2c9cf !important;margin-bottom:6px}
+.bty .stat span{font-size:13.5px;color:#d8c9c6 !important;letter-spacing:.02em}
+.bty .stat .stars{color:#ffc94d !important;font-size:15px;margin-bottom:6px;letter-spacing:2px}
+
+.bty footer{padding:34px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+
+.bty .quick-cta{position:fixed;right:26px;bottom:26px;z-index:200;display:flex;align-items:center;gap:9px;padding:15px 24px;font-weight:700;font-size:13.5px;color:#fff !important;background:var(--rose) !important;border-radius:2px;box-shadow:0 16px 30px -10px rgba(201,107,122,.55)}
+.bty .quick-cta:hover{transform:translateY(-3px)}
+.bty .quick-cta .dot{width:7px;height:7px;border-radius:50%;background:#fff}
+</style>
+
+<header class="nav" id="btyNav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand"><span class="mark">글</span>글로우아뜰리에</a>
+    <nav class="nav-links">
+      <a href="/about">업체소개</a>
+      <a href="/treatment">시술</a>
+      <a href="/review">후기사례</a>
+      <a href="/course">수강신청</a>
+      <a href="/location">오시는길</a>
+      <a href="/contact">문의하기</a>
+    </nav>
+    <a href="/contact" class="nav-cta">문의하기</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="slide"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/bty-images/hero1.jpg" alt=""></div>
+  <div class="slide"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/bty-images/hero2.jpg" alt=""></div>
+  <div class="slide"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/bty-images/hero3.jpg" alt=""></div>
+  <div class="scrim"></div>
+  <div class="hero-content">
+    <div class="eyebrow" style="color:#f2c9cf">Glow Atelier</div>
+    <h1>유행이 아니라,<br><b>당신에게 맞는 선을 그립니다</b></h1>
+    <p>눈썹, 헤어라인, 반영구, 왁싱까지 — 얼굴의 인상을 결정하는 디테일을 1:1 맞춤 디자인으로 완성합니다.</p>
+    <div class="hero-btns">
+      <a href="/contact" class="btn btn-p">문의하기 →</a>
+      <a href="/treatment" class="btn btn-g">시술 보기</a>
+    </div>
+  </div>
+</section>
+
+<section class="mission">
+  <div class="wrap">
+    <p>
+      눈썹 하나에도 <span class="hl">그날의 표정</span>이 달라집니다,<br>
+      유행보다 <span class="hl">얼굴에 맞는 선</span>을 먼저 찾습니다,<br>
+      빠른 시술보다 <span class="hl">정확한 디자인</span>을 먼저 그립니다,<br>
+      1회의 완성보다 <span class="hl">오래가는 자연스러움</span>을 만듭니다,<br>
+      비슷한 눈썹이 아니라 <span class="hl">나에게 맞는 눈썹</span>을 그립니다,<br>
+      경력보다 <span class="hl">오늘의 손끝 감각</span>을 믿습니다,<br>
+      가격보다 <span class="hl">신뢰</span>를 먼저 약속드립니다,<br>
+      설명 없는 시술은 하지 않습니다,<br>
+      관리법까지 책임지는 것이 <span class="hl">시술의 완성</span>이라 믿습니다,<br>
+      그렇게 완성되는 것이 글로우아뜰리에의 반영구입니다.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Visit Process</div>
+      <h2>방문 시 절차</h2>
+      <p>상담부터 애프터케어까지, 네 단계로 진행됩니다.</p>
+    </div>
+    <div class="process-strip">
+      <div class="proc-step"><span class="pnum">1</span><h3>상담 예약</h3><p>온라인·전화로 원하는 시술과 희망 디자인을 상담합니다.</p></div>
+      <div class="proc-step"><span class="pnum">2</span><h3>디자인 상담</h3><p>얼굴형과 결에 맞는 1:1 디자인 시안을 제안합니다.</p></div>
+      <div class="proc-step"><span class="pnum">3</span><h3>시술 진행</h3><p>마취 크림 사용 후 정밀하게 시술을 진행합니다.</p></div>
+      <div class="proc-step"><span class="pnum">4</span><h3>애프터케어 안내</h3><p>관리법 안내와 함께 재방문 일정을 조율합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Aftercare</div>
+      <h2>추후 관리법</h2>
+      <p>시술 효과를 오래 유지하기 위한 관리 안내입니다.</p>
+    </div>
+    <div class="care-grid">
+      <div class="care-card"><span class="num">01</span><p>시술 후 3일간 물 접촉을 최소화해주세요.</p></div>
+      <div class="care-card"><span class="num">02</span><p>연고는 소량씩 하루 2~3회 도포해주세요.</p></div>
+      <div class="care-card"><span class="num">03</span><p>딱지는 자연스럽게 떨어질 때까지 뜯지 마세요.</p></div>
+      <div class="care-card"><span class="num">04</span><p>사우나·찜질방·수영장은 2주간 자제해주세요.</p></div>
+      <div class="care-card"><span class="num">05</span><p>자외선 차단제로 색소 유지력을 관리해주세요.</p></div>
+      <div class="care-card"><span class="num">06</span><p>리터치는 4~6주 이내 방문을 권장드립니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-band">
+  <div class="wrap stats-row">
+    <div class="stat"><div class="stars">★★★★★</div><b>4.9</b><span>평균 후기 별점</span></div>
+    <div class="stat"><b>3,000+</b><span>누적 시술 건수</span></div>
+    <div class="stat"><b>88%</b><span>재방문율</span></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">© 2026 글로우아뜰리에 · GLOW ATELIER</div>
+</footer>
+
+<a href="/contact" class="quick-cta"><span class="dot"></span>문의하기</a>
+
+<script>
+(function(){
+  var navEl = document.getElementById('btyNav');
+  window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+})();
+</script>
+
+</div>
+</body></html>
