@@ -226,11 +226,14 @@
   .hero-media::after{
     content:"";
     position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(28,18,9,0.18) 0%, rgba(24,15,7,0.42) 55%, rgba(15,9,4,0.92) 100%);
+    background:linear-gradient(180deg, rgba(20,13,6,0.34) 0%, rgba(18,11,5,0.46) 40%, rgba(14,9,4,0.74) 66%, rgba(9,5,2,0.95) 100%);
   }
   .hero-inner{
+    position:relative;
     width:100%;
-    padding:120px 0 84px;
+    max-width:1120px;
+    margin-inline:auto;
+    padding:120px 24px 84px;
   }
   .hero-eyebrow{
     font-family:"Noto Sans KR", sans-serif;
@@ -245,7 +248,7 @@
     font-size:clamp(2.5rem, 5.4vw, 4.4rem);
     line-height:1.22;
     max-width:16ch;
-    text-shadow:0 2px 20px rgba(10,6,2,0.35);
+    text-shadow:0 2px 24px rgba(6,4,1,0.55), 0 1px 3px rgba(6,4,1,0.6);
   }
   .hero h1 em{ font-style:normal; color:var(--accent-tint); }
   .hero p{
@@ -253,22 +256,28 @@
     max-width:44ch;
     font-size:1.08rem;
     line-height:1.85;
-    color:rgba(251,244,225,0.92);
-    text-shadow:0 1px 12px rgba(10,6,2,0.3);
+    color:rgba(251,244,225,0.94);
+    text-shadow:0 1px 14px rgba(6,4,1,0.55);
   }
   .hero-actions{ margin-top:38px; display:flex; align-items:center; gap:28px; flex-wrap:wrap; }
   .hero-actions .btn-line{ color:#F3E3C6; }
   .hero-actions .btn-line::after{ color:var(--accent-tint); }
 
   @media (max-width:760px){
-    .hero{ min-height:100svh; align-items:flex-end; }
-    .hero-media{ background-position:38% 24%; }
-    .hero-inner{ padding:96px 0 56px; }
-    .hero h1{ max-width:12ch; }
-    .hero-actions{ gap:16px 22px; }
+    .hero{ min-height:88svh; align-items:flex-end; }
+    .hero-media{ background-position:56% 18%; }
+    .hero-media::after{
+      background:linear-gradient(180deg, rgba(20,13,6,0.3) 0%, rgba(18,11,5,0.4) 30%, rgba(13,8,3,0.7) 58%, rgba(9,5,2,0.96) 100%);
+    }
+    .hero-inner{ padding:0 20px 44px; }
+    .hero-eyebrow{ font-size:0.78rem; letter-spacing:0.18em; margin-bottom:16px; }
+    .hero h1{ max-width:11ch; font-size:clamp(2.1rem, 8.6vw, 2.7rem); line-height:1.28; }
+    .hero p{ margin-top:18px; font-size:0.98rem; line-height:1.72; max-width:32ch; }
+    .hero-actions{ margin-top:28px; gap:14px 20px; }
   }
   @media (max-width:400px){
-    .hero-inner{ padding:84px 0 48px; }
+    .hero-inner{ padding:0 20px 36px; }
+    .hero h1{ font-size:clamp(1.9rem, 8.4vw, 2.4rem); }
   }
 
   /* ---------- section shells ---------- */
