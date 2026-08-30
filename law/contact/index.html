@@ -1,0 +1,178 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>법률상담신청 | 법률사무소 온담</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="lawf">
+<style>
+.lawf{
+  --bg:#ffffff; --bg2:#f7f7f5; --ink:#191919; --ink-dim:#5c5c5c; --muted:#8a8a8a;
+  --line:#e7e5e2; --orange:#1c9a5b; --orange-dark:#157a48;
+  --serif:'Noto Serif KR',serif; --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.lawf *{box-sizing:border-box}
+.lawf a{color:inherit;text-decoration:none}
+.lawf img{max-width:100%;display:block}
+.lawf .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.lawf .eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--orange) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.lawf .eyebrow::before{content:"";width:22px;height:2px;background:var(--orange)}
+.lawf h1,.lawf h2,.lawf h3{font-family:var(--serif);font-weight:700;color:var(--ink) !important;margin:0}
+.lawf p{margin:0}
+.lawf .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:4px;transition:transform .2s ease,box-shadow .2s ease;background:transparent !important}
+.lawf .btn-p{background:var(--orange) !important;color:#fff !important}
+.lawf .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(28,154,91,.5)}
+.lawf section{padding:100px 0;background:var(--bg)}
+@media(max-width:760px){.lawf section{padding:64px 0} .lawf .contact-inner{flex-direction:column}}
+
+.lawf header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:20px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.lawf .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.lawf .brand{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink) !important;display:flex;align-items:center;gap:8px}
+.lawf .brand .mark{width:30px;height:30px;border-radius:50%;border:2px solid var(--orange);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--orange) !important}
+.lawf .nav-links{display:flex;gap:30px}
+.lawf .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.lawf .nav-links a:hover{color:var(--orange) !important}
+.lawf .nav-links a.active{color:var(--orange) !important}
+.lawf .brand,.lawf .nav-phone,.lawf .nav-toggle{position:relative;z-index:141}
+.lawf .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.lawf .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.lawf .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.lawf .nav-toggle.open span:nth-child(2){opacity:0}
+.lawf .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:960px){
+  .lawf .nav-toggle{display:flex} .lawf .brand{font-size:15px;white-space:nowrap}
+  .lawf .nav-phone{padding:8px 12px;font-size:11px;white-space:nowrap}
+  .lawf .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .lawf .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .lawf .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
+.lawf .nav-phone{display:flex;align-items:center;gap:8px;background:var(--orange) !important;color:#fff !important;padding:11px 20px;border-radius:30px;font-weight:700;font-size:14.5px}
+
+.lawf .page-head{padding:170px 0 50px;text-align:center;background:var(--bg2)}
+.lawf .page-head .eyebrow{justify-content:center}
+.lawf .page-head h1{font-size:clamp(26px,3.6vw,38px);font-weight:700}
+.lawf .page-head p{color:var(--muted) !important;font-size:14.5px;margin-top:12px}
+
+.lawf .contact-band{background:var(--ink) !important}
+.lawf .contact-inner{display:flex;flex-wrap:wrap;gap:60px}
+.lawf .contact-info{flex:1 1 300px}
+.lawf .contact-info .eyebrow{color:var(--orange) !important}
+.lawf .contact-info h2{font-size:clamp(24px,3.2vw,34px);margin-bottom:18px;color:#fff !important}
+.lawf .contact-info p{color:#c9c9c9 !important;font-size:14.5px;line-height:1.9;margin-bottom:26px;max-width:360px}
+.lawf .contact-info .note{border-left:2px solid var(--orange);padding-left:16px;font-size:13px;color:#e0a67e !important;line-height:1.8}
+.lawf .contact-form{flex:1 1 380px;display:flex;flex-direction:column;gap:16px}
+.lawf .field label{display:block;font-size:12px;letter-spacing:.05em;color:#bdbdbd !important;margin-bottom:8px}
+.lawf .field input,.lawf .field select,.lawf .field textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);border-radius:4px;padding:13px 14px;color:#fff !important;font-family:inherit;font-size:14px;outline:none;transition:border-color .2s}
+.lawf .field select option{color:#111}
+.lawf .field input:focus,.lawf .field select:focus,.lawf .field textarea:focus{border-color:var(--orange)}
+.lawf .field textarea{resize:vertical;min-height:100px}
+.lawf .form-msg{font-size:13px;color:var(--orange) !important;opacity:0;transition:opacity .3s ease}
+.lawf .form-msg.show{opacity:1}
+
+.lawf footer{padding:36px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+
+.lawf .quickmenu{position:fixed;right:26px;bottom:26px;z-index:200;display:flex;flex-direction:column;gap:12px}
+.lawf .quickmenu a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 24px -8px rgba(0,0,0,.35);transition:transform .2s ease}
+.lawf .quickmenu a svg{width:22px;height:22px;display:block}
+.lawf .quickmenu a.yt{background:#ff0000 !important}
+.lawf .quickmenu a.ig{background:linear-gradient(45deg,#f9ce34,#ee2a7b 45%,#6228d7) !important}
+.lawf .quickmenu a.blog{background:#03c75a !important}
+.lawf .quickmenu a:hover{transform:translateY(-3px)}
+</style>
+
+<header class="nav" id="lawfNav">
+  <div class="wrap nav-inner">
+    <a href="/law" class="brand"><span class="mark">溫</span>법률사무소 온담</a>
+    <nav class="nav-links">
+      <a href="/law/lawyers">변호사소개</a>
+      <a href="/law/practice">업무분야</a>
+      <a href="/law/cases">업무사례</a>
+      <a href="/law/contact" class="active">법률상담</a>
+    </nav>
+    <a href="/law/contact" class="nav-phone">법률 상담신청</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="contact-band">
+  <div class="wrap contact-inner">
+    <div class="contact-info">
+      <div class="eyebrow">Legal Consultation</div>
+      <h2>법률상담 신청하기</h2>
+      <p>사건 개요를 남겨주시면 담당 변호사가 확인 후 개별로 연락드립니다. 상담 내용은 철저히 비밀이 보장됩니다.</p>
+      <p class="note">성함, 연락처, 상담분야, 상담 내용을 작성해주시면 빠르게 안내드립니다.</p>
+    </div>
+    <form class="contact-form" id="lawfContactForm">
+      <div class="field">
+        <label for="lawf-name">성명</label>
+        <input type="text" id="lawf-name" name="name" placeholder="성함을 입력해주세요" required>
+      </div>
+      <div class="field">
+        <label for="lawf-phone">번호</label>
+        <input type="tel" id="lawf-phone" name="phone" placeholder="010-0000-0000" required>
+      </div>
+      <div class="field">
+        <label for="lawf-area">상담분야 (선택)</label>
+        <select id="lawf-area" name="area">
+          <option value="">선택해주세요</option>
+          <option value="이혼">이혼</option>
+          <option value="민사">민사</option>
+          <option value="가사">가사</option>
+          <option value="행정">행정</option>
+          <option value="노동">노동</option>
+          <option value="기업">기업</option>
+          <option value="기타">기타</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="lawf-detail">문의내용</label>
+        <textarea id="lawf-detail" name="detail" placeholder="사건 개요를 간단히 남겨주세요" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-p" style="align-self:flex-start">상담 신청하기</button>
+      <span class="form-msg" id="lawfFormMsg">상담 신청이 접수되었습니다. 확인 후 개별로 연락드릴게요.</span>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 법률사무소 온담 · LAW FIRM ONDAM</div>
+</footer>
+
+<div class="quickmenu">
+  <a href="#" class="yt" target="_blank" rel="noopener" aria-label="유튜브">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+  </a>
+  <a href="#" class="ig" target="_blank" rel="noopener" aria-label="인스타그램">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="#fff" stroke="none"/></svg>
+  </a>
+  <a href="#" class="blog" target="_blank" rel="noopener" aria-label="블로그">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/><path d="M8 13h8M8 17h5"/></svg>
+  </a>
+</div>
+
+<script>
+(function(){
+  var form = document.getElementById('lawfContactForm');
+  var msg = document.getElementById('lawfFormMsg');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      msg.classList.add('show');
+      form.reset();
+      setTimeout(function(){ msg.classList.remove('show'); }, 6000);
+    });
+  }
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+})();
+</script>
+
+</div>
+</body></html>

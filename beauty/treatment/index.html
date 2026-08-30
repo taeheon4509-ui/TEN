@@ -1,0 +1,196 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>시술 | 글로우아뜰리에</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="bty">
+<style>
+.bty{
+  --bg:#fffaf8; --bg2:#faf0ed; --ink:#2b2220; --ink-dim:#6b5b57; --muted:#9a8a86;
+  --line:#ede0dc; --rose:#c96b7a; --rose-dark:#a8515f;
+  --serif:'Noto Serif KR',serif; --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.bty *{box-sizing:border-box}
+.bty a{color:inherit;text-decoration:none}
+.bty img{max-width:100%;display:block}
+.bty .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.bty .eyebrow{font-family:var(--serif);font-style:italic;font-size:14px;letter-spacing:.12em;color:var(--rose) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.bty .eyebrow::before{content:"";width:22px;height:1px;background:var(--rose)}
+.bty h1,.bty h2,.bty h3{font-family:var(--serif);font-weight:700;color:var(--ink) !important;margin:0}
+.bty p{margin:0}
+.bty .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:2px;transition:transform .2s ease,box-shadow .2s ease;background:transparent !important}
+.bty .btn-p{background:var(--rose) !important;color:#fff !important}
+.bty .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(201,107,122,.5)}
+.bty section{padding:96px 0;background:var(--bg)}
+@media(max-width:760px){.bty section{padding:60px 0}}
+
+.bty .ph{background-size:cover;background-position:center;position:relative;overflow:hidden}
+.bty .ph:empty::after{content:"사진 영역";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:rgba(255,255,255,.75);letter-spacing:.08em;font-weight:600}
+.bty .ph1{background:linear-gradient(150deg,#f3d9d0,#c96b7a)}
+.bty .ph2{background:linear-gradient(150deg,#f7e3dd,#d98b96)}
+.bty .ph3{background:linear-gradient(150deg,#f0d6cf,#b85566)}
+.bty .ph4{background:linear-gradient(150deg,#f5ddd6,#c47a86)}
+
+.bty header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.bty .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.bty .brand{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink) !important;display:flex;align-items:center;gap:9px}
+.bty .brand .mark{width:32px;height:32px;border-radius:50%;background:var(--rose) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;font-family:var(--serif)}
+.bty .nav-links{display:flex;gap:26px}
+.bty .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.bty .nav-links a:hover{color:var(--rose) !important}
+.bty .nav-links a.active{color:var(--rose) !important}
+.bty .brand,.bty .nav-cta,.bty .nav-toggle{position:relative;z-index:141}
+.bty .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.bty .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.bty .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.bty .nav-toggle.open span:nth-child(2){opacity:0}
+.bty .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1040px){
+  .bty .nav-toggle{display:flex}
+  .bty .nav-cta{padding:9px 16px;font-size:12.5px}
+  .bty .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .bty .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .bty .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
+.bty .nav-cta{background:var(--rose) !important;color:#fff !important;padding:11px 20px;border-radius:2px;font-weight:700;font-size:13.5px}
+
+.bty .page-head{position:relative;padding:180px 0 60px;background:var(--bg2) !important;text-align:center}
+.bty .page-head .eyebrow{justify-content:center}
+.bty .page-head h1{font-size:clamp(26px,3.6vw,38px);font-weight:400}
+.bty .page-head p{color:var(--muted) !important;font-size:14.5px;margin-top:12px}
+
+/* 시술 카드 */
+.bty .tx-row{display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin-bottom:80px}
+.bty .tx-row.rev{flex-direction:row-reverse}
+.bty .tx-photo{flex:1 1 380px;aspect-ratio:4/3;border-radius:4px;overflow:hidden}
+.bty .tx-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.bty .tx-text{flex:1 1 380px}
+.bty .tx-text .tag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--rose) !important;background:rgba(201,107,122,.1) !important;padding:5px 12px;border-radius:20px;margin-bottom:14px;letter-spacing:.05em}
+.bty .tx-text h3{font-size:22px;margin-bottom:12px;font-weight:700}
+.bty .tx-text .lead{color:var(--ink-dim) !important;font-size:14px;line-height:1.9;margin-bottom:16px}
+.bty .tx-text ul{margin:0;padding:0}
+.bty .tx-text li{list-style:none;font-size:13.5px;color:var(--ink-dim) !important;padding:5px 0 5px 16px;position:relative;line-height:1.6}
+.bty .tx-text li::before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--rose)}
+
+.bty footer{padding:34px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+
+.bty .quick-cta{position:fixed;right:26px;bottom:26px;z-index:200;display:flex;align-items:center;gap:9px;padding:15px 24px;font-weight:700;font-size:13.5px;color:#fff !important;background:var(--rose) !important;border-radius:2px;box-shadow:0 16px 30px -10px rgba(201,107,122,.55)}
+.bty .quick-cta:hover{transform:translateY(-3px)}
+.bty .quick-cta .dot{width:7px;height:7px;border-radius:50%;background:#fff}
+
+@media(max-width:760px){.bty .tx-row,.bty .tx-row.rev{flex-direction:column} .bty .tx-photo{flex-basis:auto;width:100%}}
+</style>
+
+<header class="nav" id="btyNav">
+  <div class="wrap nav-inner">
+    <a href="/beauty" class="brand"><span class="mark">글</span>글로우아뜰리에</a>
+    <nav class="nav-links">
+      <a href="/beauty/about">업체소개</a>
+      <a href="/beauty/treatment" class="active">시술</a>
+      <a href="/beauty/review">후기사례</a>
+      <a href="/beauty/course">수강신청</a>
+      <a href="/beauty/location">오시는길</a>
+      <a href="/beauty/contact">문의하기</a>
+    </nav>
+    <a href="/beauty/contact" class="nav-cta">문의하기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Treatment</div>
+    <h1>시술</h1>
+    <p>얼굴의 인상을 결정하는 네 가지 전문 시술입니다.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="tx-row">
+      <div class="tx-photo"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/bty-images/tx-eyebrow.jpg" alt=""></div>
+      <div class="tx-text">
+        <span class="tag">EYEBROW</span>
+        <h3>눈썹</h3>
+        <p class="lead">얼굴형과 골격에 맞춰 자연스러운 결을 살리는 눈썹 반영구입니다. 화장 없이도 완성된 인상을 만들어드립니다.</p>
+        <ul>
+          <li>1:1 디자인 상담 후 시술 진행</li>
+          <li>자연모 느낌의 결 표현 기법</li>
+          <li>얼굴형별 맞춤 눈썹 라인 설계</li>
+          <li>4~6주 이내 리터치 관리</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tx-row rev">
+      <div class="tx-photo"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/bty-images/tx-hairline.jpg" alt=""></div>
+      <div class="tx-text">
+        <span class="tag">HAIRLINE</span>
+        <h3>헤어라인</h3>
+        <p class="lead">M자 탈모, 정수리, 가르마 부분을 자연스럽게 채워 훨씬 풍성한 인상을 완성합니다.</p>
+        <ul>
+          <li>모발 방향에 맞춘 자연스러운 표현</li>
+          <li>이마 라인·정수리·가르마 부위별 시술</li>
+          <li>탈모 커버 및 얼굴형 보정 효과</li>
+          <li>두피 상태 진단 후 맞춤 진행</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tx-row">
+      <div class="tx-photo"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/bty-images/tx-semiperm.jpg" alt=""></div>
+      <div class="tx-text">
+        <span class="tag">SEMI-PERMANENT</span>
+        <h3>반영구</h3>
+        <p class="lead">아이라인, 입술 등 얼굴의 포인트를 살리는 반영구 시술로, 화장 시간을 줄여드립니다.</p>
+        <ul>
+          <li>아이라인(속눈썹라인) 반영구</li>
+          <li>입술 반영구(립블러쉬)</li>
+          <li>붓기·번짐 최소화 시술 기법</li>
+          <li>피부 타입별 색소 맞춤 조색</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tx-row rev">
+      <div class="tx-photo"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/bty-images/tx-waxing.jpg" alt=""></div>
+      <div class="tx-text">
+        <span class="tag">WAXING</span>
+        <h3>왁싱</h3>
+        <p class="lead">위생적인 1회용 도구와 순한 왁스로 통증을 최소화한 제모 서비스를 제공합니다.</p>
+        <ul>
+          <li>얼굴·팔·다리·바디 부위별 왁싱</li>
+          <li>1회용 스틱·저자극 왁스 사용</li>
+          <li>시술 전후 진정 케어 포함</li>
+          <li>정기 관리 시 할인 혜택 제공</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 글로우아뜰리에 · GLOW ATELIER</div>
+</footer>
+
+<a href="/beauty/contact" class="quick-cta"><span class="dot"></span>문의하기</a>
+
+<script>
+(function(){
+  var navEl = document.getElementById('btyNav');
+  window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+})();
+</script>
+
+</div>
+</body></html>

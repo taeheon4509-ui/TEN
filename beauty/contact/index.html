@@ -1,0 +1,143 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>문의하기 | 글로우아뜰리에</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="bty">
+<style>
+.bty{
+  --bg:#fffaf8; --bg2:#faf0ed; --ink:#2b2220; --ink-dim:#6b5b57; --muted:#9a8a86;
+  --line:#ede0dc; --rose:#c96b7a; --rose-dark:#a8515f;
+  --serif:'Noto Serif KR',serif; --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.bty *{box-sizing:border-box}
+.bty a{color:inherit;text-decoration:none}
+.bty img{max-width:100%;display:block}
+.bty .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.bty .eyebrow{font-family:var(--serif);font-style:italic;font-size:14px;letter-spacing:.12em;color:var(--rose) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.bty .eyebrow::before{content:"";width:22px;height:1px;background:var(--rose)}
+.bty h1,.bty h2,.bty h3{font-family:var(--serif);font-weight:700;color:var(--ink) !important;margin:0}
+.bty p{margin:0}
+.bty .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:2px;transition:transform .2s ease,box-shadow .2s ease;background:transparent !important}
+.bty .btn-p{background:var(--rose) !important;color:#fff !important}
+.bty .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(201,107,122,.5)}
+.bty section{padding:96px 0;background:var(--bg)}
+@media(max-width:760px){.bty section{padding:60px 0} .bty .contact-inner{flex-direction:column}}
+
+.bty header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.bty .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.bty .brand{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink) !important;display:flex;align-items:center;gap:9px}
+.bty .brand .mark{width:32px;height:32px;border-radius:50%;background:var(--rose) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;font-family:var(--serif)}
+.bty .nav-links{display:flex;gap:26px}
+.bty .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.bty .nav-links a:hover{color:var(--rose) !important}
+.bty .nav-links a.active{color:var(--rose) !important}
+.bty .brand,.bty .nav-cta,.bty .nav-toggle{position:relative;z-index:141}
+.bty .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.bty .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.bty .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.bty .nav-toggle.open span:nth-child(2){opacity:0}
+.bty .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1040px){
+  .bty .nav-toggle{display:flex}
+  .bty .nav-cta{padding:9px 16px;font-size:12.5px}
+  .bty .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .bty .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .bty .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
+.bty .nav-cta{background:var(--rose) !important;color:#fff !important;padding:11px 20px;border-radius:2px;font-weight:700;font-size:13.5px}
+
+/* 문의 폼 */
+.bty .contact-band{background:var(--ink) !important;padding-top:180px}
+.bty .contact-inner{display:flex;flex-wrap:wrap;gap:56px}
+.bty .contact-info{flex:1 1 300px}
+.bty .contact-info .eyebrow{color:#f2c9cf !important}
+.bty .contact-info h2{font-size:clamp(24px,3.2vw,32px);margin-bottom:16px;color:#fff !important;font-weight:400}
+.bty .contact-info p{color:#d8c9c6 !important;font-size:14px;line-height:1.9;margin-bottom:20px;max-width:340px}
+.bty .contact-info .note{border-left:2px solid var(--rose);padding-left:16px;font-size:13px;color:#f2c9cf !important;line-height:1.8}
+.bty .contact-form{flex:1 1 380px;display:flex;flex-direction:column;gap:15px}
+.bty .field label{display:block;font-size:12px;letter-spacing:.05em;color:#cbb9b5 !important;margin-bottom:8px}
+.bty .field input,.bty .field textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:4px;padding:13px 14px;color:#fff !important;font-family:inherit;font-size:14px;outline:none;transition:border-color .2s}
+.bty .field input:focus,.bty .field textarea:focus{border-color:var(--rose)}
+.bty .field textarea{resize:vertical;min-height:110px}
+.bty .form-msg{font-size:13px;color:#f2c9cf !important;opacity:0;transition:opacity .3s ease}
+.bty .form-msg.show{opacity:1}
+
+.bty footer{padding:34px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+</style>
+
+<header class="nav" id="btyNav">
+  <div class="wrap nav-inner">
+    <a href="/beauty" class="brand"><span class="mark">글</span>글로우아뜰리에</a>
+    <nav class="nav-links">
+      <a href="/beauty/about">업체소개</a>
+      <a href="/beauty/treatment">시술</a>
+      <a href="/beauty/review">후기사례</a>
+      <a href="/beauty/course">수강신청</a>
+      <a href="/beauty/location">오시는길</a>
+      <a href="/beauty/contact" class="active">문의하기</a>
+    </nav>
+    <a href="/beauty/contact" class="nav-cta">문의하기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="contact-band">
+  <div class="wrap contact-inner">
+    <div class="contact-info">
+      <div class="eyebrow">Contact</div>
+      <h2>문의하기</h2>
+      <p>시술·수강 관련 궁금하신 점을 남겨주시면 빠르게 안내드립니다.</p>
+      <p class="note">이름, 연락처, 문의 내용을 작성해주시면 확인 후 개별로 연락드립니다.</p>
+    </div>
+    <form class="contact-form" id="btyContactForm">
+      <div class="field">
+        <label for="bty-name">이름</label>
+        <input type="text" id="bty-name" name="name" placeholder="이름을 입력해주세요" required>
+      </div>
+      <div class="field">
+        <label for="bty-phone">번호</label>
+        <input type="tel" id="bty-phone" name="phone" placeholder="010-0000-0000" required>
+      </div>
+      <div class="field">
+        <label for="bty-detail">문의내용 (상세내용)</label>
+        <textarea id="bty-detail" name="detail" placeholder="희망 시술이나 수강 문의 내용을 자세히 남겨주세요" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-p" style="align-self:flex-start">문의 보내기</button>
+      <span class="form-msg" id="btyFormMsg">문의가 접수되었습니다. 확인 후 개별로 연락드릴게요.</span>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 글로우아뜰리에 · GLOW ATELIER</div>
+</footer>
+
+<script>
+(function(){
+  var navEl = document.getElementById('btyNav');
+  window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+
+  var form = document.getElementById('btyContactForm');
+  var msg = document.getElementById('btyFormMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.classList.add('show');
+    form.reset();
+    setTimeout(function(){ msg.classList.remove('show'); }, 6000);
+  });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+})();
+</script>
+
+</div>
+</body></html>

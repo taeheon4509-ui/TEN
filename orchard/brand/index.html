@@ -1,4 +1,4 @@
-<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>THE ORCHARD</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>브랜드 | THE ORCHARD</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 
@@ -12,28 +12,20 @@
 }
 .orc *{box-sizing:border-box}
 .orc a{color:inherit;text-decoration:none}
-.orc img{max-width:100%;display:block}
 .orc h1,.orc h2,.orc h3{font-family:var(--serif);font-weight:700;color:var(--ink) !important;margin:0;word-break:keep-all}
 .orc p,.orc li,.orc a,.orc span,.orc div{word-break:keep-all}
-.orc .wrap{max-width:1240px;margin:0 auto;padding:0 36px}
-.orc .accent{color:var(--green-lt) !important}
-.orc .eyebrow{font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.22em;color:var(--green-lt) !important;text-transform:uppercase}
-.orc .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:13.5px;padding:15px 30px;border-radius:2px;letter-spacing:.03em;transition:all .25s ease}
-.orc .btn-p{background:var(--green) !important;color:#fff !important}
-.orc .btn-p:hover{background:var(--green-lt) !important;color:#0a0a08 !important}
-.orc .btn-o{border:1px solid var(--line);color:var(--ink) !important;background:transparent !important}
-.orc .btn-o:hover{border-color:var(--green-lt);color:var(--green-lt) !important}
-.orc section{padding:120px 0;background:var(--bg)}
-@media(max-width:760px){.orc section{padding:70px 0}}
+.orc .wrap{max-width:900px;margin:0 auto;padding:0 36px}
+.orc .eyebrow{font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.22em;color:var(--green-lt) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px}
+.orc .eyebrow::before{content:"";width:28px;height:1px;background:var(--green-lt)}
+.orc section{padding:110px 0;background:var(--bg)}
+@media(max-width:760px){.orc section{padding:64px 0}}
 
-/* header / nav — no border, blends into hero */
-.orc header.nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:26px 0;background:transparent;transition:.35s ease}
-.orc header.nav.scrolled{background:rgba(10,10,8,.92) !important;padding:16px 0;box-shadow:0 6px 24px rgba(0,0,0,.3)}
-.orc .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.orc header.nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:16px 0;background:rgba(10,10,8,.94);border-bottom:1px solid var(--line)}
+.orc .nav-inner{max-width:1240px;margin:0 auto;padding:0 36px;display:flex;align-items:center;justify-content:space-between}
 .orc .brand{font-family:var(--serif);font-size:21px;font-weight:700;color:#fff !important;letter-spacing:.06em}
 .orc .brand .dot{color:var(--green-lt) !important}
 .orc .nav-links{display:flex;align-items:center;gap:38px}
-.orc .nav-links>a{font-size:13.5px;font-weight:500;color:#f3f1e8 !important;letter-spacing:.02em;position:relative;padding:6px 0}
+.orc .nav-links>a{font-size:13.5px;font-weight:500;color:#f3f1e8 !important;letter-spacing:.02em;padding:6px 0}
 .orc .nav-links>a:hover,.orc .nav-links>a.active{color:var(--green-lt) !important}
 .orc .nav-parent{cursor:pointer;font-size:13.5px;font-weight:500;color:#f3f1e8 !important;letter-spacing:.02em;padding:6px 0}
 .orc .nav-parent:hover,.orc .nav-parent.active{color:var(--green-lt) !important}
@@ -64,38 +56,17 @@
   .orc .dropdown-inner a{padding:12px 0;font-size:15px}
 }
 
-/* hero */
-.orc .hero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:block}
-.orc .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:heroFade 18s infinite}
-.orc .hero-slide:nth-child(1){animation-delay:0s}
-.orc .hero-slide:nth-child(2){animation-delay:6s}
-.orc .hero-slide:nth-child(3){animation-delay:12s}
-@keyframes heroFade{0%{opacity:0}5%{opacity:1}31%{opacity:1}36%{opacity:0}100%{opacity:0}}
-.orc .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.15) 38%,rgba(0,0,0,.25) 70%,rgba(0,0,0,.75) 100%);z-index:2}
-.orc .hero-link{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:110px 24px 60px}
-.orc .hero-link:hover .hero-title{color:var(--green-lt) !important}
-.orc .hero-eyebrow{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.3em;color:var(--green-lt) !important;text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:12px}
-.orc .hero-eyebrow::before,.orc .hero-eyebrow::after{content:"";width:28px;height:1px;background:var(--green-lt)}
-.orc .hero-title{font-family:var(--serif);font-weight:700;font-size:clamp(30px,5vw,58px);color:#fff !important;line-height:1.35;transition:color .3s ease;max-width:920px}
-.orc .hero-sub{margin-top:22px;font-size:14.5px;color:rgba(243,241,232,.8) !important;letter-spacing:.04em}
-.orc .hero-hint{position:absolute;bottom:34px;left:0;right:0;text-align:center;z-index:3;font-size:11.5px;letter-spacing:.18em;color:rgba(243,241,232,.55) !important;text-transform:uppercase}
+.orc .page-head{padding:200px 0 40px;text-align:center}
+.orc .page-head .eyebrow{justify-content:center}
+.orc .page-head h1{font-size:clamp(30px,4vw,44px);font-weight:400;margin-top:16px}
 
-/* SNS section */
-.orc .sns-head{text-align:center;max-width:640px;margin:0 auto 60px}
-.orc .sns-head .eyebrow{justify-content:center;display:flex}
-.orc .sns-head h2{font-size:clamp(26px,3.4vw,36px);margin:16px 0 18px;font-weight:400}
-.orc .sns-head p{color:var(--ink-dim) !important;font-size:14.5px;line-height:1.9}
-.orc .marquee{overflow:hidden;position:relative;margin:0 -36px}
-.orc .marquee::before,.orc .marquee::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
-.orc .marquee::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
-.orc .marquee::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
-.orc .marquee-track{display:flex;width:max-content;animation:marqueeMove 42s linear infinite}
-.orc .marquee-track img{width:280px;height:280px;object-fit:cover;margin-right:14px;filter:saturate(.96)}
-@keyframes marqueeMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media(max-width:760px){.orc .marquee-track img{width:190px;height:190px}}
+.orc .story p{color:var(--ink-dim) !important;font-size:15.5px;line-height:2.15;margin-bottom:26px}
+.orc .story .lead{font-family:var(--serif);color:var(--ink) !important;font-size:clamp(19px,2.1vw,24px);line-height:1.75;font-weight:600;margin-bottom:40px}
+.orc .pull{border-left:2px solid var(--green) !important;padding-left:28px;margin:56px 0;font-family:var(--serif);font-size:clamp(19px,2.2vw,25px);color:var(--green-lt) !important;font-weight:600;line-height:1.6}
+.orc .sig{margin-top:70px;padding-top:34px;border-top:1px solid var(--line);text-align:right;color:var(--muted) !important;font-size:13px;font-style:italic}
 
-/* footer */
 .orc footer{background:var(--bg2);padding:64px 0 28px;border-top:1px solid var(--line)}
+.orc .foot-inner{max-width:1240px;margin:0 auto;padding:0 36px}
 .orc .foot-top{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;padding-bottom:40px;border-bottom:1px solid var(--line)}
 .orc .foot-brand .brand{display:block;margin-bottom:14px}
 .orc .foot-brand p{color:var(--muted) !important;font-size:13px;max-width:280px;line-height:1.8}
@@ -116,7 +87,7 @@
 </style>
 
 <header class="nav" id="orcNav">
-  <div class="wrap nav-inner">
+  <div class="nav-inner">
     <a href="/orchard" class="brand">THE ORCHARD<span class="dot">.</span></a>
     <nav class="nav-links">
       <div class="has-drop">
@@ -127,7 +98,7 @@
           <a href="/orchard/business">사업소개</a>
         </div></div>
       </div>
-      <a href="/orchard/brand">브랜드</a>
+      <a href="/orchard/brand" class="active">브랜드</a>
       <a href="/orchard/product">프로덕트</a>
       <a href="/orchard/connect">커넥트</a>
       <a href="https://smartstore.naver.com" target="_blank" rel="noopener">공식몰</a>
@@ -137,46 +108,30 @@
   </div>
 </header>
 
-<div class="hero">
-  <div class="hero-slide" style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/hero1.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/hero2.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/hero3.jpg')"></div>
-  <div class="hero-scrim"></div>
-  <a href="/orchard/product" class="hero-link">
-    <div class="hero-eyebrow">The Orchard · Premium Fruit</div>
-    <h1 class="hero-title">당신의 식탁에, 가장 좋은 계절을 올립니다</h1>
-    <p class="hero-sub">산지에서 고른 그날의 최상급 과일만, 오처드의 이름으로.</p>
-  </a>
-  <div class="hero-hint">Scroll</div>
+<div class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Brand Story</div>
+    <h1>오처드가 걸어온 길</h1>
+  </div>
 </div>
 
-<section>
-  <div class="wrap">
-    <div class="sns-head">
-      <div class="eyebrow">S . N . S</div>
-      <h2>오처드의 순간들을 만나보세요</h2>
-      <p>인스타그램에서 오처드의 산지 이야기와 포장 과정, 그리고 매일의 신선함을 확인하실 수 있습니다.</p>
-    </div>
-  </div>
-  <div class="marquee">
-    <div class="marquee-track" id="marqueeTrack">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/hero1.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/facility1.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/product4.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/hero3.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/facility3.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/product1.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/business1.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/hero2.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/hero1.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/facility1.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/product4.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/hero3.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/facility3.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/product1.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/business1.jpg" alt="">
-      <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/orc-images/hero2.jpg" alt="">
-    </div>
+<section style="padding-top:20px">
+  <div class="wrap story">
+    <p class="lead">좋은 과일은 화려한 말이 필요 없다고 믿습니다. 오처드는 그 믿음 하나로 시작된 브랜드입니다.</p>
+
+    <p>2020년, 저희는 작은 트럭 한 대로 경기도 이천의 농가들을 돌며 그날 수확한 과일을 직접 확인하는 일부터 시작했습니다. 마트 진열대에 오르기까지 며칠씩 걸리는 유통 구조 안에서, 정작 가장 좋은 상태의 과일은 소비자에게 닿지 못한다는 걸 알게 된 것이 시작이었습니다.</p>
+
+    <p>산지에서 직접 고르고, 그날 안에 포장하고, 최단 시간에 전달한다. 말은 단순하지만, 이를 지키기 위해서는 매일 새벽 산지를 확인하는 발품과, 기준에 미달하면 아무리 물량이 급해도 되돌려 보내는 원칙이 필요했습니다.</p>
+
+    <div class="pull">"예쁘게 포장된 평범한 과일보다, 담백하게 담긴 최상의 과일이 낫다."</div>
+
+    <p>오처드라는 이름은 정직한 과수원, 있는 그대로의 자연을 뜻합니다. 저희는 브랜드를 화려하게 꾸미기보다, 과일 본연의 맛과 신선함이 스스로 말하게 하는 쪽을 택했습니다.</p>
+
+    <p>선물을 준비하는 사람의 마음, 아이에게 좋은 과일을 먹이고 싶은 부모의 마음, 소중한 손님을 초대하는 자리를 준비하는 마음. 오처드는 그런 마음들이 실망하지 않도록, 매일 같은 기준으로 과일을 고르고 있습니다.</p>
+
+    <p>지금도 오처드의 첫 마음은 그대로입니다. 가장 좋은 계절을, 가장 정직한 방식으로 전하는 것. 그것이 저희가 매일 아침 산지로 향하는 이유입니다.</p>
+
+    <div class="sig">THE ORCHARD 대표 김오처</div>
   </div>
 </section>
 

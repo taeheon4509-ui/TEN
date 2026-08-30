@@ -1,0 +1,178 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>변호사소개 | 법률사무소 온담</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="lawf">
+<style>
+.lawf{
+  --bg:#ffffff; --bg2:#f7f7f5; --ink:#191919; --ink-dim:#5c5c5c; --muted:#8a8a8a;
+  --line:#e7e5e2; --orange:#1c9a5b; --orange-dark:#157a48;
+  --serif:'Noto Serif KR',serif; --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.lawf *{box-sizing:border-box}
+.lawf a{color:inherit;text-decoration:none}
+.lawf img{max-width:100%;display:block}
+.lawf .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.lawf .eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--orange) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.lawf .eyebrow::before{content:"";width:22px;height:2px;background:var(--orange)}
+.lawf h1,.lawf h2,.lawf h3{font-family:var(--serif);font-weight:700;color:var(--ink) !important;margin:0}
+.lawf p{margin:0}
+.lawf .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:4px;transition:transform .2s ease,box-shadow .2s ease;background:transparent !important}
+.lawf .btn-p{background:var(--orange) !important;color:#fff !important}
+.lawf .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(28,154,91,.5)}
+.lawf .btn-g{border:1px solid var(--ink);color:var(--ink) !important;background:#fff !important}
+.lawf .btn-g:hover{background:var(--ink) !important;color:#fff !important}
+.lawf section{padding:100px 0;background:var(--bg)}
+@media(max-width:760px){.lawf section{padding:64px 0}}
+
+.lawf header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:20px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.lawf .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.lawf .brand{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink) !important;display:flex;align-items:center;gap:8px}
+.lawf .brand .mark{width:30px;height:30px;border-radius:50%;border:2px solid var(--orange);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--orange) !important}
+.lawf .nav-links{display:flex;gap:30px}
+.lawf .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.lawf .nav-links a:hover{color:var(--orange) !important}
+.lawf .nav-links a.active{color:var(--orange) !important}
+.lawf .brand,.lawf .nav-phone,.lawf .nav-toggle{position:relative;z-index:141}
+.lawf .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.lawf .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.lawf .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.lawf .nav-toggle.open span:nth-child(2){opacity:0}
+.lawf .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:960px){
+  .lawf .nav-toggle{display:flex} .lawf .brand{font-size:15px;white-space:nowrap}
+  .lawf .nav-phone{padding:8px 12px;font-size:11px;white-space:nowrap}
+  .lawf .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .lawf .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .lawf .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
+.lawf .nav-phone{display:flex;align-items:center;gap:8px;background:var(--orange) !important;color:#fff !important;padding:11px 20px;border-radius:30px;font-weight:700;font-size:14.5px}
+
+.lawf .page-head{padding:170px 0 50px;text-align:center;background:var(--bg2)}
+.lawf .page-head .eyebrow{justify-content:center}
+.lawf .page-head h1{font-size:clamp(26px,3.6vw,38px);font-weight:700}
+.lawf .page-head p{color:var(--muted) !important;font-size:14.5px;margin-top:12px}
+
+.lawf .lawyers{background:var(--bg)}
+.lawf .section-head{max-width:640px;margin:0 auto 56px;text-align:center}
+.lawf .section-head h2{font-size:clamp(24px,3.2vw,34px);margin-bottom:12px}
+.lawf .section-head p{color:var(--muted) !important;font-size:14.5px}
+.lawf .lawyer-grid{display:flex;flex-wrap:wrap;gap:22px;justify-content:center}
+.lawf .lawyer-card{flex:1 1 260px;max-width:280px;background:#fff !important;border:1px solid var(--line);border-radius:12px;padding:30px 24px;text-align:center}
+.lawf .lawyer-card .avatar{width:76px;height:76px;border-radius:50%;background:var(--ink) !important;color:var(--orange) !important;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:24px;font-weight:700;margin:0 auto 18px}
+.lawf .lawyer-card h3{font-size:17px;margin-bottom:4px}
+.lawf .lawyer-card .role{font-size:12.5px;color:var(--orange) !important;font-weight:700;margin-bottom:12px;display:block}
+.lawf .lawyer-card p{font-size:13px;color:var(--muted) !important;line-height:1.8}
+
+.lawf .lawyer-gallery{display:flex;gap:18px;margin-top:40px;flex-wrap:wrap}
+.lawf .lawyer-gallery figure{flex:1 1 260px;margin:0;border-radius:12px;overflow:hidden;position:relative}
+.lawf .lawyer-gallery img{width:100%;height:220px;object-fit:cover;display:block}
+.lawf .lawyer-gallery figcaption{position:absolute;left:16px;bottom:14px;color:#fff !important;font-size:13px;font-weight:600;z-index:2}
+.lawf .lawyer-gallery figure::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 45%)}
+
+.lawf .photo-band{position:relative;height:38vh;min-height:260px;overflow:hidden}
+.lawf .photo-band img{width:100%;height:100%;object-fit:cover}
+.lawf .photo-band .pb-scrim{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.72) 0%,rgba(10,10,10,.15) 60%)}
+.lawf .photo-band .pb-cap{position:absolute;left:0;right:0;bottom:26px;text-align:center;color:#fff !important;font-family:var(--serif);font-size:clamp(17px,2.2vw,24px);z-index:2;padding:0 24px}
+
+.lawf footer{padding:36px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+
+.lawf .quickmenu{position:fixed;right:26px;bottom:26px;z-index:200;display:flex;flex-direction:column;gap:12px}
+.lawf .quickmenu a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 24px -8px rgba(0,0,0,.35);transition:transform .2s ease}
+.lawf .quickmenu a svg{width:22px;height:22px;display:block}
+.lawf .quickmenu a.yt{background:#ff0000 !important}
+.lawf .quickmenu a.ig{background:linear-gradient(45deg,#f9ce34,#ee2a7b 45%,#6228d7) !important}
+.lawf .quickmenu a.blog{background:#03c75a !important}
+.lawf .quickmenu a:hover{transform:translateY(-3px)}
+</style>
+
+<header class="nav" id="lawfNav">
+  <div class="wrap nav-inner">
+    <a href="/law" class="brand"><span class="mark">溫</span>법률사무소 온담</a>
+    <nav class="nav-links">
+      <a href="/law/lawyers" class="active">변호사소개</a>
+      <a href="/law/practice">업무분야</a>
+      <a href="/law/cases">업무사례</a>
+      <a href="/law/contact">법률상담</a>
+    </nav>
+    <a href="/law/contact" class="nav-phone">법률 상담신청</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Our Lawyers</div>
+    <h1>변호사 소개</h1>
+    <p>각 분야 전담 변호사가 사건 초기부터 종결까지 직접 대리합니다.</p>
+  </div>
+</div>
+
+<section class="lawyers">
+  <div class="wrap">
+    <div class="lawyer-grid">
+      <div class="lawyer-card">
+        <div class="avatar">金</div>
+        <h3>김O진 변호사</h3>
+        <span class="role">대표변호사 · 이혼·가사 전담</span>
+        <p>15년간 이혼·재산분할 사건을 전담하며 축적된 협상·소송 노하우로 의뢰인의 권리를 지켜왔습니다.</p>
+      </div>
+      <div class="lawyer-card">
+        <div class="avatar">李</div>
+        <h3>이O훈 변호사</h3>
+        <span class="role">파트너변호사 · 기업·민사 전담</span>
+        <p>대형 로펌 기업자문 경력을 바탕으로 계약·분쟁 사건에서 실질적인 리스크 관리 해법을 제시합니다.</p>
+      </div>
+      <div class="lawyer-card">
+        <div class="avatar">朴</div>
+        <h3>박O영 변호사</h3>
+        <span class="role">파트너변호사 · 노동·행정 전담</span>
+        <p>노동위원회·행정심판 실무 경험을 바탕으로 신속하고 정확한 구제 절차를 이끌어냅니다.</p>
+      </div>
+    </div>
+    <div class="lawyer-gallery">
+      <figure><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/law-images/meeting1.jpg" alt=""><figcaption>계약 검토 미팅</figcaption></figure>
+      <figure><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/law-images/meeting3.jpg" alt=""><figcaption>사건 전략 회의</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="photo-band">
+  <img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/law-images/hero.jpg" alt="">
+  <div class="pb-scrim"></div>
+  <div class="pb-cap">치열한 사건 준비, 확실한 결과</div>
+</div>
+
+<footer>
+  <div class="wrap">© 2026 법률사무소 온담 · LAW FIRM ONDAM</div>
+</footer>
+
+<div class="quickmenu">
+  <a href="#" class="yt" target="_blank" rel="noopener" aria-label="유튜브">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+  </a>
+  <a href="#" class="ig" target="_blank" rel="noopener" aria-label="인스타그램">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="#fff" stroke="none"/></svg>
+  </a>
+  <a href="#" class="blog" target="_blank" rel="noopener" aria-label="블로그">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/><path d="M8 13h8M8 17h5"/></svg>
+  </a>
+</div>
+
+<script>
+(function(){
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+})();
+</script>
+
+</div>
+</body></html>

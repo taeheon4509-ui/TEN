@@ -1,0 +1,156 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>후기사례 | 글로우아뜰리에</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="bty">
+<style>
+.bty{
+  --bg:#fffaf8; --bg2:#faf0ed; --ink:#2b2220; --ink-dim:#6b5b57; --muted:#9a8a86;
+  --line:#ede0dc; --rose:#c96b7a; --rose-dark:#a8515f;
+  --serif:'Noto Serif KR',serif; --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.bty *{box-sizing:border-box}
+.bty a{color:inherit;text-decoration:none}
+.bty img{max-width:100%;display:block}
+.bty .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.bty .eyebrow{font-family:var(--serif);font-style:italic;font-size:14px;letter-spacing:.12em;color:var(--rose) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.bty .eyebrow::before{content:"";width:22px;height:1px;background:var(--rose)}
+.bty h1,.bty h2,.bty h3{font-family:var(--serif);font-weight:700;color:var(--ink) !important;margin:0}
+.bty p{margin:0}
+.bty section{padding:96px 0;background:var(--bg)}
+@media(max-width:760px){.bty section{padding:60px 0}}
+
+.bty header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.bty .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.bty .brand{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink) !important;display:flex;align-items:center;gap:9px}
+.bty .brand .mark{width:32px;height:32px;border-radius:50%;background:var(--rose) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;font-family:var(--serif)}
+.bty .nav-links{display:flex;gap:26px}
+.bty .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.bty .nav-links a:hover{color:var(--rose) !important}
+.bty .nav-links a.active{color:var(--rose) !important}
+.bty .brand,.bty .nav-cta,.bty .nav-toggle{position:relative;z-index:141}
+.bty .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.bty .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.bty .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.bty .nav-toggle.open span:nth-child(2){opacity:0}
+.bty .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1040px){
+  .bty .nav-toggle{display:flex}
+  .bty .nav-cta{padding:9px 16px;font-size:12.5px}
+  .bty .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .bty .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .bty .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
+.bty .nav-cta{background:var(--rose) !important;color:#fff !important;padding:11px 20px;border-radius:2px;font-weight:700;font-size:13.5px}
+
+.bty .page-head{position:relative;padding:180px 0 60px;background:var(--bg2) !important;text-align:center}
+.bty .page-head .eyebrow{justify-content:center}
+.bty .page-head h1{font-size:clamp(26px,3.6vw,38px);font-weight:400}
+.bty .page-head p{color:var(--muted) !important;font-size:14.5px;margin-top:12px}
+
+/* 통계 */
+.bty .stats-band{background:var(--ink) !important;padding:56px 0}
+.bty .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.bty .stat b{display:block;font-family:var(--serif);font-size:clamp(20px,4vw,44px);font-weight:700;color:#f2c9cf !important;margin-bottom:6px}
+.bty .stat span{font-size:12px;color:#d8c9c6 !important;letter-spacing:.02em;line-height:1.4}
+@media(max-width:480px){.bty .stat span{font-size:10.5px}}
+.bty .stat .stars{color:#ffc94d !important;font-size:15px;margin-bottom:6px;letter-spacing:2px}
+
+/* 후기 목록 (빼곡히) */
+.bty .review-list{max-width:840px;margin:0 auto;display:flex;flex-direction:column}
+.bty .review-row{display:flex;gap:16px;align-items:flex-start;padding:18px 4px;border-bottom:1px solid var(--line)}
+.bty .review-row:first-child{border-top:1px solid var(--line)}
+.bty .review-row .rnum{font-family:var(--serif);font-size:13px;color:var(--muted) !important;flex-shrink:0;width:22px;padding-top:2px}
+.bty .review-row .stars{color:#e0a83a !important;font-size:13px;letter-spacing:1px;flex-shrink:0;width:80px;padding-top:2px}
+.bty .review-row .tag{flex-shrink:0;font-size:11px;font-weight:700;color:var(--rose) !important;background:rgba(201,107,122,.1) !important;padding:4px 10px;border-radius:14px;white-space:nowrap}
+.bty .review-row .txt{flex:1;font-size:13.5px;color:var(--ink-dim) !important;line-height:1.7}
+.bty .review-row .who{flex-shrink:0;font-size:12px;color:var(--muted) !important;font-weight:600;white-space:nowrap}
+@media(max-width:700px){.bty .review-row{flex-wrap:wrap}.bty .review-row .who{width:100%;text-align:right}}
+
+.bty footer{padding:34px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+
+.bty .quick-cta{position:fixed;right:26px;bottom:26px;z-index:200;display:flex;align-items:center;gap:9px;padding:15px 24px;font-weight:700;font-size:13.5px;color:#fff !important;background:var(--rose) !important;border-radius:2px;box-shadow:0 16px 30px -10px rgba(201,107,122,.55)}
+.bty .quick-cta:hover{transform:translateY(-3px)}
+.bty .quick-cta .dot{width:7px;height:7px;border-radius:50%;background:#fff}
+</style>
+
+<header class="nav" id="btyNav">
+  <div class="wrap nav-inner">
+    <a href="/beauty" class="brand"><span class="mark">글</span>글로우아뜰리에</a>
+    <nav class="nav-links">
+      <a href="/beauty/about">업체소개</a>
+      <a href="/beauty/treatment">시술</a>
+      <a href="/beauty/review" class="active">후기사례</a>
+      <a href="/beauty/course">수강신청</a>
+      <a href="/beauty/location">오시는길</a>
+      <a href="/beauty/contact">문의하기</a>
+    </nav>
+    <a href="/beauty/contact" class="nav-cta">문의하기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="eyebrow">Reviews</div>
+  <div class="wrap">
+    <h1>후기사례</h1>
+    <p>실제 고객님들이 남겨주신 생생한 후기입니다.</p>
+  </div>
+</div>
+
+<div class="stats-band">
+  <div class="wrap stats-row">
+    <div class="stat"><div class="stars">★★★★★</div><b>4.9</b><span>평균 후기 별점</span></div>
+    <div class="stat"><b>3,000+</b><span>누적 시술 건수</span></div>
+    <div class="stat"><b>88%</b><span>재방문율</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="review-list">
+      <div class="review-row"><span class="rnum">01</span><span class="stars">★★★★★</span><span class="tag">눈썹반영구</span><span class="txt">자연스러운 눈썹 라인 덕분에 화장 시간이 확 줄었어요.</span><span class="who">김O영님</span></div>
+      <div class="review-row"><span class="rnum">02</span><span class="stars">★★★★★</span><span class="tag">헤어라인</span><span class="txt">정수리 라인이 자연스러워져서 자신감이 생겼어요.</span><span class="who">이O훈님</span></div>
+      <div class="review-row"><span class="rnum">03</span><span class="stars">★★★★☆</span><span class="tag">반영구(아이라인)</span><span class="txt">붓기도 적고 라인이 깔끔하게 잡혔습니다.</span><span class="who">박O은님</span></div>
+      <div class="review-row"><span class="rnum">04</span><span class="stars">★★★★★</span><span class="tag">왁싱</span><span class="txt">통증이 적고 꼼꼼하게 해주셔서 만족했어요.</span><span class="who">최O아님</span></div>
+      <div class="review-row"><span class="rnum">05</span><span class="stars">★★★★★</span><span class="tag">눈썹반영구</span><span class="txt">상담부터 시술까지 정말 꼼꼼하게 봐주셨어요.</span><span class="who">정O민님</span></div>
+      <div class="review-row"><span class="rnum">06</span><span class="stars">★★★★★</span><span class="tag">반영구(입술)</span><span class="txt">입술 컬러가 자연스럽고 예쁘게 나왔어요.</span><span class="who">한O수님</span></div>
+      <div class="review-row"><span class="rnum">07</span><span class="stars">★★★★☆</span><span class="tag">헤어라인</span><span class="txt">M자 탈모 부분이 훨씬 자연스러워졌습니다.</span><span class="who">오O진님</span></div>
+      <div class="review-row"><span class="rnum">08</span><span class="stars">★★★★★</span><span class="tag">왁싱</span><span class="txt">관리도 편하고 재방문 의사 100%입니다.</span><span class="who">서O아님</span></div>
+      <div class="review-row"><span class="rnum">09</span><span class="stars">★★★★★</span><span class="tag">눈썹반영구</span><span class="txt">얼굴형에 맞는 디자인 제안이 정말 만족스러웠어요.</span><span class="who">윤O호님</span></div>
+      <div class="review-row"><span class="rnum">10</span><span class="stars">★★★★★</span><span class="tag">반영구(아이라인)</span><span class="txt">붓기 없이 자연스러운 라인, 강추합니다.</span><span class="who">임O영님</span></div>
+      <div class="review-row"><span class="rnum">11</span><span class="stars">★★★★☆</span><span class="tag">헤어라인</span><span class="txt">가르마 부분 채워주셔서 훨씬 풍성해보여요.</span><span class="who">조O민님</span></div>
+      <div class="review-row"><span class="rnum">12</span><span class="stars">★★★★★</span><span class="tag">눈썹반영구</span><span class="txt">번짐 없이 오래 유지돼서 좋았어요.</span><span class="who">배O은님</span></div>
+      <div class="review-row"><span class="rnum">13</span><span class="stars">★★★★★</span><span class="tag">왁싱</span><span class="txt">위생적이고 친절하게 설명해주셔서 편했습니다.</span><span class="who">신O진님</span></div>
+      <div class="review-row"><span class="rnum">14</span><span class="stars">★★★★★</span><span class="tag">반영구(입술)</span><span class="txt">톤이 자연스럽게 붉어져서 생기 있어 보여요.</span><span class="who">강O수님</span></div>
+      <div class="review-row"><span class="rnum">15</span><span class="stars">★★★★★</span><span class="tag">눈썹반영구</span><span class="txt">리터치까지 꼼꼼하게 챙겨주셔서 감사했어요.</span><span class="who">문O영님</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 글로우아뜰리에 · GLOW ATELIER</div>
+</footer>
+
+<a href="/beauty/contact" class="quick-cta"><span class="dot"></span>문의하기</a>
+
+<script>
+(function(){
+  var navEl = document.getElementById('btyNav');
+  window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+})();
+</script>
+
+</div>
+</body></html>

@@ -1,0 +1,242 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>진료과목 | 라온이비인후과</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="entc">
+<style>
+.entc{
+  --bg:#ffffff; --bg2:#f2f9fa; --ink:#1c2327; --ink-dim:#5b6a6f; --muted:#8a9599;
+  --line:#e2edee; --teal:#12a89a; --teal-dark:#0c8577; --blue:#4f7cff;
+  --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.entc *{box-sizing:border-box}
+.entc a{color:inherit;text-decoration:none}
+.entc img{max-width:100%;display:block}
+.entc .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.entc .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--teal) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.entc .eyebrow::before{content:"";width:22px;height:2px;background:var(--teal)}
+.entc h1,.entc h2,.entc h3{font-family:var(--sans);font-weight:800;color:var(--ink) !important;margin:0}
+.entc p{margin:0}
+.entc .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:30px;transition:transform .2s ease,box-shadow .2s ease;background:transparent !important}
+.entc .btn-p{background:var(--teal) !important;color:#fff !important}
+.entc .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(18,168,154,.5)}
+.entc .btn-g{border:1.5px solid var(--teal);color:var(--teal) !important;background:#fff !important}
+.entc .btn-g:hover{background:var(--teal) !important;color:#fff !important}
+.entc section{padding:96px 0;background:var(--bg)}
+@media(max-width:760px){.entc section{padding:60px 0}}
+
+/* placeholder photo gradients (class-based, never inline style) */
+.entc .ph{background-size:cover;background-position:center;position:relative;overflow:hidden}
+.entc .ph:empty::after{content:"사진 영역";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:rgba(255,255,255,.75);letter-spacing:.08em;font-weight:600}
+.entc .ph1{background:linear-gradient(150deg,#bfe3e0,#12a89a)}
+.entc .ph2{background:linear-gradient(150deg,#cfe0ff,#4f7cff)}
+.entc .ph3{background:linear-gradient(150deg,#d8ecea,#5fb8ac)}
+.entc .ph4{background:linear-gradient(150deg,#e4eefc,#8fb0f5)}
+.entc .ph5{background:linear-gradient(150deg,#c9ece6,#1c9b8d)}
+.entc .ph6{background:linear-gradient(150deg,#dbe8ff,#6d93f7)}
+.entc .ph7{background:linear-gradient(150deg,#bfe9e2,#0c8577)}
+.entc .ph8{background:linear-gradient(150deg,#e7f1ff,#a9c2f7)}
+
+.entc header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.entc .nav-inner{display:flex;align-items:center;justify-content:space-between} .entc .brand,.entc .nav-cta,.entc .nav-toggle{position:relative;z-index:141}
+.entc .brand{font-size:19px;font-weight:800;color:var(--ink) !important;display:flex;align-items:center;gap:9px}
+.entc .brand .mark{width:32px;height:32px;border-radius:10px;background:var(--teal) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900}
+.entc .nav-links{display:flex;gap:28px}
+.entc .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.entc .nav-links a:hover{color:var(--teal) !important}
+.entc .nav-links a.active{color:var(--teal) !important}
+.entc .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.entc .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.entc .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.entc .nav-toggle.open span:nth-child(2){opacity:0}
+.entc .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:980px){
+  .entc .nav-toggle{display:flex}
+  .entc .nav-cta{padding:9px 16px;font-size:12.5px}
+  .entc .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .entc .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .entc .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
+.entc .nav-cta{background:var(--teal) !important;color:#fff !important;padding:11px 22px;border-radius:30px;font-weight:700;font-size:14px}
+
+.entc .page-head{position:relative;padding:180px 0 60px;background:var(--bg2) !important;text-align:center}
+.entc .page-head .eyebrow{justify-content:center}
+.entc .page-head h1{font-size:clamp(26px,3.6vw,38px)}
+.entc .page-head p{color:var(--muted) !important;font-size:14.5px;margin-top:12px}
+
+.entc .section-head{max-width:640px;margin:0 auto 52px;text-align:center}
+.entc .section-head h2{font-size:clamp(24px,3.2vw,32px);margin-bottom:12px}
+.entc .section-head p{color:var(--muted) !important;font-size:14.5px}
+
+/* 진료과목 */
+.entc .clinic-grid{display:flex;flex-wrap:wrap;gap:20px}
+.entc .clinic-card{flex:1 1 300px;max-width:360px;background:#fff !important;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.entc .clinic-card:hover{transform:translateY(-4px);box-shadow:0 22px 36px -20px rgba(0,0,0,.15)}
+.entc .clinic-card .ph{width:100%;height:150px}
+.entc .clinic-card .ph img{width:100%;height:150px;object-fit:cover;display:block}
+.entc .clinic-card .body{padding:24px 24px 28px}
+.entc .clinic-card .tag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--teal) !important;background:rgba(18,168,154,.1) !important;padding:5px 12px;border-radius:20px;margin-bottom:12px}
+.entc .clinic-card h3{font-size:18px;margin-bottom:10px}
+.entc .clinic-card ul{margin:0;padding:0}
+.entc .clinic-card li{list-style:none;font-size:13px;color:var(--ink-dim) !important;padding:4px 0 4px 14px;position:relative;line-height:1.6}
+.entc .clinic-card li::before{content:"";position:absolute;left:0;top:12px;width:5px;height:5px;border-radius:50%;background:var(--teal)}
+.entc .clinic-card .lead{font-size:12.5px;color:var(--ink-dim) !important;line-height:1.75;margin-bottom:14px}
+.entc .symptom-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.entc .symptom-chips span{font-size:11px;background:var(--bg2) !important;color:var(--ink-dim) !important;padding:4px 10px;border-radius:20px;border:1px solid var(--line)}
+.entc .clinic-card .sub-label{font-size:11px;font-weight:700;color:var(--muted) !important;letter-spacing:.05em;margin-bottom:8px;display:block}
+
+.entc .process-strip{display:flex;flex-wrap:wrap;gap:20px;margin-top:56px}
+.entc .proc-step{flex:1 1 220px;text-align:center;padding:26px 18px;background:#fff !important;border-radius:14px;border:1px solid var(--line)}
+.entc .proc-step .pnum{width:34px;height:34px;border-radius:50%;background:var(--teal) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-weight:800;margin:0 auto 12px}
+.entc .proc-step h3{font-size:15px;margin-bottom:6px}
+.entc .proc-step p{font-size:12.5px;color:var(--muted) !important;line-height:1.7}
+
+.entc footer{padding:34px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+
+.entc .quick-cta{position:fixed;right:26px;bottom:26px;z-index:200;display:flex;align-items:center;gap:9px;padding:15px 24px;font-weight:800;font-size:13.5px;color:#fff !important;background:var(--teal) !important;border-radius:30px;box-shadow:0 16px 30px -10px rgba(18,168,154,.55)}
+.entc .quick-cta:hover{transform:translateY(-3px)}
+.entc .quick-cta .dot{width:7px;height:7px;border-radius:50%;background:#fff}
+</style>
+
+<header class="nav" id="entcNav">
+  <div class="wrap nav-inner">
+    <a href="/ent" class="brand"><span class="mark">라</span>라온이비인후과</a>
+    <nav class="nav-links">
+      <a href="/ent/about">병원소개</a>
+      <a href="/ent/clinic" class="active">진료과목</a>
+      <a href="/ent/price">비급여진료비</a>
+      <a href="/ent/reserve">온라인예약</a>
+    </nav>
+    <a href="/ent/reserve" class="nav-cta">예약하기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Practice Areas</div>
+    <h1>진료과목</h1>
+    <p>귀·코·목·알레르기·소아까지, 다섯 개 전문 클리닉으로 나누어 진료합니다.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="clinic-grid">
+      <div class="clinic-card">
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/ent-images/clinic-ear.jpg" alt=""></div>
+        <div class="body">
+          <span class="tag">EAR</span>
+          <h3>이(귀) 클리닉</h3>
+          <p class="lead">귀의 통증, 먹먹함, 이명이 반복된다면 방치하지 말고 정밀 검사로 원인을 확인해야 합니다.</p>
+          <div class="symptom-chips"><span>귀 통증</span><span>먹먹함</span><span>이명</span><span>청력저하</span></div>
+          <span class="sub-label">주요 진료</span>
+          <ul>
+            <li>중이염 진단 및 치료</li>
+            <li>이명·난청 정밀 검사</li>
+            <li>보청기 상담 및 연계</li>
+            <li>귀지 제거 및 외이도염 치료</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clinic-card">
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/ent-images/clinic-nose.jpg" alt=""></div>
+        <div class="body">
+          <span class="tag">NOSE</span>
+          <h3>비(코) 클리닉</h3>
+          <p class="lead">콧물, 코막힘, 재채기가 계절과 상관없이 이어진다면 비염·축농증 여부를 확인해보세요.</p>
+          <div class="symptom-chips"><span>코막힘</span><span>콧물</span><span>재채기</span><span>코골이</span></div>
+          <span class="sub-label">주요 진료</span>
+          <ul>
+            <li>알레르기성 비염 진단·치료</li>
+            <li>축농증(부비동염) 관리</li>
+            <li>코골이·수면무호흡 검사</li>
+            <li>비중격만곡증 상담</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clinic-card">
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/ent-images/clinic-throat.jpg" alt=""></div>
+        <div class="body">
+          <span class="tag">THROAT</span>
+          <h3>인후(목) 클리닉</h3>
+          <p class="lead">목의 통증, 이물감, 쉰 목소리가 2주 이상 이어진다면 정밀 후두 검사를 권장드립니다.</p>
+          <div class="symptom-chips"><span>목 통증</span><span>이물감</span><span>쉰 목소리</span><span>만성기침</span></div>
+          <span class="sub-label">주요 진료</span>
+          <ul>
+            <li>편도염·인후두염 치료</li>
+            <li>후두염 및 음성 클리닉</li>
+            <li>역류성 인후두염 관리</li>
+            <li>만성 기침 원인 검사</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clinic-card">
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/ent-images/clinic-allergy.jpg" alt=""></div>
+        <div class="body">
+          <span class="tag">ALLERGY</span>
+          <h3>알레르기 클리닉</h3>
+          <p class="lead">원인을 모른 채 증상만 반복 치료하기보다, 정밀 검사로 알레르기 원인물질을 먼저 찾습니다.</p>
+          <div class="symptom-chips"><span>재발성 비염</span><span>가려움</span><span>피부발진</span><span>천식동반</span></div>
+          <span class="sub-label">주요 진료</span>
+          <ul>
+            <li>알레르기 원인물질 정밀 검사</li>
+            <li>면역치료(감작요법) 상담</li>
+            <li>비염·천식 동반질환 관리</li>
+            <li>계절성 알레르기 예방 상담</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clinic-card">
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/ent-images/clinic-kids.jpg" alt=""></div>
+        <div class="body">
+          <span class="tag">KIDS</span>
+          <h3>소아이비인후과</h3>
+          <p class="lead">잦은 감기, 중이염, 코골이가 반복되는 아이도 눈높이 진료로 편안하게 검사받을 수 있습니다.</p>
+          <div class="symptom-chips"><span>잦은 중이염</span><span>코골이</span><span>편도비대</span><span>입호흡</span></div>
+          <span class="sub-label">주요 진료</span>
+          <ul>
+            <li>소아 중이염·비염 진료</li>
+            <li>아데노이드·편도 비대 상담</li>
+            <li>어린이 청력 선별 검사</li>
+            <li>눈높이 맞춤 진료 진행</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-strip">
+      <div class="proc-step"><span class="pnum">1</span><h3>상담 접수</h3><p>온라인예약 또는 전화로 증상을 먼저 안내해주세요.</p></div>
+      <div class="proc-step"><span class="pnum">2</span><h3>정밀 검사</h3><p>내시경·청력·알레르기 등 필요한 검사를 진행합니다.</p></div>
+      <div class="proc-step"><span class="pnum">3</span><h3>진단 상담</h3><p>검사 결과를 바탕으로 원인과 치료 방향을 설명드립니다.</p></div>
+      <div class="proc-step"><span class="pnum">4</span><h3>치료·관리</h3><p>치료 이후에도 재발 방지를 위한 후속 관리를 진행합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 라온이비인후과 · RAON ENT CLINIC</div>
+</footer>
+
+<a href="/ent/reserve" class="quick-cta"><span class="dot"></span>빠른예약</a>
+
+<script>
+(function(){
+  var navEl = document.getElementById('entcNav');
+  window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+})();
+</script>
+
+</div>
+</body></html>

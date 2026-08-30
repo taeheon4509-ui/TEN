@@ -1,0 +1,168 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>청소후기 | 클린베이스</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="cln">
+<style>
+.cln{
+  --bg:#ffffff; --bg2:#eef5fc; --ink:#1a2128; --ink-dim:#586472; --muted:#8993a1;
+  --line:#e3eaf1; --blue:#2f7fe0; --blue-dark:#1f66c2;
+  --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.cln *{box-sizing:border-box}
+.cln a{color:inherit;text-decoration:none}
+.cln img{max-width:100%;display:block}
+.cln .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.cln .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--blue) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.cln .eyebrow::before{content:"";width:22px;height:2px;background:var(--blue)}
+.cln h1,.cln h2,.cln h3{font-family:var(--sans);font-weight:800;color:var(--ink) !important;margin:0}
+.cln p{margin:0}
+.cln .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:8px;transition:transform .2s ease,box-shadow .2s ease;background:transparent !important}
+.cln .btn-p{background:var(--blue) !important;color:#fff !important}
+.cln .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(47,127,224,.5)}
+.cln section{padding:96px 0;background:var(--bg)}
+@media(max-width:760px){.cln section{padding:60px 0}}
+
+.cln header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.cln .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.cln .brand{font-size:19px;font-weight:800;color:var(--ink) !important;display:flex;align-items:center;gap:9px}
+.cln .brand .mark{width:32px;height:32px;border-radius:10px;background:var(--blue) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900}
+.cln .nav-links{display:flex;gap:28px}
+.cln .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.cln .nav-links a:hover{color:var(--blue) !important}
+.cln .nav-links a.active{color:var(--blue) !important}
+.cln .brand,.cln .nav-cta,.cln .nav-toggle{position:relative;z-index:141}
+.cln .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.cln .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.cln .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.cln .nav-toggle.open span:nth-child(2){opacity:0}
+.cln .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:980px){
+  .cln .nav-toggle{display:flex}
+  .cln .nav-cta{padding:9px 16px;font-size:12.5px}
+  .cln .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .cln .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .cln .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
+.cln .nav-cta{background:var(--blue) !important;color:#fff !important;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px}
+
+.cln .page-head{position:relative;padding:180px 0 60px;background:var(--bg2) !important;text-align:center}
+.cln .page-head .eyebrow{justify-content:center}
+.cln .page-head h1{font-size:clamp(26px,3.6vw,38px)}
+.cln .page-head p{color:var(--muted) !important;font-size:14.5px;margin-top:12px}
+
+/* 통계 밴드 */
+.cln .stats-band{background:var(--ink) !important;padding:56px 0}
+.cln .stats-row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-around;text-align:center}
+.cln .stat b{display:block;font-size:clamp(30px,4vw,44px);font-weight:900;color:#a9d0ff !important;margin-bottom:6px}
+.cln .stat span{font-size:13.5px;color:#cfd8e2 !important;letter-spacing:.02em}
+.cln .stat .stars{color:#ffc94d !important;font-size:15px;margin-bottom:6px;letter-spacing:2px}
+
+/* 후기 카드 */
+.cln .review-grid{display:flex;flex-wrap:wrap;gap:20px}
+.cln .review-card{flex:1 1 280px;max-width:360px;background:var(--bg2) !important;border-radius:16px;padding:26px 24px}
+.cln .review-card .stars{color:#ffb800 !important;font-size:14px;letter-spacing:2px;margin-bottom:10px}
+.cln .review-card .tag{display:inline-block;font-size:11px;font-weight:700;color:var(--blue) !important;background:rgba(47,127,224,.1) !important;padding:4px 10px;border-radius:16px;margin-bottom:12px;margin-left:8px}
+.cln .review-card p{font-size:13.5px;color:var(--ink-dim) !important;line-height:1.85;margin-bottom:16px}
+.cln .review-card .who{font-size:12.5px;color:var(--muted) !important;font-weight:600}
+
+.cln footer{padding:34px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+
+.cln .quick-cta{position:fixed;right:26px;bottom:26px;z-index:200;display:flex;align-items:center;gap:9px;padding:15px 24px;font-weight:800;font-size:13.5px;color:#fff !important;background:var(--blue) !important;border-radius:8px;box-shadow:0 16px 30px -10px rgba(47,127,224,.55)}
+.cln .quick-cta:hover{transform:translateY(-3px)}
+.cln .quick-cta .dot{width:7px;height:7px;border-radius:50%;background:#fff}
+</style>
+
+<header class="nav" id="clnNav">
+  <div class="wrap nav-inner">
+    <a href="/cleaning" class="brand"><span class="mark">클</span>클린베이스</a>
+    <nav class="nav-links">
+      <a href="/cleaning/about">업체소개</a>
+      <a href="/cleaning/service">청소분야</a>
+      <a href="/cleaning/review" class="active">청소후기</a>
+      <a href="/cleaning/faq">자주묻는질문</a>
+    </nav>
+    <a href="/cleaning/quote" class="nav-cta">견적받기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Reviews</div>
+    <h1>청소후기</h1>
+    <p>실제 이용 고객님들이 남겨주신 후기입니다.</p>
+  </div>
+</div>
+
+<div class="stats-band">
+  <div class="wrap stats-row">
+    <div class="stat"><div class="stars">★★★★★</div><b>4.9</b><span>평균 후기 별점</span></div>
+    <div class="stat"><b>1,200+</b><span>누적 청소 후기</span></div>
+    <div class="stat"><b>92%</b><span>재이용률</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★<span class="tag">원룸·투룸·쓰리룸</span></div>
+        <p>이사 전 입주청소로 이용했는데 곰팡이랑 물때까지 싹 없어졌어요. 새집 느낌 그대로 받고 시작할 수 있어서 만족스러웠습니다.</p>
+        <div class="who">김O영님</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★<span class="tag">사무실·상업공간</span></div>
+        <p>매장 정기청소 맡긴지 6개월째인데 항상 같은 퀄리티로 관리해주셔서 믿고 맡기고 있어요. 방문 시간도 유연하게 조율해주셔서 좋았습니다.</p>
+        <div class="who">이O훈님</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★☆<span class="tag">주거청소</span></div>
+        <p>반려동물 있는 집이라 세제가 걱정됐는데 친환경 제품으로만 사용해주셔서 안심하고 맡길 수 있었어요. 다음에도 또 부탁드릴 예정입니다.</p>
+        <div class="who">박O은님</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★<span class="tag">기업청소</span></div>
+        <p>물류센터 전체 정기관리를 맡겼는데 월간 리포트까지 챙겨주셔서 관리가 훨씬 수월해졌습니다. 전담 담당자분이 계셔서 소통도 편해요.</p>
+        <div class="who">정O민 과장님</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★<span class="tag">원룸·투룸·쓰리룸</span></div>
+        <p>자취방 정기청소 처음 이용해봤는데 생각보다 훨씬 꼼꼼해서 놀랐어요. 창틀이랑 베란다까지 깨끗해져서 기분이 좋아졌습니다.</p>
+        <div class="who">최O아님</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★<span class="tag">주거청소</span></div>
+        <p>어머니 댁 청소를 부탁드렸는데 꼼꼼하게 잘해주셨다고 정말 만족해하셨어요. 가격도 합리적이고 다음에도 이용할 생각입니다.</p>
+        <div class="who">한O수님</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 클린베이스 · CLEAN BASE</div>
+</footer>
+
+<a href="/cleaning/quote" class="quick-cta"><span class="dot"></span>견적받기</a>
+
+<script>
+(function(){
+  var navEl = document.getElementById('clnNav');
+  window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+})();
+</script>
+
+</div>
+</body></html>

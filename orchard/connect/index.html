@@ -1,0 +1,187 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>커넥트 | THE ORCHARD</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="orc">
+<style>
+.orc{
+  --bg:#0a0a08; --bg2:#131310; --ink:#f3f1e8; --ink-dim:#b9b6a8; --muted:#7d7a6f;
+  --line:rgba(243,241,232,.14); --green:#3f7d52; --green-lt:#8fce9f; --green-dk:#2a5638;
+  --serif:'Noto Serif KR',serif; --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.orc *{box-sizing:border-box}
+.orc a{color:inherit;text-decoration:none}
+.orc h1,.orc h2,.orc h3{font-family:var(--serif);font-weight:700;color:var(--ink) !important;margin:0;word-break:keep-all}
+.orc p,.orc li,.orc a,.orc span,.orc div,.orc label{word-break:keep-all}
+.orc .wrap{max-width:760px;margin:0 auto;padding:0 36px}
+.orc .eyebrow{font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.22em;color:var(--green-lt) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px}
+.orc .eyebrow::before{content:"";width:28px;height:1px;background:var(--green-lt)}
+.orc section{padding:110px 0;background:var(--bg)}
+@media(max-width:760px){.orc section{padding:64px 0}}
+
+.orc header.nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:16px 0;background:rgba(10,10,8,.94);border-bottom:1px solid var(--line)}
+.orc .nav-inner{max-width:1240px;margin:0 auto;padding:0 36px;display:flex;align-items:center;justify-content:space-between}
+.orc .brand{font-family:var(--serif);font-size:21px;font-weight:700;color:#fff !important;letter-spacing:.06em}
+.orc .brand .dot{color:var(--green-lt) !important}
+.orc .nav-links{display:flex;align-items:center;gap:38px}
+.orc .nav-links>a{font-size:13.5px;font-weight:500;color:#f3f1e8 !important;letter-spacing:.02em;padding:6px 0}
+.orc .nav-links>a:hover,.orc .nav-links>a.active{color:var(--green-lt) !important}
+.orc .nav-parent{cursor:pointer;font-size:13.5px;font-weight:500;color:#f3f1e8 !important;letter-spacing:.02em;padding:6px 0}
+.orc .nav-parent:hover,.orc .nav-parent.active{color:var(--green-lt) !important}
+.orc .dropdown.open{opacity:1;visibility:visible}
+.orc .has-drop{position:relative}
+.orc .dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:18px;opacity:0;visibility:hidden;transition:.2s ease;min-width:160px}
+.orc .has-drop:hover .dropdown{opacity:1;visibility:visible}
+.orc .dropdown-inner{background:rgba(12,13,10,.97);border:1px solid var(--line);border-radius:4px;padding:10px;display:flex;flex-direction:column}
+.orc .dropdown-inner a{font-size:13px;padding:10px 14px;color:var(--ink-dim) !important;border-radius:3px;white-space:nowrap}
+.orc .dropdown-inner a:hover{background:rgba(143,206,159,.1);color:var(--green-lt) !important}
+.orc .nav-cta{background:var(--green) !important;color:#fff !important;padding:11px 22px;border-radius:2px;font-weight:700;font-size:13px}
+.orc .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.orc .nav-toggle span{display:block;width:100%;height:2px;background:#fff;border-radius:2px;transition:.25s ease}
+.orc .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.orc .nav-toggle.open span:nth-child(2){opacity:0}
+.orc .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1040px){
+  .orc .nav-toggle{display:flex}
+  .orc .nav-cta{display:none}
+  .orc .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(8,9,7,.98);display:flex;flex-direction:column;align-items:flex-start;padding:100px 36px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:190}
+  .orc .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .orc .nav-links>a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+  .orc .has-drop{width:100%;border-bottom:1px solid var(--line)}
+  .orc .nav-parent{display:block;width:100%;padding:18px 0;font-size:17px}
+  .orc .dropdown{position:static;transform:none;padding-top:0;opacity:1;visibility:visible;display:none;min-width:0}
+  .orc .dropdown.open{display:block}
+  .orc .dropdown-inner{background:transparent;border:none;padding:0 0 12px 14px}
+  .orc .dropdown-inner a{padding:12px 0;font-size:15px}
+}
+
+.orc .page-head{padding:190px 0 50px;text-align:center}
+.orc .page-head .eyebrow{justify-content:center}
+.orc .page-head h1{font-size:clamp(28px,3.8vw,42px);font-weight:400;margin-top:16px}
+.orc .page-head p{color:var(--ink-dim) !important;font-size:14.5px;margin-top:14px}
+
+.orc .cc-info{display:flex;justify-content:center;gap:50px;flex-wrap:wrap;margin-bottom:70px;text-align:center}
+.orc .cc-info .cc-item .cc-label{font-size:12px;color:var(--muted) !important;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.orc .cc-info .cc-item .cc-val{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--green-lt) !important}
+
+.orc form{display:flex;flex-direction:column;gap:22px;background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:44px}
+.orc .field label{display:block;font-size:12.5px;font-weight:700;letter-spacing:.05em;color:var(--ink-dim) !important;margin-bottom:9px;text-transform:uppercase}
+.orc .field input,.orc .field textarea{width:100%;background:var(--bg) !important;border:1px solid var(--line);border-radius:3px;padding:14px 16px;color:var(--ink) !important;font-family:var(--sans);font-size:14px}
+.orc .field textarea{min-height:130px;resize:vertical}
+.orc .field input:focus,.orc .field textarea:focus{outline:none;border-color:var(--green-lt)}
+.orc .btn-p{background:var(--green) !important;color:#fff !important;border:none;padding:17px 30px;border-radius:2px;font-weight:700;font-size:14.5px;letter-spacing:.03em;cursor:pointer;transition:.25s ease}
+.orc .btn-p:hover{background:var(--green-lt) !important;color:#0a0a08 !important}
+.orc .form-msg{display:none;text-align:center;padding:16px;border-radius:4px;background:rgba(143,206,159,.1);color:var(--green-lt) !important;font-size:13.5px;font-weight:600}
+.orc .form-msg.show{display:block}
+
+.orc footer{background:var(--bg2);padding:64px 0 28px;border-top:1px solid var(--line)}
+.orc .foot-inner{max-width:1240px;margin:0 auto;padding:0 36px}
+.orc .foot-top{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;padding-bottom:40px;border-bottom:1px solid var(--line)}
+.orc .foot-brand .brand{display:block;margin-bottom:14px}
+.orc .foot-brand p{color:var(--muted) !important;font-size:13px;max-width:280px;line-height:1.8}
+.orc .foot-links{display:flex;gap:60px;flex-wrap:wrap}
+.orc .foot-col h4{font-size:12.5px;letter-spacing:.1em;color:var(--green-lt) !important;text-transform:uppercase;margin-bottom:16px;font-weight:700}
+.orc .foot-col a{display:block;font-size:13.5px;color:var(--ink-dim) !important;margin-bottom:11px}
+.orc .foot-col a:hover{color:var(--ink) !important}
+.orc .foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:26px;font-size:12px;color:var(--muted) !important}
+.orc .foot-bottom .biz-line{line-height:2}
+.orc .foot-actions{display:flex;gap:10px}
+.orc .foot-actions a{border:1px solid var(--line);padding:9px 16px;border-radius:20px;font-size:12px;color:var(--ink-dim) !important}
+.orc .foot-actions a:hover{border-color:var(--green-lt);color:var(--green-lt) !important}
+</style>
+
+<header class="nav" id="orcNav">
+  <div class="nav-inner">
+    <a href="/orchard" class="brand">THE ORCHARD<span class="dot">.</span></a>
+    <nav class="nav-links">
+      <div class="has-drop">
+        <span class="nav-parent">회사안내</span>
+        <div class="dropdown"><div class="dropdown-inner">
+          <a href="/orchard/about">회사소개</a>
+          <a href="/orchard/facility">시설소개</a>
+          <a href="/orchard/business">사업소개</a>
+        </div></div>
+      </div>
+      <a href="/orchard/brand">브랜드</a>
+      <a href="/orchard/product">프로덕트</a>
+      <a href="/orchard/connect" class="active">커넥트</a>
+      <a href="https://smartstore.naver.com" target="_blank" rel="noopener">공식몰</a>
+    </nav>
+    <a href="/orchard/connect" class="nav-cta">문의하기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Connect</div>
+    <h1>커넥트</h1>
+    <p>제품, 협업, 대량구매 등 무엇이든 편하게 문의해주세요.</p>
+  </div>
+</div>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cc-info">
+      <div class="cc-item"><div class="cc-label">고객센터</div><div class="cc-val">1588-0000</div></div>
+      <div class="cc-item"><div class="cc-label">운영시간</div><div class="cc-val">평일 09:00–18:00</div></div>
+      <div class="cc-item"><div class="cc-label">이메일</div><div class="cc-val">hello@theorchard.kr</div></div>
+    </div>
+
+    <form id="orcForm">
+      <div class="field"><label>이름</label><input type="text" placeholder="성함을 입력해주세요" required></div>
+      <div class="field"><label>연락처</label><input type="tel" placeholder="010-0000-0000" required></div>
+      <div class="field"><label>문의내용</label><textarea placeholder="문의하실 내용을 자세히 남겨주세요" required></textarea></div>
+      <button type="submit" class="btn-p">문의 보내기</button>
+      <div class="form-msg" id="orcMsg">문의가 정상적으로 접수되었습니다. 빠르게 연락드리겠습니다.</div>
+    </form>
+  </div>
+</section>
+
+
+<script>
+(function(){
+  var navEl = document.getElementById('orcNav');
+  function syncNav(){ navEl.classList.toggle('scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', syncNav);
+  syncNav();
+
+  var form = document.getElementById('orcForm');
+  var msg = document.getElementById('orcMsg');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      msg.classList.add('show');
+      form.reset();
+    });
+  }
+
+  document.querySelectorAll('.has-drop').forEach(function(el){
+    var label = el.querySelector('.nav-parent');
+    var dropdown = el.querySelector('.dropdown');
+    if(label && dropdown){
+      label.addEventListener('click', function(e){
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+      });
+    }
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.dropdown.open').forEach(function(d){ d.classList.remove('open'); });
+  });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+})();
+</script>
+
+</div>
+</body></html>

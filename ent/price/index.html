@@ -1,0 +1,146 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>비급여진료비 | 라온이비인후과</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="entc">
+<style>
+.entc{
+  --bg:#ffffff; --bg2:#f2f9fa; --ink:#1c2327; --ink-dim:#5b6a6f; --muted:#8a9599;
+  --line:#e2edee; --teal:#12a89a; --teal-dark:#0c8577; --blue:#4f7cff;
+  --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.entc *{box-sizing:border-box}
+.entc a{color:inherit;text-decoration:none}
+.entc img{max-width:100%;display:block}
+.entc .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.entc .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--teal) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.entc .eyebrow::before{content:"";width:22px;height:2px;background:var(--teal)}
+.entc h1,.entc h2,.entc h3{font-family:var(--sans);font-weight:800;color:var(--ink) !important;margin:0}
+.entc p{margin:0}
+.entc .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:30px;transition:transform .2s ease,box-shadow .2s ease;background:transparent !important}
+.entc .btn-p{background:var(--teal) !important;color:#fff !important}
+.entc .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(18,168,154,.5)}
+.entc .btn-g{border:1.5px solid var(--teal);color:var(--teal) !important;background:#fff !important}
+.entc .btn-g:hover{background:var(--teal) !important;color:#fff !important}
+.entc section{padding:96px 0;background:var(--bg)}
+@media(max-width:760px){.entc section{padding:60px 0}}
+
+.entc header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.entc .nav-inner{display:flex;align-items:center;justify-content:space-between} .entc .brand,.entc .nav-cta,.entc .nav-toggle{position:relative;z-index:141}
+.entc .brand{font-size:19px;font-weight:800;color:var(--ink) !important;display:flex;align-items:center;gap:9px}
+.entc .brand .mark{width:32px;height:32px;border-radius:10px;background:var(--teal) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900}
+.entc .nav-links{display:flex;gap:28px}
+.entc .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.entc .nav-links a:hover{color:var(--teal) !important}
+.entc .nav-links a.active{color:var(--teal) !important}
+.entc .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.entc .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.entc .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.entc .nav-toggle.open span:nth-child(2){opacity:0}
+.entc .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:980px){
+  .entc .nav-toggle{display:flex}
+  .entc .nav-cta{padding:9px 16px;font-size:12.5px}
+  .entc .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .entc .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .entc .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
+.entc .nav-cta{background:var(--teal) !important;color:#fff !important;padding:11px 22px;border-radius:30px;font-weight:700;font-size:14px}
+
+.entc .page-head{position:relative;padding:180px 0 60px;background:var(--bg2) !important;text-align:center}
+.entc .page-head .eyebrow{justify-content:center}
+.entc .page-head h1{font-size:clamp(26px,3.6vw,38px)}
+.entc .page-head p{color:var(--muted) !important;font-size:14.5px;margin-top:12px}
+
+/* 비급여진료비 */
+.entc .price-wrap{max-width:820px;margin:0 auto}
+.entc .price-group{margin-bottom:34px}
+.entc .price-group h3{font-size:16px;color:var(--teal) !important;margin-bottom:14px;padding-left:2px}
+.entc .price-row{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);font-size:14px}
+.entc .price-row:first-child{border-top:1px solid var(--line)}
+.entc .price-row .name{color:var(--ink) !important;font-weight:500}
+.entc .price-row .sub{display:block;font-size:12px;color:var(--muted) !important;margin-top:3px;font-weight:400}
+.entc .price-row .amt{color:var(--teal-dark) !important;font-weight:800;white-space:nowrap}
+.entc .price-note{margin-top:26px;font-size:12.5px;color:var(--muted) !important;line-height:1.9;background:var(--bg2) !important;border-radius:10px;padding:18px 20px}
+
+.entc footer{padding:34px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+
+.entc .quick-cta{position:fixed;right:26px;bottom:26px;z-index:200;display:flex;align-items:center;gap:9px;padding:15px 24px;font-weight:800;font-size:13.5px;color:#fff !important;background:var(--teal) !important;border-radius:30px;box-shadow:0 16px 30px -10px rgba(18,168,154,.55)}
+.entc .quick-cta:hover{transform:translateY(-3px)}
+.entc .quick-cta .dot{width:7px;height:7px;border-radius:50%;background:#fff}
+</style>
+
+<header class="nav" id="entcNav">
+  <div class="wrap nav-inner">
+    <a href="/ent" class="brand"><span class="mark">라</span>라온이비인후과</a>
+    <nav class="nav-links">
+      <a href="/ent/about">병원소개</a>
+      <a href="/ent/clinic">진료과목</a>
+      <a href="/ent/price" class="active">비급여진료비</a>
+      <a href="/ent/reserve">온라인예약</a>
+    </nav>
+    <a href="/ent/reserve" class="nav-cta">예약하기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Non-covered Price</div>
+    <h1>비급여 진료비 안내</h1>
+    <p>대표적인 비급여 항목입니다. 정확한 비용은 진료 후 상담을 통해 안내드립니다.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="price-wrap">
+      <div class="price-group">
+        <h3>검사</h3>
+        <div class="price-row"><span class="name">알레르기 원인물질 검사<span class="sub">MAST / 다중알레르기 검사</span></span><span class="amt">80,000원 ~</span></div>
+        <div class="price-row"><span class="name">수면다원검사<span class="sub">코골이·수면무호흡 정밀검사</span></span><span class="amt">450,000원 ~</span></div>
+        <div class="price-row"><span class="name">순음청력검사</span><span class="amt">30,000원 ~</span></div>
+      </div>
+      <div class="price-group">
+        <h3>보청기 · 클리닉</h3>
+        <div class="price-row"><span class="name">보청기 상담 및 적합검사</span><span class="amt">무료 상담</span></div>
+        <div class="price-row"><span class="name">코골이 레이저 시술<span class="sub">경증 코골이 완화</span></span><span class="amt">300,000원 ~</span></div>
+        <div class="price-row"><span class="name">음성(목소리) 클리닉 정밀검사</span><span class="amt">50,000원 ~</span></div>
+      </div>
+      <div class="price-group">
+        <h3>알레르기 · 기타</h3>
+        <div class="price-row"><span class="name">알레르기 면역치료(감작요법)<span class="sub">주사 1회 기준</span></span><span class="amt">15,000원 ~</span></div>
+        <div class="price-row"><span class="name">비강 내시경 검사</span><span class="amt">20,000원 ~</span></div>
+        <div class="price-row"><span class="name">진단서·소견서 발급</span><span class="amt">10,000원 ~</span></div>
+      </div>
+    </div>
+    <div class="price-note">* 상기 비급여 진료비는 병원 사정에 따라 변동될 수 있으며, 정확한 금액은 내원 후 상담을 통해 안내드립니다. 실손보험 청구를 위한 서류 발급이 가능합니다.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 라온이비인후과 · RAON ENT CLINIC</div>
+</footer>
+
+<a href="/ent/reserve" class="quick-cta"><span class="dot"></span>빠른예약</a>
+
+<script>
+(function(){
+  var navEl = document.getElementById('entcNav');
+  window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+})();
+</script>
+
+</div>
+</body></html>

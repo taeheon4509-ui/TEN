@@ -1,0 +1,218 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>업체소개 | 클린베이스</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="cln">
+<style>
+.cln{
+  --bg:#ffffff; --bg2:#eef5fc; --ink:#1a2128; --ink-dim:#586472; --muted:#8993a1;
+  --line:#e3eaf1; --blue:#2f7fe0; --blue-dark:#1f66c2;
+  --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.cln *{box-sizing:border-box}
+.cln a{color:inherit;text-decoration:none}
+.cln img{max-width:100%;display:block}
+.cln .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.cln .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--blue) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.cln .eyebrow::before{content:"";width:22px;height:2px;background:var(--blue)}
+.cln h1,.cln h2,.cln h3{font-family:var(--sans);font-weight:800;color:var(--ink) !important;margin:0}
+.cln p{margin:0}
+.cln .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:8px;transition:transform .2s ease,box-shadow .2s ease;background:transparent !important}
+.cln .btn-p{background:var(--blue) !important;color:#fff !important}
+.cln .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(47,127,224,.5)}
+.cln .btn-g{border:1.5px solid var(--blue);color:var(--blue) !important;background:#fff !important}
+.cln .btn-g:hover{background:var(--blue) !important;color:#fff !important}
+.cln section{padding:96px 0;background:var(--bg)}
+@media(max-width:760px){.cln section{padding:60px 0}}
+
+.cln .ph{background-size:cover;background-position:center;position:relative;overflow:hidden}
+.cln .ph:empty::after{content:"사진 영역";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:rgba(255,255,255,.75);letter-spacing:.08em;font-weight:600}
+.cln .ph1{background:linear-gradient(150deg,#bcdcfb,#2f7fe0)}
+.cln .ph2{background:linear-gradient(150deg,#cfe6ff,#5a9bef)}
+.cln .ph3{background:linear-gradient(150deg,#d8ecff,#4f8fe6)}
+.cln .ph4{background:linear-gradient(150deg,#c3ddfa,#3a7fdb)}
+
+.cln header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.cln .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.cln .brand{font-size:19px;font-weight:800;color:var(--ink) !important;display:flex;align-items:center;gap:9px}
+.cln .brand .mark{width:32px;height:32px;border-radius:10px;background:var(--blue) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900}
+.cln .nav-links{display:flex;gap:28px}
+.cln .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.cln .nav-links a:hover{color:var(--blue) !important}
+.cln .nav-links a.active{color:var(--blue) !important}
+.cln .brand,.cln .nav-cta,.cln .nav-toggle{position:relative;z-index:141}
+.cln .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.cln .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.cln .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.cln .nav-toggle.open span:nth-child(2){opacity:0}
+.cln .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:980px){
+  .cln .nav-toggle{display:flex}
+  .cln .nav-cta{padding:9px 16px;font-size:12.5px}
+  .cln .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .cln .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .cln .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
+.cln .nav-cta{background:var(--blue) !important;color:#fff !important;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px}
+
+.cln .page-head{position:relative;padding:180px 0 60px;background:var(--bg2) !important;text-align:center}
+.cln .page-head .eyebrow{justify-content:center}
+.cln .page-head h1{font-size:clamp(26px,3.6vw,38px)}
+.cln .page-head p{color:var(--muted) !important;font-size:14.5px;margin-top:12px}
+
+.cln .section-head{max-width:640px;margin:0 auto 52px;text-align:center}
+.cln .section-head h2{font-size:clamp(24px,3.2vw,32px);margin-bottom:12px}
+.cln .section-head p{color:var(--muted) !important;font-size:14.5px}
+
+/* 인사말 */
+.cln .greet{display:flex;flex-wrap:wrap;gap:50px;align-items:center;margin-bottom:90px}
+.cln .greet-photo{flex:1 1 340px;aspect-ratio:4/3;border-radius:16px;overflow:hidden}
+.cln .greet-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.cln .greet-text{flex:1 1 380px}
+.cln .greet-text h2{font-size:clamp(22px,2.8vw,28px);margin-bottom:18px;line-height:1.5}
+.cln .greet-text p{color:var(--ink-dim) !important;font-size:14.5px;line-height:2;margin-bottom:10px}
+.cln .greet-text .sign{margin-top:18px;font-weight:700;color:var(--blue) !important}
+
+/* 핵심가치 */
+.cln .value-row{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:90px}
+.cln .value-card{flex:1 1 220px;border:1px solid var(--line);border-radius:14px;padding:28px 24px}
+.cln .value-card .pnum{font-size:22px;font-weight:900;color:var(--blue) !important;display:block;margin-bottom:10px}
+.cln .value-card h3{font-size:16px;margin-bottom:8px}
+.cln .value-card p{font-size:13px;color:var(--muted) !important;line-height:1.8}
+
+/* 통계 */
+.cln .stats-band{background:var(--ink) !important;padding:56px 0;margin-bottom:90px}
+.cln .stats-row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-around;text-align:center}
+.cln .stat b{display:block;font-size:clamp(30px,4vw,44px);font-weight:900;color:#a9d0ff !important;margin-bottom:6px}
+.cln .stat span{font-size:13.5px;color:#cfd8e2 !important;letter-spacing:.02em}
+
+/* 팀 소개 */
+.cln .team-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-bottom:90px}
+.cln .team-card{flex:1 1 220px;max-width:240px;text-align:center}
+.cln .team-card .ph{width:100%;aspect-ratio:1/1;border-radius:50%;margin-bottom:16px}
+.cln .team-card h3{font-size:16px;margin-bottom:4px}
+.cln .team-card span{font-size:12.5px;color:var(--blue) !important;font-weight:700}
+
+/* 보유 장비 / 특징 */
+.cln .feature-row{display:flex;flex-wrap:wrap;gap:18px}
+.cln .feature-card{flex:1 1 220px;background:var(--bg2) !important;border-radius:14px;padding:26px 22px;text-align:center}
+.cln .feature-card .ico{width:48px;height:48px;border-radius:50%;background:var(--blue) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin:0 auto 14px}
+.cln .feature-card h3{font-size:15.5px;margin-bottom:6px}
+.cln .feature-card p{font-size:12.5px;color:var(--muted) !important;line-height:1.7}
+
+.cln footer{padding:34px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+
+.cln .quick-cta{position:fixed;right:26px;bottom:26px;z-index:200;display:flex;align-items:center;gap:9px;padding:15px 24px;font-weight:800;font-size:13.5px;color:#fff !important;background:var(--blue) !important;border-radius:8px;box-shadow:0 16px 30px -10px rgba(47,127,224,.55)}
+.cln .quick-cta:hover{transform:translateY(-3px)}
+.cln .quick-cta .dot{width:7px;height:7px;border-radius:50%;background:#fff}
+</style>
+
+<header class="nav" id="clnNav">
+  <div class="wrap nav-inner">
+    <a href="/cleaning" class="brand"><span class="mark">클</span>클린베이스</a>
+    <nav class="nav-links">
+      <a href="/cleaning/about" class="active">업체소개</a>
+      <a href="/cleaning/service">청소분야</a>
+      <a href="/cleaning/review">청소후기</a>
+      <a href="/cleaning/faq">자주묻는질문</a>
+    </nav>
+    <a href="/cleaning/quote" class="nav-cta">견적받기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">About Us</div>
+    <h1>업체소개</h1>
+    <p>보이지 않는 곳까지 닦는 것이 클린베이스의 기준입니다.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="greet">
+      <div class="greet-photo"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/cln-images/about-main.jpg" alt=""></div>
+      <div class="greet-text">
+        <div class="eyebrow">Greeting</div>
+        <h2>청소는 기술이 아니라<br>태도라고 믿습니다</h2>
+        <p>클린베이스는 원룸부터 대형 사업장까지, 공간의 크기와 상관없이 같은 기준으로 청소합니다. 눈에 보이는 먼지뿐 아니라 손이 잘 닿지 않는 구석까지 확인하는 것이 저희의 원칙입니다.</p>
+        <p>모든 작업자는 표준화된 체크리스트에 따라 움직이며, 청소 완료 후에는 반드시 검수 과정을 거칩니다. 한 번의 청소가 아니라, 다시 찾고 싶은 청소를 만들겠습니다.</p>
+        <div class="sign">클린베이스 대표 박정은</div>
+      </div>
+    </div>
+
+    <div class="section-head">
+      <div class="eyebrow">Our Values</div>
+      <h2>클린베이스가 지키는 4가지 원칙</h2>
+    </div>
+    <div class="value-row">
+      <div class="value-card"><span class="pnum">01</span><h3>꼼꼼함</h3><p>보이지 않는 곳까지 확인하는 표준 체크리스트 운영</p></div>
+      <div class="value-card"><span class="pnum">02</span><h3>신뢰</h3><p>투명한 견적과 정직한 작업으로 쌓아온 재이용률</p></div>
+      <div class="value-card"><span class="pnum">03</span><h3>안전</h3><p>친환경 세제와 검증된 장비만 사용</p></div>
+      <div class="value-card"><span class="pnum">04</span><h3>책임</h3><p>작업 후 하자 발생 시 신속한 재방문 처리</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-band">
+  <div class="wrap stats-row">
+    <div class="stat"><b>1,200+</b><span>누적 청소 건수</span></div>
+    <div class="stat"><b>92%</b><span>재이용률</span></div>
+    <div class="stat"><b>30+</b><span>보유 전문 인력</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Our Team</div>
+      <h2>클린베이스 팀</h2>
+      <p>정기 교육을 이수한 전문 인력이 직접 방문합니다.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card"><div class="ph ph1"></div><h3>박O은</h3><span>대표 · 현장관리</span></div>
+      <div class="team-card"><div class="ph ph2"></div><h3>이O호</h3><span>기업청소 팀장</span></div>
+      <div class="team-card"><div class="ph ph3"></div><h3>최O아</h3><span>주거청소 팀장</span></div>
+      <div class="team-card"><div class="ph ph4"></div><h3>정O민</h3><span>고객상담 매니저</span></div>
+    </div>
+
+    <div class="section-head">
+      <div class="eyebrow">Equipment</div>
+      <h2>보유 장비와 특징</h2>
+    </div>
+    <div class="feature-row">
+      <div class="feature-card"><div class="ico">✓</div><h3>업소용 스팀장비</h3><p>고온 스팀으로 세균·냄새까지 제거</p></div>
+      <div class="feature-card"><div class="ico">✓</div><h3>친환경 세제</h3><p>아이·반려동물이 있는 공간도 안심</p></div>
+      <div class="feature-card"><div class="ico">✓</div><h3>표준 체크리스트</h3><p>모든 작업자가 동일한 기준으로 작업</p></div>
+      <div class="feature-card"><div class="ico">✓</div><h3>사후 검수 시스템</h3><p>작업 완료 후 별도 검수 담당자 확인</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 클린베이스 · CLEAN BASE</div>
+</footer>
+
+<a href="/cleaning/quote" class="quick-cta"><span class="dot"></span>견적받기</a>
+
+<script>
+(function(){
+  var navEl = document.getElementById('clnNav');
+  window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+})();
+</script>
+
+</div>
+</body></html>

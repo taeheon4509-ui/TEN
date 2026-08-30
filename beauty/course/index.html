@@ -1,0 +1,171 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>수강신청 | 글로우아뜰리에</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="bty">
+<style>
+.bty{
+  --bg:#fffaf8; --bg2:#faf0ed; --ink:#2b2220; --ink-dim:#6b5b57; --muted:#9a8a86;
+  --line:#ede0dc; --rose:#c96b7a; --rose-dark:#a8515f;
+  --serif:'Noto Serif KR',serif; --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.bty *{box-sizing:border-box}
+.bty a{color:inherit;text-decoration:none}
+.bty img{max-width:100%;display:block}
+.bty .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.bty .eyebrow{font-family:var(--serif);font-style:italic;font-size:14px;letter-spacing:.12em;color:var(--rose) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.bty .eyebrow::before{content:"";width:22px;height:1px;background:var(--rose)}
+.bty h1,.bty h2,.bty h3{font-family:var(--serif);font-weight:700;color:var(--ink) !important;margin:0}
+.bty p{margin:0}
+.bty .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:17px 36px;border-radius:2px;transition:transform .2s ease,box-shadow .2s ease;background:transparent !important}
+.bty .btn-p{background:var(--rose) !important;color:#fff !important}
+.bty .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(201,107,122,.5)}
+.bty section{padding:96px 0;background:var(--bg)}
+@media(max-width:760px){.bty section{padding:60px 0}}
+
+.bty header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.bty .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.bty .brand{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink) !important;display:flex;align-items:center;gap:9px}
+.bty .brand .mark{width:32px;height:32px;border-radius:50%;background:var(--rose) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;font-family:var(--serif)}
+.bty .nav-links{display:flex;gap:26px}
+.bty .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.bty .nav-links a:hover{color:var(--rose) !important}
+.bty .nav-links a.active{color:var(--rose) !important}
+.bty .brand,.bty .nav-cta,.bty .nav-toggle{position:relative;z-index:141}
+.bty .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.bty .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.bty .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.bty .nav-toggle.open span:nth-child(2){opacity:0}
+.bty .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1040px){
+  .bty .nav-toggle{display:flex}
+  .bty .nav-cta{padding:9px 16px;font-size:12.5px}
+  .bty .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .bty .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .bty .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
+.bty .nav-cta{background:var(--rose) !important;color:#fff !important;padding:11px 20px;border-radius:2px;font-weight:700;font-size:13.5px}
+
+.bty .page-head{position:relative;padding:180px 0 60px;background:var(--bg2) !important;text-align:center}
+.bty .page-head .eyebrow{justify-content:center}
+.bty .page-head h1{font-size:clamp(26px,3.6vw,38px);font-weight:400}
+.bty .page-head p{color:var(--muted) !important;font-size:14.5px;margin-top:12px}
+
+.bty .section-head{max-width:640px;margin:0 auto 52px;text-align:center}
+.bty .section-head h2{font-size:clamp(24px,3.2vw,32px);margin-bottom:12px;font-weight:400}
+.bty .section-head p{color:var(--muted) !important;font-size:14.5px}
+
+/* 방향성 */
+.bty .direction-block{max-width:760px;margin:0 auto 90px;background:var(--bg2) !important;border-radius:6px;padding:40px 46px;border-left:3px solid var(--rose)}
+.bty .direction-block p{font-size:14.5px;color:var(--ink-dim) !important;line-height:2.2}
+
+/* 커리큘럼 */
+.bty .curri-list{max-width:760px;margin:0 auto 70px;display:flex;flex-direction:column}
+.bty .curri-row{display:flex;gap:20px;align-items:flex-start;padding:18px 4px;border-bottom:1px solid var(--line)}
+.bty .curri-row:first-child{border-top:1px solid var(--line)}
+.bty .curri-row .wk{font-family:var(--serif);font-size:14px;color:var(--rose) !important;font-weight:700;flex-shrink:0;width:70px}
+.bty .curri-row .desc{font-size:14px;color:var(--ink-dim) !important}
+
+.bty .enroll-cta{text-align:center}
+
+.bty footer{padding:34px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+
+.bty .quick-cta{position:fixed;right:26px;bottom:26px;z-index:200;display:flex;align-items:center;gap:9px;padding:15px 24px;font-weight:700;font-size:13.5px;color:#fff !important;background:var(--rose) !important;border-radius:2px;box-shadow:0 16px 30px -10px rgba(201,107,122,.55)}
+.bty .quick-cta:hover{transform:translateY(-3px)}
+.bty .quick-cta .dot{width:7px;height:7px;border-radius:50%;background:#fff}
+</style>
+
+<header class="nav" id="btyNav">
+  <div class="wrap nav-inner">
+    <a href="/beauty" class="brand"><span class="mark">글</span>글로우아뜰리에</a>
+    <nav class="nav-links">
+      <a href="/beauty/about">업체소개</a>
+      <a href="/beauty/treatment">시술</a>
+      <a href="/beauty/review">후기사례</a>
+      <a href="/beauty/course" class="active">수강신청</a>
+      <a href="/beauty/location">오시는길</a>
+      <a href="/beauty/contact">문의하기</a>
+    </nav>
+    <a href="/beauty/contact" class="nav-cta">문의하기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Academy</div>
+    <h1>수강신청</h1>
+    <p>현업 노하우를 그대로 전달하는 반영구 아카데미입니다.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Our Direction</div>
+      <h2>교육 방향성</h2>
+    </div>
+    <div class="direction-block">
+      <p>
+        기술은 배우는 것이지만, 감각은 함께 만들어가는 것이라 믿습니다.<br>
+        이론보다 실전 위주의 커리큘럼으로 구성했습니다.<br>
+        소수 정예로 운영해 한 분 한 분 꼼꼼히 지도합니다.<br>
+        현직 원장이 직접 강의부터 실습까지 전담합니다.<br>
+        초보자도 따라올 수 있도록 기초부터 차근차근 안내합니다.<br>
+        실제 모델 실습을 통해 현장 감각을 익힙니다.<br>
+        수료 후에도 취업·창업 상담을 함께 진행합니다.<br>
+        매 기수 정원을 제한해 밀도 높은 교육을 제공합니다.<br>
+        이론 교재와 실습 키트를 모두 포함해 부담을 줄였습니다.<br>
+        수료증 발급으로 활동에 필요한 자격을 갖출 수 있습니다.<br>
+        졸업 후에도 지속적인 보수교육 기회를 제공합니다.<br>
+        현업 노하우를 아낌없이 전달하는 것이 저희의 원칙입니다.
+      </p>
+    </div>
+
+    <div class="section-head">
+      <div class="eyebrow">Curriculum</div>
+      <h2>수강 커리큘럼</h2>
+    </div>
+    <div class="curri-list">
+      <div class="curri-row"><span class="wk">1주차</span><span class="desc">반영구 이론 및 위생·안전 교육</span></div>
+      <div class="curri-row"><span class="wk">2주차</span><span class="desc">눈썹 디자인 이론 및 도구 사용법</span></div>
+      <div class="curri-row"><span class="wk">3주차</span><span class="desc">눈썹 반영구 실습 (모델 실습)</span></div>
+      <div class="curri-row"><span class="wk">4주차</span><span class="desc">헤어라인·아이라인 반영구 이론</span></div>
+      <div class="curri-row"><span class="wk">5주차</span><span class="desc">헤어라인·아이라인 실습</span></div>
+      <div class="curri-row"><span class="wk">6주차</span><span class="desc">입술 반영구 및 색소 이론</span></div>
+      <div class="curri-row"><span class="wk">7주차</span><span class="desc">종합 실습 및 개별 피드백</span></div>
+      <div class="curri-row"><span class="wk">8주차</span><span class="desc">수료 평가 및 창업·취업 상담</span></div>
+    </div>
+
+    <div class="enroll-cta">
+      <a href="/beauty/contact" class="btn btn-p">수강신청하기 →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 글로우아뜰리에 · GLOW ATELIER</div>
+</footer>
+
+<a href="/beauty/contact" class="quick-cta"><span class="dot"></span>문의하기</a>
+
+<script>
+(function(){
+  var navEl = document.getElementById('btyNav');
+  window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+})();
+</script>
+
+</div>
+</body></html>

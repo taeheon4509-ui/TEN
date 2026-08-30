@@ -1,0 +1,168 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>견적받기 | 클린베이스</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<div class="cln">
+<style>
+.cln{
+  --bg:#ffffff; --bg2:#eef5fc; --ink:#1a2128; --ink-dim:#586472; --muted:#8993a1;
+  --line:#e3eaf1; --blue:#2f7fe0; --blue-dark:#1f66c2;
+  --sans:'Noto Sans KR',sans-serif;
+  background:var(--bg) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
+}
+.cln *{box-sizing:border-box}
+.cln a{color:inherit;text-decoration:none}
+.cln img{max-width:100%;display:block}
+.cln .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.cln .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--blue) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.cln .eyebrow::before{content:"";width:22px;height:2px;background:var(--blue)}
+.cln h1,.cln h2,.cln h3{font-family:var(--sans);font-weight:800;color:var(--ink) !important;margin:0}
+.cln p{margin:0}
+.cln .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:8px;transition:transform .2s ease,box-shadow .2s ease;background:transparent !important}
+.cln .btn-p{background:var(--blue) !important;color:#fff !important}
+.cln .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(47,127,224,.5)}
+.cln section{padding:96px 0;background:var(--bg)}
+@media(max-width:760px){.cln section{padding:60px 0}}
+
+.cln header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
+.cln .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.cln .brand{font-size:19px;font-weight:800;color:var(--ink) !important;display:flex;align-items:center;gap:9px}
+.cln .brand .mark{width:32px;height:32px;border-radius:10px;background:var(--blue) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900}
+.cln .nav-links{display:flex;gap:28px}
+.cln .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
+.cln .nav-links a:hover{color:var(--blue) !important}
+.cln .nav-links a.active{color:var(--blue) !important}
+.cln .brand,.cln .nav-cta,.cln .nav-toggle{position:relative;z-index:141}
+.cln .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.cln .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.cln .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.cln .nav-toggle.open span:nth-child(2){opacity:0}
+.cln .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:980px){
+  .cln .nav-toggle{display:flex}
+  .cln .nav-cta{padding:9px 16px;font-size:12.5px}
+  .cln .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .cln .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .cln .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
+.cln .nav-cta{background:var(--blue) !important;color:#fff !important;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px}
+
+/* 견적 폼 */
+.cln .quote-band{background:var(--ink) !important;padding-top:180px}
+.cln .quote-inner{display:flex;flex-wrap:wrap;gap:56px}
+.cln .quote-info{flex:1 1 300px}
+.cln .quote-info .eyebrow{color:#a9d0ff !important}
+.cln .quote-info h2{font-size:clamp(24px,3.2vw,32px);margin-bottom:16px;color:#fff !important}
+.cln .quote-info p{color:#c6d2de !important;font-size:14px;line-height:1.9;margin-bottom:20px;max-width:340px}
+.cln .quote-info .note{border-left:2px solid var(--blue);padding-left:16px;font-size:13px;color:#a9d0ff !important;line-height:1.8;margin-bottom:30px}
+.cln .basis-list{display:flex;flex-direction:column;gap:10px}
+.cln .basis-list div{font-size:13px;color:#cfd8e2 !important;padding:10px 14px;background:rgba(255,255,255,.06);border-radius:8px}
+.cln .basis-list b{color:#fff !important}
+.cln .quote-form{flex:1 1 380px;display:flex;flex-direction:column;gap:15px}
+.cln .field label{display:block;font-size:12px;letter-spacing:.05em;color:#b7c2ce !important;margin-bottom:8px}
+.cln .field input,.cln .field select,.cln .field textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:13px 14px;color:#fff !important;font-family:inherit;font-size:14px;outline:none;transition:border-color .2s}
+.cln .field select option{color:#111}
+.cln .field input:focus,.cln .field select:focus,.cln .field textarea:focus{border-color:var(--blue)}
+.cln .field textarea{resize:vertical;min-height:90px}
+.cln .form-msg{font-size:13px;color:#a9d0ff !important;opacity:0;transition:opacity .3s ease}
+.cln .form-msg.show{opacity:1}
+
+.cln footer{padding:34px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
+</style>
+
+<header class="nav" id="clnNav">
+  <div class="wrap nav-inner">
+    <a href="/cleaning" class="brand"><span class="mark">클</span>클린베이스</a>
+    <nav class="nav-links">
+      <a href="/cleaning/about">업체소개</a>
+      <a href="/cleaning/service">청소분야</a>
+      <a href="/cleaning/review">청소후기</a>
+      <a href="/cleaning/faq">자주묻는질문</a>
+    </nav>
+    <a href="/cleaning/quote" class="nav-cta">견적받기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="quote-band">
+  <div class="wrap quote-inner">
+    <div class="quote-info">
+      <div class="eyebrow">Get a Quote</div>
+      <h2>견적받기</h2>
+      <p>공간 정보와 희망 일정을 남겨주시면 확인 후 정확한 견적을 안내드립니다.</p>
+      <p class="note">문의 내용은 담당자 확인 후 개별로 연락드립니다.</p>
+      <div class="basis-list">
+        <div><b>견적 산정 기준</b> 공간 평수 · 청소 범위 · 오염도</div>
+        <div><b>방문 전 확인</b> 필요 시 현장 확인 후 최종 견적 안내</div>
+        <div><b>무료 상담</b> 견적 문의는 별도 비용이 없습니다</div>
+      </div>
+    </div>
+    <form class="quote-form" id="clnQuoteForm">
+      <div class="field">
+        <label for="cln-name">이름</label>
+        <input type="text" id="cln-name" name="name" placeholder="이름을 입력해주세요" required>
+      </div>
+      <div class="field">
+        <label for="cln-phone">연락처</label>
+        <input type="tel" id="cln-phone" name="phone" placeholder="010-0000-0000" required>
+      </div>
+      <div class="field">
+        <label for="cln-type">청소분야</label>
+        <select id="cln-type" name="type">
+          <option value="">선택해주세요</option>
+          <option value="원룸·투룸·쓰리룸">원룸·투룸·쓰리룸</option>
+          <option value="사무실·상업공간">사무실·상업공간</option>
+          <option value="기업청소">기업청소</option>
+          <option value="주거청소">주거청소</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="cln-size">공간 크기 (평수)</label>
+        <input type="text" id="cln-size" name="size" placeholder="예: 24평">
+      </div>
+      <div class="field">
+        <label for="cln-date">희망 날짜</label>
+        <input type="date" id="cln-date" name="date">
+      </div>
+      <div class="field">
+        <label for="cln-detail">문의내용</label>
+        <textarea id="cln-detail" name="detail" placeholder="공간 상태나 요청사항을 남겨주세요"></textarea>
+      </div>
+      <button type="submit" class="btn btn-p" style="align-self:flex-start">견적 신청하기</button>
+      <span class="form-msg" id="clnFormMsg">견적 신청이 접수되었습니다. 확인 후 개별로 연락드릴게요.</span>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 클린베이스 · CLEAN BASE</div>
+</footer>
+
+<script>
+(function(){
+  var navEl = document.getElementById('clnNav');
+  window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+
+  var form = document.getElementById('clnQuoteForm');
+  var msg = document.getElementById('clnFormMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.classList.add('show');
+    form.reset();
+    setTimeout(function(){ msg.classList.remove('show'); }, 6000);
+  });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+})();
+</script>
+
+</div>
+</body></html>
