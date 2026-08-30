@@ -1,153 +1,155 @@
-<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>라움 RAUM | 프리미엄 부동산 분양</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>라움 RAUM</title></head><body><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<div class="raumw">
 <style>
-:root{
+.raumw{
   --void:#0a0d12; --navy:#10151d; --card:#161c26; --line:rgba(255,255,255,.1);
   --ink:#f2efe8; --ink-dim:#a9b0bc; --muted:#7c8494;
   --gold:#c9a468; --teal:#3fb8a6;
   --serif:'Noto Serif KR',serif; --accent:'Cormorant Garamond',serif; --sans:'Noto Sans KR',sans-serif;
+  background:var(--void) !important;color:var(--ink) !important;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;display:block;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--void);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:1160px;margin:0 auto;padding:0 32px}
-.eyebrow{font-family:var(--accent);font-style:italic;font-size:14px;letter-spacing:.22em;color:var(--teal);text-transform:uppercase;display:inline-flex;align-items:center;gap:12px;margin-bottom:18px}
-.eyebrow::before{content:"";width:24px;height:1px;background:var(--teal)}
-h1,h2,h3{font-family:var(--serif);font-weight:400}
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:2px;transition:transform .25s ease,box-shadow .25s ease}
-.btn-p{background:linear-gradient(120deg,var(--gold),#e0c48f);color:#0a0d12}
-.btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(201,164,104,.5)}
-.btn-g{border:1px solid var(--line);color:var(--ink)}
-.btn-g:hover{border-color:var(--teal);background:rgba(63,184,166,.08)}
-section{padding:110px 0}
-@media(max-width:760px){section{padding:76px 0}}
+.raumw *{box-sizing:border-box}
+.raumw a{color:inherit;text-decoration:none}
+.raumw img{max-width:100%;display:block}
+.raumw .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.raumw .eyebrow{font-family:var(--accent);font-style:italic;font-size:14px;letter-spacing:.22em;color:var(--teal) !important;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px;margin-bottom:18px}
+.raumw .eyebrow::before{content:"";width:24px;height:1px;background:var(--teal)}
+.raumw h1,.raumw h2,.raumw h3{font-family:var(--serif);font-weight:400;color:var(--ink) !important;margin:0}
+.raumw p{margin:0}
+.raumw .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:15px 30px;border-radius:2px;transition:transform .25s ease,box-shadow .25s ease;background:transparent !important}
+.raumw .btn-p{background:linear-gradient(120deg,var(--gold),#e0c48f) !important;color:#0a0d12 !important}
+.raumw .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(201,164,104,.5)}
+.raumw .btn-g{border:1px solid var(--line);color:var(--ink) !important;background:rgba(255,255,255,.04) !important}
+.raumw .btn-g:hover{border-color:var(--teal);background:rgba(63,184,166,.08)}
+.raumw section{padding:110px 0;background:var(--void)}
+@media(max-width:760px){.raumw section{padding:76px 0}}
 
-/* nav */
-header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:22px 0;transition:.4s ease}
-header.nav.scrolled{background:rgba(10,13,18,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:14px 0}
-.nav-inner{display:flex;align-items:center;justify-content:space-between}
-.brand{font-family:var(--serif);font-size:19px;letter-spacing:.08em;font-weight:600}
-.brand span{color:var(--gold)}
-.nav-links{display:flex;gap:32px}
-.nav-links a{font-size:13.5px;color:var(--muted);transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-@media(max-width:900px){.nav-links{display:none}}
+.raumw header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:22px 0;transition:.4s ease}
+.raumw header.nav.scrolled{background:rgba(10,13,18,.9) !important;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:14px 0}
+.raumw .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.raumw .brand{font-family:var(--serif);font-size:19px;letter-spacing:.08em;font-weight:600;color:var(--ink) !important}
+.raumw .brand span{color:var(--gold) !important}
+.raumw .nav-links{display:flex;gap:32px}
+.raumw .nav-links a{font-size:13.5px;color:var(--muted) !important;transition:color .2s}
+.raumw .nav-links a:hover{color:var(--ink) !important}
+.raumw .brand,.raumw .nav-cta-btn,.raumw .nav-toggle{position:relative;z-index:141}
+.raumw .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.raumw .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.raumw .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.raumw .nav-toggle.open span:nth-child(2){opacity:0}
+.raumw .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:900px){
+  .raumw .nav-toggle{display:flex}
+  .raumw .nav-cta-btn{padding:9px 16px !important;font-size:12px !important}
+  .raumw .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--void);display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .raumw .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .raumw .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px;color:var(--ink) !important}
+}
 
-/* hero slideshow */
-.hero{position:relative;height:100vh;min-height:680px;overflow:hidden;display:flex;align-items:center}
-.hero .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:heroFade 18s infinite}
-.hero .slide:nth-child(1){animation-delay:0s}
-.hero .slide:nth-child(2){animation-delay:6s}
-.hero .slide:nth-child(3){animation-delay:12s}
-@keyframes heroFade{0%{opacity:0}5%{opacity:1}28%{opacity:1}33%{opacity:0}100%{opacity:0}}
-.hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(10,13,18,.92) 0%,rgba(10,13,18,.45) 46%,rgba(10,13,18,.15) 100%)}
-.hero-content{position:relative;z-index:2;text-align:center;max-width:820px;margin:0 auto;padding:0 24px}
-.hero h1{font-size:clamp(32px,5.6vw,58px);line-height:1.4;margin-bottom:24px}
-.hero h1 b{font-weight:700;display:block;color:var(--gold)}
-.hero p{color:var(--ink-dim);font-size:16.5px;max-width:520px;margin:0 auto 40px}
-.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.raumw .hero{position:relative;height:100vh;min-height:680px;overflow:hidden;display:flex;align-items:center}
+.raumw .hero .slide{position:absolute;inset:0;opacity:0;animation:raumHeroFade 18s infinite;overflow:hidden}
+.raumw .hero .slide img{width:100%;height:100%;object-fit:cover;display:block}
+.raumw .hero .slide:nth-child(1){animation-delay:0s}
+.raumw .hero .slide:nth-child(2){animation-delay:6s}
+.raumw .hero .slide:nth-child(3){animation-delay:12s}
+@keyframes raumHeroFade{0%{opacity:0}5%{opacity:1}28%{opacity:1}33%{opacity:0}100%{opacity:0}}
+.raumw .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(10,13,18,.92) 0%,rgba(10,13,18,.45) 46%,rgba(10,13,18,.15) 100%)}
+.raumw .hero-content{position:relative;z-index:2;text-align:center;max-width:820px;margin:0 auto;padding:0 24px}
+.raumw .hero h1{font-size:clamp(32px,5.6vw,58px);line-height:1.4;margin-bottom:24px;color:#f2efe8 !important}
+.raumw .hero h1 b{font-weight:700;display:block;color:var(--gold) !important}
+.raumw .hero p{color:var(--ink-dim) !important;font-size:16.5px;max-width:520px;margin:0 auto 40px}
+.raumw .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
-/* about */
-.about{background:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.about-inner{max-width:740px;margin:0 auto;text-align:center}
-.about h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:24px;line-height:1.5}
-.about p{color:var(--ink-dim);font-size:15.5px;line-height:2}
+.raumw .about{background:var(--navy) !important;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.raumw .about-inner{max-width:740px;margin:0 auto;text-align:center}
+.raumw .about h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:24px;line-height:1.5;color:var(--ink) !important}
+.raumw .about p{color:var(--ink-dim) !important;font-size:15.5px;line-height:2}
 
-/* mission 5 lines */
-.mission{text-align:center}
-.mission p{font-family:var(--serif);font-size:clamp(17px,2vw,21px);font-weight:300;line-height:2.15;color:var(--ink)}
-.mission .gold{color:var(--gold)}
+.raumw .mission{text-align:center}
+.raumw .mission p{font-family:var(--serif);font-size:clamp(17px,2vw,21px);font-weight:300;line-height:2.15;color:var(--ink) !important}
+.raumw .mission .gold{color:var(--gold) !important}
 
-/* property sections */
-.section-head{max-width:640px;margin:0 auto 60px;text-align:center}
-.section-head h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:14px}
-.section-head p{color:var(--muted);font-size:14.5px}
-.prop-grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
-.prop-card{flex:1 1 320px;max-width:360px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--card);transition:transform .3s ease,border-color .3s ease}
-.prop-card:hover{transform:translateY(-4px);border-color:rgba(201,164,104,.45)}
-.prop-card .ph{aspect-ratio:4/3;background-size:cover;background-position:center}
-.prop-card .body{padding:22px 24px}
-.prop-card .type{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:8px;display:block}
-.prop-card h3{font-size:18px;margin-bottom:8px}
-.prop-card .info{display:flex;gap:14px;font-size:12.5px;color:var(--muted);margin-bottom:10px}
-.prop-card .price{font-family:var(--serif);color:var(--gold);font-size:17px}
+.raumw .section-head{max-width:640px;margin:0 auto 60px;text-align:center}
+.raumw .section-head h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:14px;color:var(--ink) !important}
+.raumw .section-head p{color:var(--muted) !important;font-size:14.5px}
+.raumw .prop-grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
+.raumw .prop-card{flex:1 1 320px;max-width:360px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--card) !important;transition:transform .3s ease,border-color .3s ease}
+.raumw .prop-card:hover{transform:translateY(-4px);border-color:rgba(201,164,104,.45)}
+.raumw .prop-card .ph{aspect-ratio:4/3;overflow:hidden}
+.raumw .prop-card .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.raumw .prop-card .body{padding:22px 24px}
+.raumw .prop-card .type{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--teal) !important;text-transform:uppercase;margin-bottom:8px;display:block}
+.raumw .prop-card h3{font-size:18px;margin-bottom:8px;color:var(--ink) !important}
+.raumw .prop-card .info{display:flex;gap:14px;font-size:12.5px;color:var(--muted) !important;margin-bottom:10px}
+.raumw .prop-card .price{font-family:var(--serif);color:var(--gold) !important;font-size:17px}
 
-/* faq */
-.faq{background:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-details{border:1px solid var(--line);border-radius:8px;background:var(--void);padding:22px 26px}
-summary{cursor:pointer;font-weight:600;font-size:15px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:20px;color:var(--gold);flex-shrink:0}
-details[open] summary::after{content:"–"}
-details p{margin-top:14px;color:var(--muted);font-size:14px;line-height:1.85}
+.raumw .faq{background:var(--navy) !important;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.raumw .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.raumw details{border:1px solid var(--line);border-radius:8px;background:var(--void) !important;padding:22px 26px}
+.raumw summary{cursor:pointer;font-weight:600;font-size:15px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink) !important}
+.raumw summary::-webkit-details-marker{display:none}
+.raumw summary::after{content:"+";font-size:20px;color:var(--gold) !important;flex-shrink:0}
+.raumw details[open] summary::after{content:"\2013"}
+.raumw details p{margin-top:14px;color:var(--muted) !important;font-size:14px;line-height:1.85}
 
-/* contact */
-.contact-inner{display:flex;flex-wrap:wrap;gap:60px}
-.contact-info{flex:1 1 300px}
-.contact-info h2{font-size:clamp(26px,3.2vw,36px);margin-bottom:20px}
-.contact-info p{color:var(--muted);font-size:14.5px;line-height:1.9;margin-bottom:30px;max-width:360px}
-.contact-info .note{border-left:2px solid var(--teal);padding-left:18px;font-size:13px;color:var(--teal);line-height:1.8}
-.contact-form{flex:1 1 380px;display:flex;flex-direction:column;gap:18px}
-.field label{display:block;font-size:12px;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
-.field input,.field textarea{width:100%;background:transparent;border:1px solid var(--line);border-radius:4px;padding:13px 14px;color:var(--ink);font-family:inherit;font-size:14px;outline:none;transition:border-color .2s}
-.field input:focus,.field textarea:focus{border-color:var(--gold)}
-.field textarea{resize:vertical;min-height:100px}
-.form-msg{font-size:13px;color:var(--teal);opacity:0;transition:opacity .3s ease}
-.form-msg.show{opacity:1}
+.raumw .contact-inner{display:flex;flex-wrap:wrap;gap:60px}
+.raumw .contact-info{flex:1 1 300px}
+.raumw .contact-info h2{font-size:clamp(26px,3.2vw,36px);margin-bottom:20px;color:var(--ink) !important}
+.raumw .contact-info p{color:var(--muted) !important;font-size:14.5px;line-height:1.9;margin-bottom:30px;max-width:360px}
+.raumw .contact-info .note{border-left:2px solid var(--teal);padding-left:18px;font-size:13px;color:var(--teal) !important;line-height:1.8}
+.raumw .contact-form{flex:1 1 380px;display:flex;flex-direction:column;gap:18px}
+.raumw .field label{display:block;font-size:12px;letter-spacing:.06em;color:var(--muted) !important;margin-bottom:8px}
+.raumw .field input,.raumw .field textarea{width:100%;background:transparent;border:1px solid var(--line);border-radius:4px;padding:13px 14px;color:var(--ink) !important;font-family:inherit;font-size:14px;outline:none;transition:border-color .2s}
+.raumw .field input:focus,.raumw .field textarea:focus{border-color:var(--gold)}
+.raumw .field textarea{resize:vertical;min-height:100px}
+.raumw .form-msg{font-size:13px;color:var(--teal) !important;opacity:0;transition:opacity .3s ease}
+.raumw .form-msg.show{opacity:1}
 
-footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
+.raumw footer{padding:44px 0;text-align:center;color:var(--muted) !important;font-size:12px}
 
-.quick-cta{position:fixed;right:28px;bottom:28px;z-index:200;display:flex;align-items:center;gap:9px;padding:15px 24px;font-weight:700;font-size:13.5px;color:#0a0d12;background:linear-gradient(120deg,var(--gold),#e0c48f);border-radius:2px;box-shadow:0 16px 34px -10px rgba(201,164,104,.6)}
-.quick-cta:hover{transform:translateY(-3px)}
-.quick-cta .dot{width:7px;height:7px;border-radius:50%;background:#0a0d12}
+.raumw .quick-cta{position:fixed;right:28px;bottom:28px;z-index:200;display:flex;align-items:center;gap:9px;padding:15px 24px;font-weight:700;font-size:13.5px;color:#0a0d12 !important;background:linear-gradient(120deg,var(--gold),#e0c48f) !important;border-radius:2px;box-shadow:0 16px 34px -10px rgba(201,164,104,.6)}
+.raumw .quick-cta:hover{transform:translateY(-3px)}
+.raumw .quick-cta .dot{width:7px;height:7px;border-radius:50%;background:#0a0d12}
 </style>
-</head>
-<body>
 
 <header class="nav" id="siteNav">
   <div class="wrap nav-inner">
-    <a href="#top" class="brand">라움 <span>RAUM</span></a>
+    <a href="#raum-top" class="brand">라움 <span>RAUM</span></a>
     <nav class="nav-links">
-      <a href="#about">소개</a>
-      <a href="#office">사무실·상가</a>
-      <a href="#apt">아파트</a>
-      <a href="#villa">빌라·주택</a>
-      <a href="#room">원투쓰리룸</a>
-      <a href="#contact">문의하기</a>
+      <a href="#raum-about">소개</a>
+      <a href="#raum-office">사무실·상가</a>
+      <a href="#raum-apt">아파트</a>
+      <a href="#raum-villa">빌라·주택</a>
+      <a href="#raum-room">원투쓰리룸</a>
+      <a href="#raum-contact">문의하기</a>
     </nav>
-    <a href="#contact" class="btn btn-p" style="padding:10px 22px;font-size:13px">문의하기</a>
+    <a href="#raum-contact" class="btn btn-p nav-cta-btn" style="padding:10px 22px;font-size:13px">문의하기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<div id="top"></div>
+<div id="raum-top"></div>
 
 <section class="hero">
-  <div class="slide" style="background-image:url('https://myeongundang.vercel.app/realestate-images/hero1.jpg')"></div>
-  <div class="slide" style="background-image:url('https://myeongundang.vercel.app/realestate-images/hero2.jpg')"></div>
-  <div class="slide" style="background-image:url('https://myeongundang.vercel.app/realestate-images/hero3.jpg')"></div>
+  <div class="slide"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/realestate-images/hero1.jpg" alt=""></div>
+  <div class="slide"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/realestate-images/hero2.jpg" alt=""></div>
+  <div class="slide"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/realestate-images/hero3.jpg" alt=""></div>
   <div class="scrim"></div>
   <div class="hero-content">
     <div class="eyebrow">Premium Real Estate</div>
     <h1>도시를 내려다보는 자리에,<br><b>라움이 짓는 공간</b></h1>
     <p>사무실·상가부터 아파트, 빌라·주택, 원룸·투룸·쓰리룸까지 — 입지와 설계를 직접 검증한 매물만 소개합니다.</p>
     <div class="hero-btns">
-      <a href="#apt" class="btn btn-g">매물 둘러보기</a>
-      <a href="#contact" class="btn btn-p">상담 신청하기 →</a>
+      <a href="#raum-apt" class="btn btn-g">매물 둘러보기</a>
+      <a href="#raum-contact" class="btn btn-p">상담 신청하기 →</a>
     </div>
   </div>
 </section>
 
-<section class="about" id="about">
+<section class="about" id="raum-about">
   <div class="wrap about-inner">
     <div class="eyebrow">About</div>
     <h2>숫자보다, 실제로 걸어본 동네를<br>먼저 말씀드립니다</h2>
@@ -165,7 +167,7 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
   </div>
 </section>
 
-<section id="office">
+<section id="raum-office">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Office · Retail</div>
@@ -174,18 +176,18 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
     </div>
     <div class="prop-grid">
       <div class="prop-card">
-        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/office1.jpg')"></div>
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/realestate-images/office1.jpg" alt=""></div>
         <div class="body"><span class="type">사무실 · 임대</span><h3>강남대로 프라임 오피스</h3><div class="info"><span>42평</span><span>9층</span><span>즉시입주</span></div><div class="price">보증금 5,000 / 월 380만</div></div>
       </div>
       <div class="prop-card">
-        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/office2.jpg')"></div>
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/realestate-images/office2.jpg" alt=""></div>
         <div class="body"><span class="type">상가 · 분양</span><h3>역세권 1층 코너 상가</h3><div class="info"><span>28평</span><span>1층</span><span>코너입지</span></div><div class="price">분양가 9억 5,000</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="apt" style="background:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section id="raum-apt" style="background:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Apartment</div>
@@ -194,18 +196,18 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
     </div>
     <div class="prop-grid">
       <div class="prop-card">
-        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/apt1.jpg')"></div>
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/realestate-images/apt1.jpg" alt=""></div>
         <div class="body"><span class="type">신축 · 분양</span><h3>라움 더 스카이 84㎡</h3><div class="info"><span>34평</span><span>25층</span><span>남향</span></div><div class="price">분양가 14억 8,000</div></div>
       </div>
       <div class="prop-card">
-        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/apt2.jpg')"></div>
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/realestate-images/apt2.jpg" alt=""></div>
         <div class="body"><span class="type">준신축 · 매매</span><h3>한강뷰 리버파크 59㎡</h3><div class="info"><span>25평</span><span>18층</span><span>리모델링</span></div><div class="price">매매가 11억 2,000</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="villa">
+<section id="raum-villa">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Villa · House</div>
@@ -214,18 +216,18 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
     </div>
     <div class="prop-grid">
       <div class="prop-card">
-        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/villa1.jpg')"></div>
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/realestate-images/villa1.jpg" alt=""></div>
         <div class="body"><span class="type">신축 빌라</span><h3>성북동 테라스 하우스</h3><div class="info"><span>32평</span><span>3층</span><span>테라스</span></div><div class="price">매매가 8억 3,000</div></div>
       </div>
       <div class="prop-card">
-        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/villa2.jpg')"></div>
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/realestate-images/villa2.jpg" alt=""></div>
         <div class="body"><span class="type">단독주택</span><h3>정원 딸린 2층 단독주택</h3><div class="info"><span>48평</span><span>2층</span><span>마당 포함</span></div><div class="price">매매가 13억</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="room" style="background:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section id="raum-room" style="background:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">One · Two · Three Room</div>
@@ -234,22 +236,22 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
     </div>
     <div class="prop-grid">
       <div class="prop-card">
-        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/room2.jpg')"></div>
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/realestate-images/room2.jpg" alt=""></div>
         <div class="body"><span class="type">원룸</span><h3>신축 풀옵션 원룸</h3><div class="info"><span>8평</span><span>5층</span><span>즉시입주</span></div><div class="price">보증금 1,000 / 월 55만</div></div>
       </div>
       <div class="prop-card">
-        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/room1.jpg')"></div>
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/realestate-images/room1.jpg" alt=""></div>
         <div class="body"><span class="type">투룸</span><h3>역세권 신혼 투룸</h3><div class="info"><span>16평</span><span>3층</span><span>주차가능</span></div><div class="price">보증금 3,000 / 월 90만</div></div>
       </div>
       <div class="prop-card">
-        <div class="ph" style="background-image:url('https://myeongundang.vercel.app/realestate-images/villa1.jpg');background-position:60% center"></div>
+        <div class="ph"><img src="https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/realestate-images/villa1.jpg" alt="" style="object-position:60% center"></div>
         <div class="body"><span class="type">쓰리룸</span><h3>패밀리형 쓰리룸</h3><div class="info"><span>24평</span><span>7층</span><span>남향</span></div><div class="price">전세 3억 8,000</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="faq" id="faq">
+<section class="faq" id="raum-faq">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">FAQ</div>
@@ -280,7 +282,7 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
   </div>
 </section>
 
-<section id="contact">
+<section id="raum-contact">
   <div class="wrap contact-inner">
     <div class="contact-info">
       <div class="eyebrow">Contact</div>
@@ -288,21 +290,21 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
       <p>관심 있는 매물이나 조건을 남겨주시면, 확인 후 빠르게 안내드립니다.</p>
       <p class="note">이름, 연락처, 문의 내용을 작성해주시면 확인 후 개별로 연락드립니다.</p>
     </div>
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="raumContactForm">
       <div class="field">
-        <label for="name">이름</label>
-        <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" required>
+        <label for="raum-name">이름</label>
+        <input type="text" id="raum-name" name="name" placeholder="이름을 입력해주세요" required>
       </div>
       <div class="field">
-        <label for="phone">번호</label>
-        <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+        <label for="raum-phone">번호</label>
+        <input type="tel" id="raum-phone" name="phone" placeholder="010-0000-0000" required>
       </div>
       <div class="field">
-        <label for="detail">문의내용</label>
-        <textarea id="detail" name="detail" placeholder="관심 매물 유형, 예산, 희망 지역 등을 남겨주세요" required></textarea>
+        <label for="raum-detail">문의내용</label>
+        <textarea id="raum-detail" name="detail" placeholder="관심 매물 유형, 예산, 희망 지역 등을 남겨주세요" required></textarea>
       </div>
       <button type="submit" class="btn btn-p" style="align-self:flex-start">문의 보내기</button>
-      <span class="form-msg" id="formMsg">문의가 접수되었습니다. 확인 후 개별로 연락드릴게요.</span>
+      <span class="form-msg" id="raumFormMsg">문의가 접수되었습니다. 확인 후 개별로 연락드릴게요.</span>
     </form>
   </div>
 </section>
@@ -311,21 +313,39 @@ footer{padding:44px 0;text-align:center;color:var(--muted);font-size:12px}
   <div class="wrap">© 2026 라움 RAUM · 프리미엄 부동산 분양</div>
 </footer>
 
-<a href="#contact" class="quick-cta"><span class="dot"></span>문의하기</a>
+<a href="#raum-contact" class="quick-cta"><span class="dot"></span>문의하기</a>
 
 <script>
-  const navEl = document.getElementById('siteNav');
-  window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', window.scrollY > 30));
+(function(){
+  var navEl = document.getElementById('siteNav');
+  window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
 
-  const form = document.getElementById('contactForm');
-  const msg = document.getElementById('formMsg');
-  form.addEventListener('submit', (e) => {
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('mobile-open');
+      });
+    });
+  }
+
+  var form = document.getElementById('raumContactForm');
+  var msg = document.getElementById('raumFormMsg');
+  form.addEventListener('submit', function(e){
     e.preventDefault();
     msg.classList.add('show');
     form.reset();
-    setTimeout(() => msg.classList.remove('show'), 6000);
+    setTimeout(function(){ msg.classList.remove('show'); }, 6000);
   });
+})();
 </script>
 
-</body>
-</html>
+</div>
+</body></html>

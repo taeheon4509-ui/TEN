@@ -43,7 +43,19 @@
 .cln .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
 .cln .nav-links a:hover{color:var(--blue) !important}
 .cln .nav-links a.active{color:var(--blue) !important}
-@media(max-width:980px){.cln .nav-links{display:none}}
+.cln .brand,.cln .nav-cta,.cln .nav-toggle{position:relative;z-index:141}
+.cln .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.cln .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.cln .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.cln .nav-toggle.open span:nth-child(2){opacity:0}
+.cln .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:980px){
+  .cln .nav-toggle{display:flex}
+  .cln .nav-cta{padding:9px 16px;font-size:12.5px}
+  .cln .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .cln .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .cln .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
 .cln .nav-cta{background:var(--blue) !important;color:#fff !important;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px}
 
 /* 히어로 슬라이드 */
@@ -87,9 +99,10 @@
 
 /* 청소후기 통계 */
 .cln .stats-band{background:var(--ink) !important;padding:56px 0}
-.cln .stats-row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-around;text-align:center}
-.cln .stat b{display:block;font-size:clamp(30px,4vw,44px);font-weight:900;color:#a9d0ff !important;margin-bottom:6px}
-.cln .stat span{font-size:13.5px;color:#cfd8e2 !important;letter-spacing:.02em}
+.cln .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.cln .stat b{display:block;font-size:clamp(22px,4vw,44px);font-weight:900;color:#a9d0ff !important;margin-bottom:6px}
+.cln .stat span{font-size:12px;color:#cfd8e2 !important;letter-spacing:.02em;line-height:1.4}
+@media(max-width:480px){.cln .stat span{font-size:10.5px}}
 .cln .stat .stars{color:#ffc94d !important;font-size:15px;margin-bottom:6px;letter-spacing:2px}
 
 /* FAQ 요약 */
@@ -129,6 +142,7 @@
       <a href="/faq">자주묻는질문</a>
     </nav>
     <a href="/quote" class="nav-cta">견적받기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -256,6 +270,16 @@
 (function(){
   var navEl = document.getElementById('clnNav');
   window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
 })();
 </script>
 

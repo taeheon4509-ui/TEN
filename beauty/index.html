@@ -41,12 +41,25 @@
 .bty .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
 .bty .nav-links a:hover{color:var(--rose) !important}
 .bty .nav-links a.active{color:var(--rose) !important}
-@media(max-width:1040px){.bty .nav-links{display:none}}
+.bty .brand,.bty .nav-cta,.bty .nav-toggle{position:relative;z-index:141}
+.bty .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.bty .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.bty .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.bty .nav-toggle.open span:nth-child(2){opacity:0}
+.bty .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1040px){
+  .bty .nav-toggle{display:flex}
+  .bty .nav-cta{padding:9px 16px;font-size:12.5px}
+  .bty .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .bty .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .bty .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
 .bty .nav-cta{background:var(--rose) !important;color:#fff !important;padding:11px 20px;border-radius:2px;font-weight:700;font-size:13.5px}
 
 .bty .hero{position:relative;height:92vh;min-height:600px;overflow:hidden;display:flex;align-items:center;margin-top:0}
 .bty .hero .slide{position:absolute;inset:0;opacity:0;animation:btyHeroFade 18s infinite;overflow:hidden}
-.bty .hero .slide img{width:100%;height:100%;object-fit:cover;display:block}
+.bty .hero .slide img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
+@media(max-width:760px){.bty .hero{height:78vh;min-height:520px}}
 .bty .hero .slide:nth-child(1){animation-delay:0s}
 .bty .hero .slide:nth-child(2){animation-delay:6s}
 .bty .hero .slide:nth-child(3){animation-delay:12s}
@@ -79,14 +92,15 @@
 /* 추후관리법 */
 .bty .care-grid{display:flex;flex-wrap:wrap;gap:16px}
 .bty .care-card{flex:1 1 260px;background:var(--bg2) !important;border-radius:4px;padding:22px 24px;display:flex;gap:14px;align-items:flex-start}
-.bty .care-card .num{font-family:var(--serif);font-size:20px;color:var(--rose) !important;flex-shrink:0}
+.bty .care-card .care-num{background:none !important;border:none !important;border-radius:0 !important;padding:0 !important;width:auto !important;height:auto !important;display:inline !important;line-height:inherit !important;font-family:var(--serif);font-size:20px;color:var(--rose) !important;flex-shrink:0}
 .bty .care-card p{font-size:13.5px;color:var(--ink-dim) !important;line-height:1.8}
 
 /* 후기 통계 */
 .bty .stats-band{background:var(--ink) !important;padding:56px 0}
-.bty .stats-row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-around;text-align:center}
-.bty .stat b{display:block;font-family:var(--serif);font-size:clamp(30px,4vw,44px);font-weight:700;color:#f2c9cf !important;margin-bottom:6px}
-.bty .stat span{font-size:13.5px;color:#d8c9c6 !important;letter-spacing:.02em}
+.bty .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.bty .stat b{display:block;font-family:var(--serif);font-size:clamp(20px,4vw,44px);font-weight:700;color:#f2c9cf !important;margin-bottom:6px}
+.bty .stat span{font-size:12px;color:#d8c9c6 !important;letter-spacing:.02em;line-height:1.4}
+@media(max-width:480px){.bty .stat span{font-size:10.5px}}
 .bty .stat .stars{color:#ffc94d !important;font-size:15px;margin-bottom:6px;letter-spacing:2px}
 
 .bty footer{padding:34px 0;text-align:center;color:var(--muted) !important;font-size:12px;background:var(--bg)}
@@ -108,6 +122,7 @@
       <a href="/contact">문의하기</a>
     </nav>
     <a href="/contact" class="nav-cta">문의하기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -168,12 +183,12 @@
       <p>시술 효과를 오래 유지하기 위한 관리 안내입니다.</p>
     </div>
     <div class="care-grid">
-      <div class="care-card"><span class="num">01</span><p>시술 후 3일간 물 접촉을 최소화해주세요.</p></div>
-      <div class="care-card"><span class="num">02</span><p>연고는 소량씩 하루 2~3회 도포해주세요.</p></div>
-      <div class="care-card"><span class="num">03</span><p>딱지는 자연스럽게 떨어질 때까지 뜯지 마세요.</p></div>
-      <div class="care-card"><span class="num">04</span><p>사우나·찜질방·수영장은 2주간 자제해주세요.</p></div>
-      <div class="care-card"><span class="num">05</span><p>자외선 차단제로 색소 유지력을 관리해주세요.</p></div>
-      <div class="care-card"><span class="num">06</span><p>리터치는 4~6주 이내 방문을 권장드립니다.</p></div>
+      <div class="care-card"><span class="care-num">01</span><p>시술 후 3일간 물 접촉을 최소화해주세요.</p></div>
+      <div class="care-card"><span class="care-num">02</span><p>연고는 소량씩 하루 2~3회 도포해주세요.</p></div>
+      <div class="care-card"><span class="care-num">03</span><p>딱지는 자연스럽게 떨어질 때까지 뜯지 마세요.</p></div>
+      <div class="care-card"><span class="care-num">04</span><p>사우나·찜질방·수영장은 2주간 자제해주세요.</p></div>
+      <div class="care-card"><span class="care-num">05</span><p>자외선 차단제로 색소 유지력을 관리해주세요.</p></div>
+      <div class="care-card"><span class="care-num">06</span><p>리터치는 4~6주 이내 방문을 권장드립니다.</p></div>
     </div>
   </div>
 </section>
@@ -196,6 +211,16 @@
 (function(){
   var navEl = document.getElementById('btyNav');
   window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
 })();
 </script>
 

@@ -36,14 +36,25 @@
 .entc .ph5{background:linear-gradient(150deg,#c9ece6,#1c9b8d)}
 
 .entc header.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;background:#fff;border-bottom:1px solid var(--line);transition:.3s ease}
-.entc .nav-inner{display:flex;align-items:center;justify-content:space-between}
+.entc .nav-inner{display:flex;align-items:center;justify-content:space-between} .entc .brand,.entc .nav-cta,.entc .nav-toggle{position:relative;z-index:141}
 .entc .brand{font-size:19px;font-weight:800;color:var(--ink) !important;display:flex;align-items:center;gap:9px}
 .entc .brand .mark{width:32px;height:32px;border-radius:10px;background:var(--teal) !important;color:#fff !important;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900}
 .entc .nav-links{display:flex;gap:28px}
 .entc .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim) !important;transition:color .2s}
 .entc .nav-links a:hover{color:var(--teal) !important}
 .entc .nav-links a.active{color:var(--teal) !important}
-@media(max-width:980px){.entc .nav-links{display:none}}
+.entc .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.entc .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:.25s ease}
+.entc .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.entc .nav-toggle.open span:nth-child(2){opacity:0}
+.entc .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:980px){
+  .entc .nav-toggle{display:flex}
+  .entc .nav-cta{padding:9px 16px;font-size:12.5px}
+  .entc .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;flex-direction:column;align-items:flex-start;padding:100px 32px 40px;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s ease;z-index:140}
+  .entc .nav-links.mobile-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .entc .nav-links a{display:block;width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+}
 .entc .nav-cta{background:var(--teal) !important;color:#fff !important;padding:11px 22px;border-radius:30px;font-weight:700;font-size:14px}
 
 /* 히어로 슬라이드 */
@@ -90,9 +101,10 @@
 
 /* 하루 방문율 통계 */
 .entc .stats-band{background:var(--ink) !important;padding:56px 0}
-.entc .stats-row{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-around;text-align:center}
-.entc .stat b{display:block;font-size:clamp(30px,4vw,44px);font-weight:900;color:#7fe8db !important;margin-bottom:6px}
-.entc .stat span{font-size:13.5px;color:#cfcfcf !important;letter-spacing:.02em}
+.entc .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.entc .stat b{display:block;font-size:clamp(22px,4vw,44px);font-weight:900;color:#7fe8db !important;margin-bottom:6px}
+.entc .stat span{font-size:12px;color:#cfcfcf !important;letter-spacing:.02em;line-height:1.4}
+@media(max-width:480px){.entc .stat span{font-size:10.5px}}
 
 /* 간단 진료과목 */
 .entc .clinic-tags{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
@@ -126,7 +138,8 @@
       <a href="/price">비급여진료비</a>
       <a href="/reserve">온라인예약</a>
     </nav>
-    <a href="/reserve" class="nav-cta">온라인예약</a>
+    <a href="/reserve" class="nav-cta">예약하기</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -248,6 +261,16 @@
 (function(){
   var navEl = document.getElementById('entcNav');
   window.addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', window.scrollY > 30); });
+
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
 })();
 </script>
 
