@@ -1,4 +1,3 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>静寂庵</title></head><body>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -106,6 +105,7 @@
   .ryk nav.links a:hover::after{width:100%;}
   .ryk .nav-cta{display:flex;align-items:center;gap:26px;}
   .ryk .nav-cta .btn{padding:11px 24px;font-size:12px;}
+  .ryk .brand-mark,.ryk .nav-cta,.ryk .burger{position:relative;z-index:110;}
   .ryk .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
   .ryk .burger span{width:24px;height:1px;background:var(--ink);display:block;}
 
@@ -115,8 +115,9 @@
     display:flex;align-items:center;justify-content:center;
     overflow:hidden;
   }
+  @media(max-width:760px){.ryk .hero{height:82vh;min-height:560px;}}
   .ryk .hero .bg{position:absolute;inset:0;z-index:0;background:linear-gradient(160deg,#1a2a4a,#05070c) !important;}
-  .ryk .hero .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:heroZoom 22s ease-out forwards;}
+  .ryk .hero .bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.08);animation:heroZoom 22s ease-out forwards;}
   @keyframes heroZoom{to{transform:scale(1);}}
   .ryk .hero .scrim{
     position:absolute;inset:0;z-index:1;
@@ -191,7 +192,7 @@
   
   .ryk .intro{background:var(--navy-900) !important;}
   .ryk .intro-grid{display:flex;flex-wrap:wrap;gap:60px;align-items:center;}
-  .ryk .intro-grid>*{flex:1 1 420px;}
+  .ryk .intro-grid>*{flex:1 1 420px;min-width:0;}
   .ryk .intro-text h2{font-size:clamp(30px,3.6vw,44px);line-height:1.4;margin:22px 0 30px;font-weight:300;}
   .ryk .intro-text p{color:var(--ink-dim);font-size:16px;line-height:2;margin-bottom:36px;max-width:480px;}
   .ryk .pull-quote{
@@ -204,13 +205,12 @@
   .ryk .intro-media .frame{position:relative;border:1px solid var(--line-strong);padding:16px;}
   .ryk .intro-media .frame .img-wrap{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#1a2a4a,#0d1526) !important;}
   .ryk .fact-row{
-    display:flex;gap:0;margin-top:64px;border-top:1px solid var(--line);padding-top:36px;
-    flex-wrap:wrap;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:64px;border-top:1px solid var(--line);padding-top:36px;
   }
-  .ryk .fact-row .fact{flex:1;min-width:180px;padding:0 34px;border-left:1px solid var(--line);}
+  .ryk .fact-row .fact{padding:0 34px;border-left:1px solid var(--line);}
   .ryk .fact-row .fact:first-child{border-left:none;padding-left:0;}
-  .ryk .fact-row .fact .num{font-family:var(--font-disp);font-size:26px;color:var(--gold) !important;display:block;margin-bottom:8px;white-space:nowrap !important;writing-mode:horizontal-tb !important;}
-  .ryk .fact-row .fact .num *{display:inline !important;writing-mode:horizontal-tb !important;white-space:nowrap !important;color:inherit !important;background:none !important;}
+  .ryk .fact-row .fact .fact-num{background:none !important;border:none !important;border-radius:0 !important;padding:0 !important;width:auto !important;height:auto !important;line-height:inherit !important;font-family:var(--font-disp);font-size:26px;color:var(--gold) !important;display:block;margin-bottom:8px;white-space:nowrap !important;writing-mode:horizontal-tb !important;}
+  .ryk .fact-row .fact .fact-num *{display:inline !important;writing-mode:horizontal-tb !important;white-space:nowrap !important;color:inherit !important;background:none !important;}
   .ryk .fact-row .fact .label{font-size:13px;color:var(--ink-faint) !important;letter-spacing:0.05em;white-space:normal !important;writing-mode:horizontal-tb !important;}
   .ryk .fact-row .fact .label *{display:inline !important;writing-mode:horizontal-tb !important;color:inherit !important;background:none !important;}
 
@@ -351,20 +351,27 @@
   .ryk .foot-col ul li a:hover{color:var(--ink);}
   .ryk .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:30px;border-top:1px solid var(--line);flex-wrap:wrap;gap:14px;}
   .ryk .foot-bottom p{font-size:12px;color:var(--ink-faint);letter-spacing:.03em;}
-  @media(max-width:900px){.ryk .foot-top{grid-template-columns:1fr 1fr;}}
-  @media(max-width:560px){.ryk .foot-top{grid-template-columns:1fr;}}
+  @media(max-width:560px){.ryk .foot-top{flex-direction:column;gap:34px;}}
 
   
   @media(max-width:900px){
     .ryk nav.links{display:none;}
     .ryk .burger{display:flex;}
     .ryk .nav-cta .btn.ghost{display:none;}
-    .ryk .intro-grid{grid-template-columns:1fr;gap:50px;}
+    .ryk .brand-mark .kanji{font-size:17px;white-space:nowrap;}
+    .ryk .brand-mark .romaji{font-size:9.5px;white-space:nowrap;}
+    .ryk .nav-cta .btn.primary{padding:9px 16px;font-size:11px;white-space:nowrap;}
+    .ryk .nav-cta{gap:12px;}
+    .ryk .intro-grid{flex-direction:column;gap:50px;}
     .ryk .intro-media{order:-1;}
-    .ryk .room-row,.ryk .room-row.reverse{grid-template-columns:1fr;gap:34px;}
+    .ryk .room-row,.ryk .room-row.reverse{flex-direction:column;gap:34px;}
+    .ryk .room-row>*,.ryk .room-row.reverse>*{flex-basis:auto;width:100%;}
     .ryk .room-row.reverse .room-media,.ryk .room-row.reverse .room-copy{order:initial;}
-    .ryk .fact-row{gap:20px;}
-    .ryk .fact-row .fact{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:20px;flex:1 1 45%;}
+    .ryk .onsen-head{flex-direction:column;gap:24px;}
+    .ryk .res-inner{flex-direction:column;gap:40px;}
+    .ryk .fact-row{gap:0;grid-template-columns:1fr 1fr 1fr;}
+    .ryk .fact-row .fact{border-left:none;padding-left:16px;border-top:1px solid var(--line);padding-top:20px;padding-right:8px;}
+    .ryk .fact-row .fact:first-child{padding-left:0;}
   }
   @media(max-width:600px){
     .ryk .container{padding:0 24px;}
@@ -444,9 +451,9 @@
         <p class="pull-quote-cap">— 静寂庵 오카미(女将)</p>
 
         <div class="fact-row">
-          <div class="fact"><span class="num">9</span><span class="label">객실, 그 이상을 두지 않습니다</span></div>
-          <div class="fact"><span class="num">100%</span><span class="label">원천 온천수, 가열·순환 없이</span></div>
-          <div class="fact"><span class="num">1일 1조</span><span class="label">코스로 짓는 가이세키</span></div>
+          <div class="fact"><span class="fact-num">9</span><span class="label">객실, 그 이상을 두지 않습니다</span></div>
+          <div class="fact"><span class="fact-num">100%</span><span class="label">원천 온천수, 가열·순환 없이</span></div>
+          <div class="fact"><span class="fact-num">1일 1조</span><span class="label">코스로 짓는 가이세키</span></div>
         </div>
       </div>
       <div class="intro-media reveal reveal-delay2">
@@ -690,7 +697,7 @@
     if(open){
       linksEl.style.display = '';
     } else {
-      linksEl.style.cssText = 'display:flex;position:fixed;top:0;left:0;right:0;bottom:0;flex-direction:column;align-items:center;justify-content:center;gap:40px;background:rgba(5,7,12,0.98);z-index:99;';
+      linksEl.style.cssText = 'display:flex;position:fixed;top:0;left:0;right:0;bottom:0;flex-direction:column;align-items:center;justify-content:center;gap:40px;background:rgba(5,7,12,1);z-index:99;';
       linksEl.querySelectorAll('a').forEach(a=>a.style.fontSize='20px');
     }
   });
@@ -730,5 +737,3 @@
 </div>
 </body>
 </html>
-
-</body></html>
