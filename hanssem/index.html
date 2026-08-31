@@ -10,6 +10,13 @@
 .it nav .m{display:flex;gap:26px;font-size:14.5px;color:var(--muted);font-weight:500}
 .it nav .m a:hover{color:var(--text)}
 .it nav .nav-cta{background:var(--text);color:#fff;font-weight:700;font-size:13.5px;padding:11px 20px;border-radius:2px;white-space:nowrap}
+.it nav b,.it nav .nav-cta{position:relative;z-index:5}
+.it .nav-toggle{display:none;flex-direction:column;gap:5px;width:26px;cursor:pointer;position:relative;z-index:5;background:none;border:none;padding:0}
+.it .nav-toggle span{display:block;height:2px;background:var(--text);border-radius:2px}
+.it .mobile-menu{display:none;position:fixed;inset:0;z-index:4;background:var(--bg);padding:100px 32px 40px;flex-direction:column;gap:6px}
+.it .mobile-menu.open{display:flex}
+.it .mobile-menu a{padding:18px 0;border-bottom:1px solid var(--line);font-size:18px;font-weight:600}
+.it .mobile-menu .m-cta{margin-top:20px;background:var(--text);color:#fff;text-align:center;padding:16px;border-radius:2px;font-weight:700}
 .it .hero{position:relative;height:640px;overflow:hidden}
 .it .hero .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:heroFade 20s infinite}
 .it .hero .slide:nth-child(1){animation-delay:0s}
@@ -55,14 +62,19 @@
 .it .cta p{color:#B8B6AE;font-size:15.5px;margin-bottom:24px}
 .it .cta .btn{display:inline-block;background:var(--warm);color:#1c1c1a;font-weight:700;font-size:14.5px;padding:15px 32px;border-radius:2px}
 .it footer{padding:26px 0;text-align:center;color:var(--muted);font-size:13px}
-@media(max-width:760px){.it .steps{grid-template-columns:1fr}.it .process-wrap{grid-template-columns:1fr}.it .hero{height:560px}.it .hero .btn{display:none}.it nav .m{display:none}.it .work-slide{height:360px}}
+@media(max-width:760px){.it .steps{grid-template-columns:1fr}.it .process-wrap{grid-template-columns:1fr}.it .hero{height:560px}.it .hero .btn{display:none}.it nav .m{display:none}.it .nav-toggle{display:flex}.it .work-slide{height:360px}}
 </style>
 <div class="it">
 <nav class="wrap">
 <b>한샘 · 부산센텀점</b>
 <div class="m"><a href="#about">소개</a><a href="#process">프로세스</a><a href="#work">시공사례</a><a href="#visit">오시는 길</a></div>
 <a href="#contact" class="nav-cta">쇼룸 방문 예약</a>
+<button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#about">소개</a><a href="#process">프로세스</a><a href="#work">시공사례</a><a href="#visit">오시는 길</a>
+<a href="#contact" class="m-cta">쇼룸 방문 예약</a>
+</div>
 <div class="hero">
 <div class="slide" style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/living-room.jpg')"></div>
 <div class="slide" style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/kitchen-a.jpg')"></div>
@@ -133,4 +145,14 @@
 </div>
 <footer>© 한샘 플래그십 부산센텀점</footer>
 </div>
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.classList.remove('open'); });
+  });
+})();
+</script>
 </body></html>
