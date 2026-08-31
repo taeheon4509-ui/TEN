@@ -62,12 +62,15 @@
 .hs .about-copy{display:flex;flex-direction:column;justify-content:center;padding:0 80px}
 .hs .about-copy h2{font-family:'Noto Serif KR',serif;font-weight:300;font-size:clamp(26px,2.8vw,38px);line-height:1.5;margin:22px 0 28px}
 .hs .about-copy p{color:var(--stone);font-size:15.5px;font-weight:300;max-width:42ch;margin-bottom:20px}
+.hs .about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.hs .about-tags span{border:1px solid var(--line-light);color:var(--stone);font-size:12.5px;letter-spacing:.04em;padding:8px 16px;border-radius:100px}
 
 .hs .signature{height:64vh;min-height:400px;background-size:cover;background-position:center}
 
 .hs .info{padding:150px 0 130px;background:var(--paper-deep)}
 .hs .info-head{text-align:center;margin-bottom:80px}
 .hs .info-head h2{font-family:'Noto Serif KR',serif;font-weight:300;font-size:clamp(26px,3vw,40px);margin-top:20px}
+.hs .info-head p{color:var(--stone);font-size:15px;font-weight:300;max-width:44ch;margin:22px auto 0;line-height:1.9}
 .hs .ilist{display:flex;flex-direction:column}
 .hs .irow{display:grid;grid-template-columns:150px 1fr;gap:30px;align-items:baseline;padding:30px 0;border-top:1px solid var(--line-light)}
 .hs .ilist .irow:last-child{border-bottom:1px solid var(--line-light)}
@@ -85,6 +88,7 @@
 .hs .spread .copy .idx{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--bronze);letter-spacing:.1em}
 .hs .spread .copy h3{font-family:'Noto Serif KR',serif;font-weight:400;font-size:26px;margin:18px 0 14px}
 .hs .spread .copy span{color:var(--stone);font-size:14px;font-weight:300}
+.hs .spread .copy p{color:var(--stone);font-size:14.5px;font-weight:300;line-height:1.9;max-width:34ch;margin-top:16px}
 
 .hs .visit{background:var(--ink);color:var(--paper);padding:150px 0;text-align:center}
 .hs .visit .eyebrow{justify-content:center;display:flex}
@@ -160,7 +164,14 @@
 <div class="eyebrow reveal">ABOUT NEWNEWN</div>
 <h2 class="reveal">익숙한 공간을<br>낯설게 바라보는 시선</h2>
 <p class="reveal">뉴눈(NEWNEWN)은 '새로운 눈'이라는 이름처럼, 지나치기 쉬운 공간의 결을 다시 보게 만드는 소품을 소개합니다. 광안리 해수욕장 인근 골목 안 매장과 온라인 스마트스토어에서 함께 만나보실 수 있습니다.</p>
-<p class="reveal">매장에서 직접 만져보고 고른 물건을, 온라인에서도 같은 마음으로 큐레이션합니다.</p>
+<p class="reveal">매장에서 직접 만져보고 고른 물건을, 온라인에서도 같은 마음으로 큐레이션합니다. 계절이 바뀔 때마다, 그리고 손님들의 취향이 쌓일 때마다 진열도 조금씩 달라집니다.</p>
+<div class="about-tags reveal">
+<span>매장 · 온라인 동시 운영</span>
+<span>포장 가능</span>
+<span>간편결제</span>
+<span>단체 이용 가능</span>
+<span>주차 가능</span>
+</div>
 </div>
 </section>
 
@@ -170,12 +181,15 @@
 <div class="info-head">
 <div class="eyebrow reveal" style="justify-content:center;display:flex">STORE INFO</div>
 <h2 class="reveal">매장 안내</h2>
+<p class="reveal">광안리 해수욕장 인근 골목 안, 눈에 잘 띄지 않는 자리에 조용히 자리 잡고 있습니다. 처음 오시는 분들은 아래 위치와 대중교통 정보를 참고해주세요.</p>
 </div>
 <div class="ilist">
-<div class="irow reveal"><b>Location</b><span>부산 수영구 수영로546번길 20-3<br>광안리 해수욕장 인근 골목 안 · 광안역 5번 출구에서 도보 약 6분</span></div>
+<div class="irow reveal"><b>Location</b><span>부산 수영구 수영로546번길 20-3<br>광안리 해수욕장 인근 골목 안</span></div>
+<div class="irow reveal"><b>Subway</b><span>광안역 5번 출구에서 도보 약 6분 · 436m</span></div>
 <div class="irow reveal"><b>Hours</b><span>매일 11:00 오픈</span></div>
 <div class="irow reveal"><b>Contact</b><span><a href="tel:0507-1387-1408">0507-1387-1408</a></span></div>
 <div class="irow reveal"><b>Online</b><span><a href="https://smartstore.naver.com/newnewn_official" target="_blank" rel="noopener">smartstore.naver.com/newnewn_official</a></span></div>
+<div class="irow reveal"><b>Amenities</b><span>주차 가능 · 포장 가능 · 간편결제 · 단체 이용 가능 · 무선 인터넷</span></div>
 </div>
 </div></section>
 
@@ -186,15 +200,15 @@
 </div>
 <div class="spread">
 <div class="media reveal" style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/bathroom.jpg')"></div>
-<div class="copy reveal"><span class="idx disp">Ⅰ</span><h3>결이 있는 사물</h3><span>도자, 유리, 원목 소품</span></div>
+<div class="copy reveal"><span class="idx disp">Ⅰ</span><h3>결이 있는 사물</h3><span>도자, 유리, 원목 소품</span><p>손으로 빚은 도자기, 시간이 지날수록 깊어지는 원목, 빛을 머금는 유리 소품까지 — 만듦새가 느껴지는 것들만 골랐습니다.</p></div>
 </div>
 <div class="spread rev">
 <div class="media reveal" style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/kitchen-a.jpg')"></div>
-<div class="copy reveal"><span class="idx disp">Ⅱ</span><h3>공간에 향을 더하다</h3><span>조명, 캔들, 디퓨저</span></div>
+<div class="copy reveal"><span class="idx disp">Ⅱ</span><h3>공간에 향을 더하다</h3><span>조명, 캔들, 디퓨저</span><p>은은한 조명 하나, 향 하나가 공간의 인상을 바꿉니다. 계절과 시간에 따라 어울리는 무드를 함께 제안합니다.</p></div>
 </div>
 <div class="spread">
 <div class="media reveal" style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/desk.jpg')"></div>
-<div class="copy reveal"><span class="idx disp">Ⅲ</span><h3>매일 쓰는 것의 태도</h3><span>테이블웨어, 리빙 소품</span></div>
+<div class="copy reveal"><span class="idx disp">Ⅲ</span><h3>매일 쓰는 것의 태도</h3><span>테이블웨어, 리빙 소품</span><p>매일 손이 가는 물건일수록 더 신경 써서 고릅니다. 자주 쓰는 것이 가장 좋은 것이어야 한다는 생각으로 채웁니다.</p></div>
 </div>
 </div></section>
 
