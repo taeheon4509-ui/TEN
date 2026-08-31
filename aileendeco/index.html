@@ -1,0 +1,192 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>에일린데코 AILEEN DECO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+</head><body style="margin:0"><style>
+.ds{
+  --ink:#1A1A18; --paper:#FFFFFF; --paper-soft:#F5F4F1;
+  --stone:#6B6A63; --stone-soft:#9C9A90; --line:rgba(26,26,24,.1);
+  font-family:'Pretendard Variable','Noto Sans KR',sans-serif;
+  color:var(--ink); background:var(--paper); line-height:1.7; font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.ds *{margin:0;padding:0;box-sizing:border-box}
+.ds a{color:inherit;text-decoration:none}
+.ds img{display:block;max-width:100%}
+.ds .disp{font-family:'Cormorant Garamond',serif}
+.ds .wrap{max-width:1320px;margin:0 auto;padding:0 44px}
+.ds section{position:relative}
+.ds .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.ds .reveal.show{opacity:1;transform:translateY(0)}
+
+.ds nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:30px 44px}
+.ds nav::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,10,9,.55) 0%,rgba(10,10,9,.2) 65%,transparent 100%);pointer-events:none}
+.ds nav .m{display:flex;gap:34px;font-size:13.5px;letter-spacing:.02em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.35)}
+.ds nav .m a{position:relative;padding-bottom:3px}
+.ds nav .m a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:#fff;transition:width .35s ease}
+.ds nav .m a:hover::after{width:100%}
+.ds nav .word{font-family:'Cormorant Garamond',serif;font-size:23px;letter-spacing:.24em;font-weight:500;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.35)}
+.ds nav .soc{font-size:13px;letter-spacing:.04em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.35)}
+.ds .nav-toggle{display:none;flex-direction:column;gap:5px;width:24px;cursor:pointer;background:none;border:none;padding:0}
+.ds .nav-toggle span{display:block;height:1px;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.ds .mobile-menu{display:none;position:fixed;inset:0;z-index:60;background:var(--ink);padding:110px 36px 40px;flex-direction:column}
+.ds .mobile-menu.open{display:flex}
+.ds .mobile-menu a{color:#fff;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:18px}
+.ds .mobile-menu .m-cta{margin-top:24px;border:1px solid rgba(255,255,255,.5);color:#fff;text-align:center;padding:16px;font-size:13px;letter-spacing:.14em}
+
+.ds .hero{position:relative;height:100vh;min-height:640px;overflow:hidden}
+.ds .hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.05);animation:dsZoom 18s ease-out forwards}
+@keyframes dsZoom{to{transform:scale(1)}}
+.ds .hero .scrim{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,9,.55) 0%,transparent 32%,transparent 72%,rgba(10,10,9,.3) 100%)}
+.ds .hero-cap{position:absolute;left:44px;bottom:44px;z-index:2;color:#fff}
+.ds .hero-cap .eyebrow{font-size:12.5px;letter-spacing:.2em;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.ds .hero-cap h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(26px,3.6vw,44px);margin-top:14px;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+
+.ds .intro{padding:150px 0;text-align:center}
+.ds .intro .eyebrow{font-size:12px;letter-spacing:.3em;color:var(--stone-soft);text-transform:uppercase}
+.ds .intro p{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(22px,3vw,32px);line-height:1.9;color:var(--ink);max-width:24ch;margin:26px auto 0}
+.ds .badges{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:40px}
+.ds .badges span{border:1px solid var(--line);color:var(--stone);font-size:12.5px;letter-spacing:.03em;padding:9px 18px;border-radius:100px}
+
+.ds .works{padding:0 0 160px}
+.ds .works-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;border-bottom:1px solid var(--line);padding-bottom:26px}
+.ds .works-head h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(28px,3vw,40px);letter-spacing:.02em}
+.ds .works-head span{font-size:13px;color:var(--stone);letter-spacing:.04em}
+.ds .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 30px}
+.ds .card .ph{aspect-ratio:4/3;background-size:cover;background-position:center;overflow:hidden}
+.ds .card .ph div{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s ease}
+.ds .card:hover .ph div{transform:scale(1.05)}
+.ds .card p{margin-top:14px;font-size:14.5px;color:var(--ink);letter-spacing:.01em}
+.ds .card span{display:block;margin-top:3px;font-size:12px;color:var(--stone-soft);letter-spacing:.03em}
+
+.ds .about{background:var(--paper-soft);padding:150px 0}
+.ds .about-inner{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
+.ds .about-inner .media{aspect-ratio:3/4;background-size:cover;background-position:center}
+.ds .about-inner .eyebrow{font-size:12px;letter-spacing:.3em;color:var(--stone-soft);text-transform:uppercase}
+.ds .about-inner h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(26px,2.8vw,36px);line-height:1.5;margin:20px 0 26px}
+.ds .about-inner p{color:var(--stone);font-size:15px;font-weight:300;max-width:44ch;margin-bottom:16px}
+.ds .about-stats{display:flex;gap:44px;margin-top:34px;border-top:1px solid var(--line);padding-top:24px;flex-wrap:wrap}
+.ds .about-stats div b{display:block;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500}
+.ds .about-stats div span{font-size:12px;color:var(--stone-soft);letter-spacing:.03em}
+
+.ds .contact{padding:170px 0;text-align:center;background:var(--ink);color:#fff}
+.ds .contact .eyebrow{font-size:12px;letter-spacing:.3em;color:#9C9A90;text-transform:uppercase}
+.ds .contact h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(28px,3.6vw,46px);margin:22px 0 40px}
+.ds .contact .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.ds .contact .ghost-btn{display:inline-block;border:1px solid rgba(255,255,255,.5);color:#fff;padding:16px 34px;font-size:13px;letter-spacing:.16em;transition:background .3s,color .3s}
+.ds .contact .ghost-btn:hover{background:#fff;color:var(--ink)}
+.ds .contact .sub{color:#B9B7AE;font-size:13.5px;margin-top:30px;font-weight:300}
+
+.ds footer{padding:30px 44px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--stone-soft);letter-spacing:.03em}
+
+@media(max-width:900px){
+  .ds nav .m{display:none}
+  .ds nav .soc{display:none}
+  .ds .nav-toggle{display:flex}
+  .ds .wrap{padding:0 24px}
+  .ds .grid{grid-template-columns:1fr 1fr;gap:24px 18px}
+  .ds .works{padding:0 0 110px}
+  .ds .intro{padding:100px 0}
+  .ds .about{padding:100px 0}
+  .ds .about-inner{grid-template-columns:1fr;gap:30px}
+  .ds .about-inner .media{aspect-ratio:16/9}
+  .ds .about-stats{gap:28px}
+  .ds .contact{padding:120px 0}
+  .ds footer{flex-direction:column;gap:8px;text-align:center}
+}
+@media(max-width:560px){
+  .ds .grid{grid-template-columns:1fr}
+}
+</style>
+<div class="ds">
+<nav>
+<div class="m"><a href="#works">Portfolio</a><a href="#about">About</a><a href="#contact">무료 견적</a></div>
+<div class="word">AILEEN DECO</div>
+<div class="soc">@aileendeco_changwon</div>
+<button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#works">Portfolio</a><a href="#about">About</a><a href="#contact">무료 견적</a>
+<a href="https://open.kakao.com/o/sfNK7cre" class="m-cta" target="_blank" rel="noopener">카카오톡 상담</a>
+</div>
+
+<section class="hero">
+<div class="bg" style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/living-room.jpg')"></div>
+<div class="scrim"></div>
+<div class="hero-cap">
+<div class="eyebrow">PREMIUM CURTAIN &amp; BLIND</div>
+<h1>빛이 머무는 자리를<br>가장 먼저 압니다</h1>
+</div>
+</section>
+
+<section class="intro"><div class="wrap">
+<div class="eyebrow reveal">CHANGWON · JINHAE · MASAN · GIMHAE</div>
+<p class="reveal">같은 창이어도,<br>커튼 하나로 공간의 분위기가 달라집니다.</p>
+<div class="badges reveal">
+<span>무료 방문견적</span>
+<span>실측부터 시공까지 책임진행</span>
+<span>방송출연업체</span>
+</div>
+</div></section>
+
+<section id="works" class="works"><div class="wrap">
+<div class="works-head reveal">
+<h2>Portfolio</h2>
+<span>LIVING ROOM · BEDROOM · KIDS ROOM · BLINDS</span>
+</div>
+<div class="grid">
+<div class="card reveal"><div class="ph"><div style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/living-room.jpg')"></div></div><p>거실 시공 사례</p><span>LIVING ROOM</span></div>
+<div class="card reveal"><div class="ph"><div style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/bathroom.jpg')"></div></div><p>침실 시공 사례</p><span>BEDROOM</span></div>
+<div class="card reveal"><div class="ph"><div style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/kitchen-a.jpg')"></div></div><p>주방 블라인드</p><span>BLINDS</span></div>
+<div class="card reveal"><div class="ph"><div style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/desk.jpg')"></div></div><p>서재 시공 사례</p><span>STUDY ROOM</span></div>
+<div class="card reveal"><div class="ph"><div style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/kitchen-b.jpg')"></div></div><p>키즈룸 시공 사례</p><span>KIDS ROOM</span></div>
+<div class="card reveal"><div class="ph"><div style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/living-room.jpg')"></div></div><p>고객 후기 공간</p><span>REVIEWS</span></div>
+</div>
+</div></section>
+
+<section id="about" class="about"><div class="wrap about-inner">
+<div class="media reveal" style="background-image:url('https://raw.githubusercontent.com/taeheon4509-ui/TEN/main/hanssem-images/kitchen-b.jpg')"></div>
+<div>
+<div class="eyebrow reveal">ABOUT AILEEN</div>
+<h2 class="reveal">공간에 딱 맞는 빛과 결을<br>찾아드립니다</h2>
+<p class="reveal">에일린데코는 창원·진해·마산·김해 지역에서 커튼과 블라인드를 전문으로 하는 프리미엄 인테리어 스토어입니다. 전문가가 직접 방문해 실측하고, 시공까지 책임지고 진행합니다.</p>
+<p class="reveal">거실, 침실, 아이방까지 — 각 공간의 채광과 용도에 맞는 소재와 색감을 함께 골라드립니다.</p>
+<div class="about-stats reveal">
+<div><b>520+</b><span>INSTAGRAM POSTS</span></div>
+<div><b>4</b><span>SERVICE AREA</span></div>
+<div><b>TV</b><span>방송출연업체</span></div>
+</div>
+</div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<div class="eyebrow reveal">FREE CONSULTING</div>
+<h2 class="reveal">무료 방문견적, 지금 상담하세요</h2>
+<div class="btns">
+<a href="https://open.kakao.com/o/sfNK7cre" class="ghost-btn reveal" target="_blank" rel="noopener">카카오톡 상담</a>
+<a href="tel:01097117123" class="ghost-btn reveal">전화 문의</a>
+</div>
+<p class="sub reveal">창원 · 진해 · 마산 · 김해 지역 방문 가능</p>
+</div></section>
+
+<footer>
+<span>© AILEEN DECO curtain &amp; blind</span>
+<span>CHANGWON · JINHAE · MASAN · GIMHAE</span>
+</footer>
+</div>
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.classList.remove('open'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold:.15 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body></html>
