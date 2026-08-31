@@ -24,9 +24,11 @@
 .hs .reveal.show{opacity:1;transform:translateY(0)}
 
 /* nav */
-.hs nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:26px 44px;mix-blend-mode:difference}
-.hs nav b{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;letter-spacing:.14em;color:#fff}
-.hs nav .m{display:flex;gap:40px;font-size:13px;letter-spacing:.06em;color:#fff}
+.hs nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:26px 44px}
+.hs nav::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,12,8,.75) 0%,rgba(15,12,8,.32) 70%,transparent 100%);pointer-events:none}
+.hs nav b{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;letter-spacing:.14em;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.hs nav .m{display:flex;gap:40px;font-size:13px;letter-spacing:.06em;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.hs .nav-toggle span{box-shadow:0 1px 4px rgba(0,0,0,.3)}
 .hs nav .m a{position:relative;padding-bottom:3px}
 .hs nav .m a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:#fff;transition:width .35s ease}
 .hs nav .m a:hover::after{width:100%}
