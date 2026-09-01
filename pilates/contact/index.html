@@ -1,0 +1,146 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>문의하기 | 결 필라테스 GYEOL PILATES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Noto+Serif+KR:wght@200;300;500&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+</head><body style="margin:0"><style>
+.plt{
+  --ink:#2E2820; --ink-deep:#211C16; --cream:#F1E9DA; --cream-soft:#D9CDB6;
+  --gold:#C9A66B; --gold-soft:#8C7550; --line:rgba(241,233,218,.18); --line-dark:rgba(33,28,22,.1);
+  font-family:'Pretendard Variable','Noto Sans KR',sans-serif;
+  color:var(--cream); background:var(--ink); line-height:1.75; font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.plt *{margin:0;padding:0;box-sizing:border-box}
+.plt a{color:inherit;text-decoration:none}
+.plt img{display:block;max-width:100%}
+.plt .serif{font-family:'Noto Serif KR',serif}
+.plt .disp{font-family:'Cormorant Garamond',serif}
+.plt .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+.plt .eyebrow{font-family:'Pretendard Variable','Noto Sans KR',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.plt section{position:relative}
+.plt .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.plt .reveal.show{opacity:1;transform:translateY(0)}
+
+.plt nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:28px 44px;background:rgba(33,28,22,.92);border-bottom:1px solid var(--line)}
+.plt nav b{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.1em;font-weight:500}
+.plt nav .m{display:flex;gap:32px;font-size:13.5px;color:var(--cream-soft)}
+.plt nav .m a{position:relative;padding-bottom:3px}
+.plt nav .m a.active,.plt nav .m a:hover{color:var(--cream)}
+.plt nav .m a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .35s ease}
+.plt nav .m a.active::after,.plt nav .m a:hover::after{width:100%}
+.plt .nav-cta{border:1px solid var(--gold);color:var(--gold);font-size:12.5px;letter-spacing:.1em;padding:10px 18px;white-space:nowrap}
+.plt .nav-toggle{display:none;flex-direction:column;gap:5px;width:24px;cursor:pointer;background:none;border:none;padding:0}
+.plt .nav-toggle span{display:block;height:1px;background:var(--cream)}
+.plt .mobile-menu{display:none;position:fixed;inset:0;z-index:60;background:var(--ink-deep);padding:110px 36px 40px;flex-direction:column}
+.plt .mobile-menu.open{display:flex}
+.plt .mobile-menu a{color:var(--cream);padding:20px 0;border-bottom:1px solid var(--line);font-family:'Noto Serif KR',serif;font-size:19px;font-weight:300}
+.plt .mobile-menu .m-cta{margin-top:24px;border:1px solid var(--gold);color:var(--gold);text-align:center;padding:15px;font-size:13px;letter-spacing:.14em}
+
+.plt .page-hero{padding:180px 0 90px;text-align:center}
+.plt .page-hero h1{font-family:'Noto Serif KR',serif;font-weight:200;font-size:clamp(32px,4.4vw,52px);margin-top:20px}
+.plt .page-hero p{margin-top:18px;color:var(--cream-soft);font-size:14.5px;font-weight:300}
+
+.plt .section-pad{padding:0 0 150px}
+.plt .form-wrap{max-width:640px;margin:0 auto}
+.plt .field{margin-bottom:30px}
+.plt .field label{display:block;font-size:12.5px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.plt .field input,.plt .field textarea{
+  width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);
+  color:var(--cream);font-size:16px;font-family:inherit;padding:12px 4px;outline:none;
+  transition:border-color .3s ease;
+}
+.plt .field input:focus,.plt .field textarea:focus{border-color:var(--gold)}
+.plt .field textarea{resize:vertical;min-height:120px;line-height:1.8}
+.plt .field input::placeholder,.plt .field textarea::placeholder{color:var(--cream-soft);opacity:.5}
+.plt .row2{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.plt .submit{width:100%;background:var(--gold);color:var(--ink);border:none;padding:18px;font-size:14.5px;font-weight:600;letter-spacing:.1em;cursor:pointer;margin-top:10px;transition:background .3s ease}
+.plt .submit:hover{background:var(--cream)}
+.plt .note2{text-align:center;margin-top:26px;font-size:13px;color:var(--cream-soft);font-weight:300}
+.plt .direct{margin-top:70px;padding-top:50px;border-top:1px solid var(--line);text-align:center}
+.plt .direct .eyebrow{justify-content:center;display:flex;margin-bottom:18px}
+.plt .direct-row{display:flex;justify-content:center;gap:50px;flex-wrap:wrap}
+.plt .direct-row div b{display:block;font-size:12px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.plt .direct-row div span{font-size:15px;color:var(--cream-soft);font-weight:300}
+
+.plt footer{padding:34px 44px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--cream-soft);letter-spacing:.03em;border-top:1px solid var(--line)}
+
+@media(max-width:900px){
+  .plt nav .m{display:none}
+  .plt .nav-cta{display:none}
+  .plt .nav-toggle{display:flex}
+  .plt .wrap{padding:0 24px}
+  .plt .row2{grid-template-columns:1fr;gap:0}
+  .plt .direct-row{flex-direction:column;gap:24px}
+  .plt footer{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+<div class="plt">
+<nav>
+<b>결 <span class="disp" style="color:var(--gold)">GYEOL</span></b>
+<div class="m">
+<a href="/pilates">홈</a>
+<a href="/pilates/about">센터소개</a>
+<a href="/pilates/instructors">강사소개</a>
+<a href="/pilates/classes">수업소개</a>
+<a href="/pilates/location">오시는 길</a>
+</div>
+<a href="/pilates/contact" class="nav-cta">문의하기</a>
+<button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/pilates">홈</a>
+<a href="/pilates/about">센터소개</a>
+<a href="/pilates/instructors">강사소개</a>
+<a href="/pilates/classes">수업소개</a>
+<a href="/pilates/location">오시는 길</a>
+<a href="/pilates/contact" class="m-cta">문의하기</a>
+</div>
+
+<section class="page-hero"><div class="wrap">
+<div class="eyebrow">GET IN TOUCH</div>
+<h1>1:1 상담 문의하기</h1>
+<p>이름과 연락처, 궁금하신 내용을 남겨주시면 빠르게 답변드리겠습니다.</p>
+</div></section>
+
+<section class="section-pad"><div class="wrap">
+<form class="form-wrap reveal" onsubmit="event.preventDefault(); this.querySelector('.note2').style.display='block';">
+<div class="row2">
+<div class="field"><label>이름</label><input type="text" placeholder="홍길동" required></div>
+<div class="field"><label>연락처</label><input type="tel" placeholder="010-0000-0000" required></div>
+</div>
+<div class="field"><label>문의 내용</label><textarea placeholder="관심 있으신 수업 형태나 궁금하신 점을 편하게 남겨주세요." required></textarea></div>
+<button class="submit" type="submit">문의 남기기</button>
+<p class="note2" style="display:none">문의가 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.</p>
+</form>
+
+<div class="direct">
+<div class="eyebrow">OR CONTACT DIRECTLY</div>
+<div class="direct-row">
+<div><b>Phone</b><span>02-1234-5678</span></div>
+<div><b>Kakao</b><span>@결필라테스</span></div>
+<div><b>Hours</b><span>평일 07:00 – 21:00</span></div>
+</div>
+</div>
+</div></section>
+
+<footer>
+<span>© GYEOL PILATES</span>
+<span>결 필라테스 · 담백하게, 꾸준하게</span>
+</footer>
+</div>
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.classList.remove('open'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold:.15 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body></html>

@@ -1,0 +1,157 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>수업소개 | 결 필라테스 GYEOL PILATES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Noto+Serif+KR:wght@200;300;500&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+</head><body style="margin:0"><style>
+.plt{
+  --ink:#2E2820; --ink-deep:#211C16; --cream:#F1E9DA; --cream-soft:#D9CDB6;
+  --gold:#C9A66B; --gold-soft:#8C7550; --line:rgba(241,233,218,.14); --line-dark:rgba(33,28,22,.1);
+  font-family:'Pretendard Variable','Noto Sans KR',sans-serif;
+  color:var(--cream); background:var(--ink); line-height:1.75; font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.plt *{margin:0;padding:0;box-sizing:border-box}
+.plt a{color:inherit;text-decoration:none}
+.plt img{display:block;max-width:100%}
+.plt .serif{font-family:'Noto Serif KR',serif}
+.plt .disp{font-family:'Cormorant Garamond',serif}
+.plt .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+.plt .eyebrow{font-family:'Pretendard Variable','Noto Sans KR',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.plt section{position:relative}
+.plt .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.plt .reveal.show{opacity:1;transform:translateY(0)}
+
+.plt nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:28px 44px;background:rgba(33,28,22,.92);border-bottom:1px solid var(--line)}
+.plt nav b{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.1em;font-weight:500}
+.plt nav .m{display:flex;gap:32px;font-size:13.5px;color:var(--cream-soft)}
+.plt nav .m a{position:relative;padding-bottom:3px}
+.plt nav .m a.active,.plt nav .m a:hover{color:var(--cream)}
+.plt nav .m a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .35s ease}
+.plt nav .m a.active::after,.plt nav .m a:hover::after{width:100%}
+.plt .nav-cta{border:1px solid var(--gold);color:var(--gold);font-size:12.5px;letter-spacing:.1em;padding:10px 18px;white-space:nowrap}
+.plt .nav-toggle{display:none;flex-direction:column;gap:5px;width:24px;cursor:pointer;background:none;border:none;padding:0}
+.plt .nav-toggle span{display:block;height:1px;background:var(--cream)}
+.plt .mobile-menu{display:none;position:fixed;inset:0;z-index:60;background:var(--ink-deep);padding:110px 36px 40px;flex-direction:column}
+.plt .mobile-menu.open{display:flex}
+.plt .mobile-menu a{color:var(--cream);padding:20px 0;border-bottom:1px solid var(--line);font-family:'Noto Serif KR',serif;font-size:19px;font-weight:300}
+.plt .mobile-menu .m-cta{margin-top:24px;border:1px solid var(--gold);color:var(--gold);text-align:center;padding:15px;font-size:13px;letter-spacing:.14em}
+
+.plt .page-hero{padding:180px 0 90px;text-align:center}
+.plt .page-hero h1{font-family:'Noto Serif KR',serif;font-weight:200;font-size:clamp(32px,4.4vw,52px);margin-top:20px}
+
+.plt .section-pad{padding:0 0 140px}
+.plt .classes{display:flex;flex-direction:column;gap:1px;background:var(--line)}
+.plt .crow{background:var(--ink);display:grid;grid-template-columns:120px 1fr 260px;gap:40px;padding:56px 44px;align-items:center}
+.plt .crow .tag{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--gold);font-weight:500}
+.plt .crow h3{font-family:'Noto Serif KR',serif;font-weight:400;font-size:23px;margin-bottom:12px}
+.plt .crow p{font-size:14px;color:var(--cream-soft);font-weight:300;line-height:1.9;max-width:52ch}
+.plt .crow .meta{border-left:1px solid var(--line);padding-left:34px}
+.plt .crow .meta div{font-size:12px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.plt .crow .meta span{display:block;font-size:13.5px;color:var(--cream-soft);margin-bottom:4px}
+
+.plt .note{background:var(--ink-deep);padding:90px 0;text-align:center}
+.plt .note p{max-width:640px;margin:0 auto;color:var(--cream-soft);font-size:14.5px;font-weight:300;line-height:2}
+
+.plt footer{padding:34px 44px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--cream-soft);letter-spacing:.03em;border-top:1px solid var(--line)}
+
+@media(max-width:900px){
+  .plt nav .m{display:none}
+  .plt .nav-cta{display:none}
+  .plt .nav-toggle{display:flex}
+  .plt .wrap{padding:0 24px}
+  .plt .crow{grid-template-columns:1fr;gap:18px;padding:40px 24px}
+  .plt .crow .meta{border-left:none;border-top:1px solid var(--line);padding-left:0;padding-top:20px}
+  .plt footer{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+<div class="plt">
+<nav>
+<b>결 <span class="disp" style="color:var(--gold)">GYEOL</span></b>
+<div class="m">
+<a href="/pilates">홈</a>
+<a href="/pilates/about">센터소개</a>
+<a href="/pilates/instructors">강사소개</a>
+<a href="/pilates/classes" class="active">수업소개</a>
+<a href="/pilates/location">오시는 길</a>
+</div>
+<a href="/pilates/contact" class="nav-cta">문의하기</a>
+<button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/pilates">홈</a>
+<a href="/pilates/about">센터소개</a>
+<a href="/pilates/instructors">강사소개</a>
+<a href="/pilates/classes">수업소개</a>
+<a href="/pilates/location">오시는 길</a>
+<a href="/pilates/contact" class="m-cta">문의하기</a>
+</div>
+
+<section class="page-hero"><div class="wrap">
+<div class="eyebrow">OUR CLASSES</div>
+<h1>나에게 맞는 수업 형태</h1>
+</div></section>
+
+<section class="section-pad"><div class="wrap">
+<div class="classes">
+
+<div class="crow reveal">
+<div class="tag disp">1:1</div>
+<div><h3>개인 수업</h3><p>강사 한 명이 회원님 한 분만을 위해 진행하는 프라이빗 수업입니다. 체형 교정, 통증 관리, 재활 목적에 가장 적합하며 매 회차 세밀한 피드백을 드립니다.</p></div>
+<div class="meta">
+<div>SUITED FOR</div>
+<span>체형교정 · 통증관리 · 재활</span>
+<div style="margin-top:14px">DURATION</div>
+<span>50분 · 주 1~3회 권장</span>
+</div>
+</div>
+
+<div class="crow reveal">
+<div class="tag disp">2:1</div>
+<div><h3>듀엣 수업</h3><p>친구나 가족과 함께, 혹은 비슷한 목표를 가진 회원님과 짝을 이뤄 진행합니다. 1:1보다 합리적인 비용으로 세심한 지도를 받을 수 있습니다.</p></div>
+<div class="meta">
+<div>SUITED FOR</div>
+<span>동반 운동 · 체력 향상</span>
+<div style="margin-top:14px">DURATION</div>
+<span>50분 · 주 1~2회 권장</span>
+</div>
+</div>
+
+<div class="crow reveal">
+<div class="tag disp">Group</div>
+<div><h3>그룹 수업</h3><p>최대 4인 소그룹으로 진행하는 매트 중심 수업입니다. 기본기를 다지고 싶은 분, 여러 사람과 함께 운동하는 분위기를 선호하시는 분께 추천합니다.</p></div>
+<div class="meta">
+<div>SUITED FOR</div>
+<span>기초 체력 · 유연성 향상</span>
+<div style="margin-top:14px">DURATION</div>
+<span>50분 · 최대 4인</span>
+</div>
+</div>
+
+</div>
+</div></section>
+
+<section class="note"><div class="wrap">
+<p class="reveal">모든 수업은 첫 방문 시 1:1 체형 상담을 먼저 진행한 뒤,<br>회원님께 맞는 수업 형태를 함께 정합니다.<br>운동이 처음이신 분도 편하게 문의해주세요.</p>
+</div></section>
+
+<footer>
+<span>© GYEOL PILATES</span>
+<span>결 필라테스 · 담백하게, 꾸준하게</span>
+</footer>
+</div>
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.classList.remove('open'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold:.15 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body></html>
