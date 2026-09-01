@@ -1,0 +1,232 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>결 필라테스 GYEOL PILATES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Noto+Serif+KR:wght@200;300;500&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+</head><body style="margin:0"><style>
+.plt{
+  --ink:#2E2820; --ink-deep:#211C16; --cream:#F1E9DA; --cream-soft:#D9CDB6;
+  --gold:#C9A66B; --gold-soft:#8C7550; --line:rgba(241,233,218,.14); --line-dark:rgba(33,28,22,.1);
+  font-family:'Pretendard Variable','Noto Sans KR',sans-serif;
+  color:var(--cream); background:var(--ink); line-height:1.75; font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.plt *{margin:0;padding:0;box-sizing:border-box}
+.plt a{color:inherit;text-decoration:none}
+.plt img{display:block;max-width:100%}
+.plt .serif{font-family:'Noto Serif KR',serif}
+.plt .disp{font-family:'Cormorant Garamond',serif}
+.plt .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+.plt .eyebrow{font-family:'Pretendard Variable','Noto Sans KR',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.plt section{position:relative}
+.plt .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.plt .reveal.show{opacity:1;transform:translateY(0)}
+
+.plt nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:28px 44px;background:linear-gradient(180deg,rgba(33,28,22,.7) 0%,rgba(33,28,22,.15) 75%,transparent 100%)}
+.plt nav b{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.1em;font-weight:500}
+.plt nav .m{display:flex;gap:32px;font-size:13.5px;color:var(--cream-soft)}
+.plt nav .m a{position:relative;padding-bottom:3px}
+.plt nav .m a.active,.plt nav .m a:hover{color:var(--cream)}
+.plt nav .m a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .35s ease}
+.plt nav .m a.active::after,.plt nav .m a:hover::after{width:100%}
+.plt .nav-cta{border:1px solid var(--gold);color:var(--gold);font-size:12.5px;letter-spacing:.1em;padding:10px 18px;white-space:nowrap}
+.plt .nav-toggle{display:none;flex-direction:column;gap:5px;width:24px;cursor:pointer;background:none;border:none;padding:0}
+.plt .nav-toggle span{display:block;height:1px;background:var(--cream)}
+.plt .mobile-menu{display:none;position:fixed;inset:0;z-index:60;background:var(--ink-deep);padding:110px 36px 40px;flex-direction:column}
+.plt .mobile-menu.open{display:flex}
+.plt .mobile-menu a{color:var(--cream);padding:20px 0;border-bottom:1px solid var(--line);font-family:'Noto Serif KR',serif;font-size:19px;font-weight:300}
+.plt .mobile-menu .m-cta{margin-top:24px;border:1px solid var(--gold);color:var(--gold);text-align:center;padding:15px;font-size:13px;letter-spacing:.14em}
+
+/* hero slider */
+.plt .hero{position:relative;height:100vh;min-height:660px;overflow:hidden}
+.plt .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.plt .slide.active{opacity:1}
+.plt .slide .tint{position:absolute;inset:0;background:radial-gradient(120% 100% at 15% 60%,rgba(46,40,32,.2),rgba(33,28,22,.88))}
+.plt .hero-inner{position:relative;z-index:2;height:100%;display:flex;align-items:center}
+.plt .hero-copy{padding:0 44px;max-width:640px}
+.plt .hero-copy .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.plt .hero-copy .eyebrow::before{content:"";width:30px;height:1px;background:var(--gold)}
+.plt .hero h1{font-family:'Noto Serif KR',serif;font-weight:200;font-size:clamp(34px,5.4vw,64px);line-height:1.35}
+.plt .hero p{margin-top:22px;font-size:14.5px;color:var(--cream-soft);font-weight:300;max-width:38ch}
+.plt .hero-dots{position:absolute;left:44px;bottom:42px;z-index:3;display:flex;gap:10px}
+.plt .hero-dots span{width:22px;height:2px;background:var(--line);cursor:pointer;transition:background .3s}
+.plt .hero-dots span.active{background:var(--gold)}
+.plt .silhouette{position:absolute;right:-40px;bottom:0;width:min(52vw,640px);opacity:.9}
+
+.plt .section-pad{padding:130px 0}
+@media(max-width:760px){.plt .section-pad{padding:88px 0}}
+
+/* mission */
+.plt .mission-head{text-align:center;max-width:640px;margin:0 auto 60px}
+.plt .mission-head .eyebrow{justify-content:center;display:flex}
+.plt .mission-head h2{font-family:'Noto Serif KR',serif;font-weight:300;font-size:clamp(26px,3vw,38px);margin-top:18px}
+.plt .mission-body{max-width:760px;margin:0 auto;text-align:center;color:var(--cream-soft);font-size:15.5px;font-weight:300;line-height:2.1}
+
+/* teaser grid */
+.plt .teasers{background:var(--ink-deep)}
+.plt .tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.plt .tcard{background:var(--ink-deep);padding:52px 34px;transition:background .3s ease}
+.plt .tcard:hover{background:#282219}
+.plt .tcard .n{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);letter-spacing:.1em}
+.plt .tcard h3{font-family:'Noto Serif KR',serif;font-weight:400;font-size:20px;margin:18px 0 12px}
+.plt .tcard span{font-size:13px;color:var(--cream-soft);font-weight:300;display:block;margin-bottom:18px}
+.plt .tcard .go{font-size:12.5px;letter-spacing:.08em;color:var(--gold)}
+
+/* quote */
+.plt .quote{text-align:center;padding:150px 0}
+.plt .quote .rule{width:1px;height:60px;background:var(--gold);margin:0 auto 40px}
+.plt .quote p{font-family:'Noto Serif KR',serif;font-weight:200;font-style:italic;font-size:clamp(20px,2.6vw,28px);line-height:2;max-width:22ch;margin:0 auto}
+
+.plt .cta{background:var(--ink-deep);padding:140px 0;text-align:center}
+.plt .cta h2{font-family:'Noto Serif KR',serif;font-weight:200;font-size:clamp(28px,3.4vw,42px);margin:20px 0 40px}
+.plt .cta .btn{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:16px 34px;font-size:13px;letter-spacing:.16em}
+
+.plt footer{padding:34px 44px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--cream-soft);letter-spacing:.03em;border-top:1px solid var(--line)}
+
+@media(max-width:900px){
+  .plt nav .m{display:none}
+  .plt .nav-cta{display:none}
+  .plt .nav-toggle{display:flex}
+  .plt .wrap{padding:0 24px}
+  .plt .hero-copy{padding:0 24px}
+  .plt .silhouette{width:78vw;opacity:.5}
+  .plt .tgrid{grid-template-columns:1fr 1fr}
+  .plt footer{flex-direction:column;gap:8px;text-align:center}
+}
+@media(max-width:560px){
+  .plt .tgrid{grid-template-columns:1fr}
+}
+</style>
+<div class="plt">
+<nav>
+<b>결 <span class="disp" style="color:var(--gold)">GYEOL</span></b>
+<div class="m">
+<a href="/pilates" class="active">홈</a>
+<a href="/pilates/about">센터소개</a>
+<a href="/pilates/instructors">강사소개</a>
+<a href="/pilates/classes">수업소개</a>
+<a href="/pilates/location">오시는 길</a>
+</div>
+<a href="/pilates/contact" class="nav-cta">문의하기</a>
+<button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/pilates">홈</a>
+<a href="/pilates/about">센터소개</a>
+<a href="/pilates/instructors">강사소개</a>
+<a href="/pilates/classes">수업소개</a>
+<a href="/pilates/location">오시는 길</a>
+<a href="/pilates/contact" class="m-cta">문의하기</a>
+</div>
+
+<section class="hero">
+<div class="slide active" data-i="0">
+  <div class="tint"></div>
+  <svg class="silhouette" viewBox="0 0 500 500" preserveAspectRatio="xMidYMax meet">
+    <path d="M120 430 C110 410 115 385 140 375 L150 340 C130 330 122 310 130 288 C136 270 152 260 168 262 L200 210 C186 198 182 178 194 162 C208 144 234 144 248 162 C258 176 258 194 248 208 L226 250 C246 258 260 276 258 298 C256 318 240 332 220 332 L214 372 C232 384 240 404 232 424 C226 440 208 448 192 442"
+      fill="none" stroke="#C9A66B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="221" cy="182" r="18" fill="none" stroke="#C9A66B" stroke-width="2.5"/>
+  </svg>
+  <div class="hero-inner"><div class="wrap"><div class="hero-copy">
+    <div class="eyebrow">GYEOL PILATES · PRIVATE STUDIO</div>
+    <h1>숨을 고르는<br>시간</h1>
+    <p>하루 중 오직 나에게만 집중하는 순간, 결 필라테스에서 시작됩니다.</p>
+  </div></div></div>
+</div>
+<div class="slide" data-i="1">
+  <div class="tint"></div>
+  <svg class="silhouette" viewBox="0 0 500 500" preserveAspectRatio="xMidYMax meet">
+    <path d="M150 420 C160 400 158 378 138 366 C120 356 116 336 128 320 L110 280 C96 272 90 254 100 238 C112 220 138 218 152 234 L188 270 C200 258 220 258 232 270 C246 284 244 306 230 318 L196 348 C210 360 214 380 202 396 C192 410 172 412 160 400"
+      fill="none" stroke="#C9A66B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="103" cy="222" r="17" fill="none" stroke="#C9A66B" stroke-width="2.5"/>
+  </svg>
+  <div class="hero-inner"><div class="wrap"><div class="hero-copy">
+    <div class="eyebrow">1:1 PRIVATE LESSON</div>
+    <h1>결을 따라<br>움직이다</h1>
+    <p>몸의 결을 먼저 읽는 1:1 맞춤 수업으로, 무리하지 않고 바르게 움직입니다.</p>
+  </div></div></div>
+</div>
+<div class="slide" data-i="2">
+  <div class="tint"></div>
+  <svg class="silhouette" viewBox="0 0 500 500" preserveAspectRatio="xMidYMax meet">
+    <path d="M130 400 L130 340 C112 336 100 320 100 300 C100 278 118 260 140 260 L140 220 C124 214 114 198 116 180 C118 158 138 142 160 146 C180 150 194 168 190 188 L184 226 L228 232 C240 218 260 216 274 228 C290 242 290 266 274 280 C264 288 250 288 240 282 L206 264 L200 340 C222 348 234 368 226 388 C220 404 200 412 184 404"
+      fill="none" stroke="#C9A66B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="152" cy="166" r="17" fill="none" stroke="#C9A66B" stroke-width="2.5"/>
+  </svg>
+  <div class="hero-inner"><div class="wrap"><div class="hero-copy">
+    <div class="eyebrow">SMALL GROUP CLASS</div>
+    <h1>천천히,<br>그러나 분명하게</h1>
+    <p>작은 변화가 쌓여 만드는 확실한 결과, 조급하지 않은 속도로 함께합니다.</p>
+  </div></div></div>
+</div>
+<div class="hero-dots">
+  <span class="active" data-i="0"></span><span data-i="1"></span><span data-i="2"></span>
+</div>
+</section>
+
+<section class="section-pad"><div class="wrap">
+<div class="mission-head">
+<div class="eyebrow">OUR PHILOSOPHY</div>
+<h2 class="reveal">결 필라테스의 마음</h2>
+</div>
+<div class="mission-body reveal">
+결 필라테스는 '몸의 결을 따라간다'는 마음으로 시작했습니다.<br>
+빠른 변화보다, 내 몸이 지닌 고유한 결을 이해하는 것이 먼저라고 생각합니다.<br><br>
+운동을 오래 쉬었던 분도, 통증 때문에 망설이셨던 분도<br>
+누구나 자신의 속도로 시작할 수 있도록 1:1 맞춤 상담을 먼저 진행합니다.<br><br>
+숫자로 증명하는 결과보다, 몸이 스스로 느끼는 변화를 더 중요하게 여깁니다.<br>
+그래서 매 수업마다 오늘의 컨디션을 먼저 묻고, 그날에 맞는 동작을 함께 찾아갑니다.<br><br>
+바른 자세, 편안한 호흡, 그리고 꾸준함 —<br>
+결 필라테스가 오래도록 지켜온 세 가지 원칙입니다.
+</div>
+</div></section>
+
+<section class="teasers"><div class="tgrid">
+<a class="tcard reveal" href="/pilates/about"><div class="n disp">01</div><h3>센터소개</h3><span>결의 공간과 철학</span><div class="go">자세히 보기 →</div></a>
+<a class="tcard reveal" href="/pilates/instructors"><div class="n disp">02</div><h3>강사소개</h3><span>5인의 전담 강사진</span><div class="go">자세히 보기 →</div></a>
+<a class="tcard reveal" href="/pilates/classes"><div class="n disp">03</div><h3>수업소개</h3><span>1:1 · 2:1 · 그룹수업</span><div class="go">자세히 보기 →</div></a>
+<a class="tcard reveal" href="/pilates/location"><div class="n disp">04</div><h3>오시는 길</h3><span>위치와 대중교통 안내</span><div class="go">자세히 보기 →</div></a>
+</div></section>
+
+<section class="quote"><div class="wrap">
+<div class="rule reveal"></div>
+<p class="reveal">몸이 편안해지는 순간,<br>마음도 함께 편안해집니다.</p>
+</div></section>
+
+<section class="cta" id="contact"><div class="wrap">
+<div class="eyebrow reveal" style="justify-content:center;display:flex">FIRST VISIT</div>
+<h2 class="reveal">첫 수업, 1:1 상담부터 시작하세요</h2>
+<a href="/pilates/contact" class="btn reveal">지금 문의하기</a>
+</div></section>
+
+<footer>
+<span>© GYEOL PILATES</span>
+<span>결 필라테스 · 담백하게, 꾸준하게</span>
+</footer>
+</div>
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.classList.remove('open'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold:.15 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  var slides = document.querySelectorAll('.slide');
+  var dots = document.querySelectorAll('.hero-dots span');
+  var cur = 0;
+  function show(i){
+    slides.forEach(function(s,idx){ s.classList.toggle('active', idx===i); });
+    dots.forEach(function(d,idx){ d.classList.toggle('active', idx===i); });
+    cur = i;
+  }
+  dots.forEach(function(d){ d.addEventListener('click', function(){ show(+d.dataset.i); }); });
+  setInterval(function(){ show((cur+1) % slides.length); }, 5000);
+})();
+</script>
+</body></html>
