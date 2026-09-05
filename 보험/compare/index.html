@@ -1,0 +1,174 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>실시간 보험비교 | 프라임에셋 PRIME ASSET</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+</head><body style="margin:0"><style>
+.pa{
+  --bg:#FFFFFF; --bg-soft:#F3F6FB; --navy:#122A4D; --navy-deep:#0B1930;
+  --ink:#16233A; --stone:#5A6B85; --stone-soft:#8B97AC;
+  --point:#FF6A3D; --point-deep:#E2551F; --line:rgba(18,42,77,.1);
+  font-family:'Pretendard Variable','Noto Sans KR',sans-serif;
+  color:var(--ink); background:var(--bg); line-height:1.7; font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.pa *{margin:0;padding:0;box-sizing:border-box}
+.pa h1,.pa h2,.pa h3,.pa p,.pa span,.pa div,.pa a,.pa b,.pa li{word-break:keep-all}
+.pa a{color:inherit;text-decoration:none}
+.pa img{display:block;max-width:100%}
+.pa .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+.pa .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--point)}
+.pa section{position:relative}
+.pa .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.pa .reveal.show{opacity:1;transform:translateY(0)}
+
+.pa nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 44px;background:rgba(255,255,255,.98);border-bottom:1px solid var(--line)}
+.pa nav b{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--navy)}
+.pa nav b span{color:var(--point)}
+.pa nav .m{display:flex;gap:30px;font-size:14px;font-weight:600;color:var(--stone)}
+.pa nav .m a.active,.pa nav .m a:hover{color:var(--navy)}
+.pa .nav-cta{background:var(--point);color:#fff;font-weight:700;font-size:13.5px;padding:11px 20px;border-radius:6px;white-space:nowrap;transition:background .25s ease}
+.pa .nav-cta:hover{background:var(--point-deep)}
+.pa .nav-toggle{display:none;flex-direction:column;gap:5px;width:24px;cursor:pointer;background:none;border:none;padding:0}
+.pa .nav-toggle span{display:block;height:2px;border-radius:2px;background:var(--navy)}
+.pa .mobile-menu{display:none;position:fixed;inset:0;z-index:60;background:#fff;padding:100px 32px 40px;flex-direction:column}
+.pa .mobile-menu.open{display:flex}
+.pa .mobile-menu a{color:var(--navy);padding:18px 0;border-bottom:1px solid var(--line);font-size:18px;font-weight:600}
+.pa .mobile-menu .m-cta{margin-top:24px;background:var(--point);color:#fff;text-align:center;padding:16px;border-radius:6px;font-weight:700}
+
+.pa .page-hero{padding:160px 0 70px;text-align:center;background:var(--bg-soft)}
+.pa .page-hero h1{font-size:clamp(30px,4vw,46px);font-weight:800;color:var(--navy);margin-top:16px}
+.pa .page-hero p{margin-top:16px;color:var(--stone);font-size:15.5px;max-width:50ch;margin-left:auto;margin-right:auto}
+
+.pa .section-pad{padding:100px 0}
+@media(max-width:760px){.pa .section-pad{padding:70px 0}}
+
+.pa .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.pa .ccard{border:1px solid var(--line);border-radius:14px;padding:36px 30px;transition:box-shadow .25s ease,transform .25s ease}
+.pa .ccard:hover{box-shadow:0 20px 40px -20px rgba(18,42,77,.18);transform:translateY(-4px)}
+.pa .ccard .ic{width:52px;height:52px;border-radius:12px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}
+.pa .ccard h3{font-size:19px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.pa .ccard p{font-size:14px;color:var(--stone);line-height:1.85}
+
+.pa .steps2{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.pa .srow{display:grid;grid-template-columns:80px 1fr;gap:24px;padding:34px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.pa .srow .n{font-size:28px;font-weight:800;color:var(--point)}
+.pa .srow b{display:block;font-size:17px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.pa .srow span{font-size:14px;color:var(--stone)}
+
+.pa .form-band{background:var(--navy-deep);color:#fff;text-align:center}
+.pa .form-band h2{font-size:clamp(26px,3vw,36px);font-weight:800;margin:16px 0 12px}
+.pa .form-band p{color:#AAB6C8;font-size:14.5px;margin-bottom:36px}
+.pa .qform{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px;text-align:left}
+.pa .qform .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pa .qform input,.pa .qform select{width:100%;padding:14px 16px;border-radius:8px;border:none;font-size:15px;font-family:inherit}
+.pa .qform button{background:var(--point);color:#fff;font-weight:700;font-size:15.5px;padding:16px;border:none;border-radius:8px;cursor:pointer;margin-top:6px;transition:background .25s ease}
+.pa .qform button:hover{background:var(--point-deep)}
+.pa .qform .ok{display:none;text-align:center;font-size:13.5px;color:#B8E2C4;margin-top:6px}
+
+.pa footer{padding:36px 44px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--stone-soft);border-top:1px solid var(--line)}
+
+@media(max-width:900px){
+  .pa nav .m{display:none}
+  .pa .nav-cta{display:none}
+  .pa .nav-toggle{display:flex}
+  .pa .wrap{padding:0 24px}
+  .pa .cgrid{grid-template-columns:1fr;gap:20px}
+  .pa .srow{grid-template-columns:56px 1fr}
+  .pa .qform .row2{grid-template-columns:1fr}
+  .pa footer{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+<div class="pa">
+<nav>
+<b>PRIME<span>ASSET</span></b>
+<div class="m">
+<a href="/compare" class="active">실시간 보험비교</a>
+<a href="/claim">보험금 청구</a>
+<a href="/careers">입사지원</a>
+<a href="/contact">문의하기</a>
+</div>
+<a href="/contact" class="nav-cta">무료 상담 신청</a>
+<button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/compare">실시간 보험비교</a>
+<a href="/claim">보험금 청구</a>
+<a href="/careers">입사지원</a>
+<a href="/contact">문의하기</a>
+<a href="/contact" class="m-cta">무료 상담 신청</a>
+</div>
+
+<section class="page-hero"><div class="wrap">
+<div class="eyebrow">REAL-TIME COMPARE</div>
+<h1>실시간 보험비교</h1>
+<p>여러 보험사 상품을 한 화면에서 비교하고, 내 상황에 맞는 보장을 전문 컨설턴트와 함께 찾아보세요.</p>
+</div></section>
+
+<section class="section-pad"><div class="wrap">
+<div class="cgrid">
+<div class="ccard reveal"><div class="ic">🚗</div><h3>자동차보험</h3><p>보험료와 보장 내용을 여러 보험사 상품으로 한 번에 비교합니다.</p></div>
+<div class="ccard reveal"><div class="ic">🏥</div><h3>실손·건강보험</h3><p>중복 가입 여부를 확인하고, 필요한 보장만 남겨드립니다.</p></div>
+<div class="ccard reveal"><div class="ic">👨‍👩‍👧</div><h3>종신·정기보험</h3><p>가족 구성과 소득에 맞는 보장 규모를 함께 설계합니다.</p></div>
+<div class="ccard reveal"><div class="ic">🏠</div><h3>화재·재산보험</h3><p>주택, 상가 등 재산 보호를 위한 상품을 비교해 드립니다.</p></div>
+<div class="ccard reveal"><div class="ic">💼</div><h3>기업·단체보험</h3><p>임직원을 위한 단체보장 상품도 조건에 맞게 설계합니다.</p></div>
+<div class="ccard reveal"><div class="ic">🐾</div><h3>펫보험</h3><p>반려동물 의료비 보장 상품도 함께 비교할 수 있습니다.</p></div>
+</div>
+</div></section>
+
+<section class="section-pad" style="background:var(--bg-soft)"><div class="wrap">
+<div style="text-align:center;margin-bottom:20px">
+<div class="eyebrow" style="display:flex;justify-content:center">HOW IT WORKS</div>
+<h2 class="reveal" style="font-size:clamp(24px,2.8vw,32px);font-weight:800;color:var(--navy);margin-top:14px">비교는 이렇게 진행됩니다</h2>
+</div>
+<div class="steps2">
+<div class="srow reveal"><div class="n">01</div><div><b>기본 정보 입력</b><span>연령, 필요 보장 항목 등 간단한 정보만 알려주세요.</span></div></div>
+<div class="srow reveal"><div class="n">02</div><div><b>보험사 상품 비교</b><span>제휴된 30여 개 보험사 상품을 조건에 맞게 정리해 드립니다.</span></div></div>
+<div class="srow reveal"><div class="n">03</div><div><b>전문가 상담</b><span>비교 결과를 바탕으로 전문 컨설턴트가 직접 설명해 드립니다.</span></div></div>
+<div class="srow reveal"><div class="n">04</div><div><b>가입 결정</b><span>충분히 이해하신 후, 원하시는 상품으로 가입을 진행합니다.</span></div></div>
+</div>
+</div></section>
+
+<section class="section-pad form-band"><div class="wrap">
+<div class="eyebrow" style="color:#FF9470;display:flex;justify-content:center">FREE COMPARISON</div>
+<h2>지금 바로 비교 견적을 받아보세요</h2>
+<p>간단한 정보만 남겨주시면 24시간 이내 연락드립니다.</p>
+<form class="qform" onsubmit="event.preventDefault(); this.querySelector('.ok').style.display='block';">
+<div class="row2">
+<input type="text" placeholder="이름" required>
+<input type="tel" placeholder="연락처" required>
+</div>
+<select required>
+<option value="" disabled selected>관심 있는 보험 종류</option>
+<option>자동차보험</option>
+<option>실손·건강보험</option>
+<option>종신·정기보험</option>
+<option>화재·재산보험</option>
+<option>기업·단체보험</option>
+<option>펫보험</option>
+</select>
+<button type="submit">무료 비교 견적 받기</button>
+<p class="ok">신청이 접수되었습니다. 24시간 이내 연락드리겠습니다.</p>
+</form>
+</div></section>
+
+<footer>
+<span>© PRIME ASSET</span>
+<span>실시간 보험비교 · 보험금 청구 · 문의하기</span>
+</footer>
+</div>
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.classList.remove('open'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold:.15 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body></html>

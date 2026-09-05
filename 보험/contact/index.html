@@ -1,0 +1,154 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>문의하기 | 프라임에셋 PRIME ASSET</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+</head><body style="margin:0"><style>
+.pa{
+  --bg:#FFFFFF; --bg-soft:#F3F6FB; --navy:#122A4D; --navy-deep:#0B1930;
+  --ink:#16233A; --stone:#5A6B85; --stone-soft:#8B97AC;
+  --point:#FF6A3D; --point-deep:#E2551F; --line:rgba(18,42,77,.1);
+  font-family:'Pretendard Variable','Noto Sans KR',sans-serif;
+  color:var(--ink); background:var(--bg); line-height:1.7; font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.pa *{margin:0;padding:0;box-sizing:border-box}
+.pa h1,.pa h2,.pa h3,.pa p,.pa span,.pa div,.pa a,.pa b,.pa li{word-break:keep-all}
+.pa a{color:inherit;text-decoration:none}
+.pa img{display:block;max-width:100%}
+.pa .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+.pa .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--point)}
+.pa section{position:relative}
+.pa .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.pa .reveal.show{opacity:1;transform:translateY(0)}
+
+.pa nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 44px;background:rgba(255,255,255,.98);border-bottom:1px solid var(--line)}
+.pa nav b{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--navy)}
+.pa nav b span{color:var(--point)}
+.pa nav .m{display:flex;gap:30px;font-size:14px;font-weight:600;color:var(--stone)}
+.pa nav .m a.active,.pa nav .m a:hover{color:var(--navy)}
+.pa .nav-cta{background:var(--point);color:#fff;font-weight:700;font-size:13.5px;padding:11px 20px;border-radius:6px;white-space:nowrap;transition:background .25s ease}
+.pa .nav-cta:hover{background:var(--point-deep)}
+.pa .nav-toggle{display:none;flex-direction:column;gap:5px;width:24px;cursor:pointer;background:none;border:none;padding:0}
+.pa .nav-toggle span{display:block;height:2px;border-radius:2px;background:var(--navy)}
+.pa .mobile-menu{display:none;position:fixed;inset:0;z-index:60;background:#fff;padding:100px 32px 40px;flex-direction:column}
+.pa .mobile-menu.open{display:flex}
+.pa .mobile-menu a{color:var(--navy);padding:18px 0;border-bottom:1px solid var(--line);font-size:18px;font-weight:600}
+.pa .mobile-menu .m-cta{margin-top:24px;background:var(--point);color:#fff;text-align:center;padding:16px;border-radius:6px;font-weight:700}
+
+.pa .page-hero{padding:160px 0 70px;text-align:center;background:var(--bg-soft)}
+.pa .page-hero h1{font-size:clamp(30px,4vw,46px);font-weight:800;color:var(--navy);margin-top:16px}
+.pa .page-hero p{margin-top:16px;color:var(--stone);font-size:15.5px}
+
+.pa .section-pad{padding:100px 0}
+@media(max-width:760px){.pa .section-pad{padding:70px 0}}
+
+.pa .csplit{display:grid;grid-template-columns:1fr .9fr;gap:70px}
+.pa .field{margin-bottom:24px}
+.pa .field label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.pa .field input,.pa .field select,.pa .field textarea{
+  width:100%;border:1px solid var(--line);border-radius:8px;
+  padding:14px 16px;font-size:15px;font-family:inherit;color:var(--ink);outline:none;
+  transition:border-color .25s ease;
+}
+.pa .field input:focus,.pa .field select:focus,.pa .field textarea:focus{border-color:var(--point)}
+.pa .field textarea{resize:vertical;min-height:120px}
+.pa .row2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pa .submit{width:100%;background:var(--point);color:#fff;border:none;padding:17px;border-radius:8px;font-size:15.5px;font-weight:700;cursor:pointer;transition:background .25s ease}
+.pa .submit:hover{background:var(--point-deep)}
+.pa .ok{display:none;text-align:center;margin-top:16px;font-size:13.5px;color:#1B8A4A;font-weight:600}
+
+.pa .info-card{background:var(--navy-deep);color:#fff;border-radius:16px;padding:44px 38px}
+.pa .info-card h3{font-size:19px;font-weight:800;margin-bottom:24px}
+.pa .irow{padding:18px 0;border-top:1px solid rgba(255,255,255,.12)}
+.pa .irow:first-of-type{border-top:none}
+.pa .irow b{display:block;font-size:12px;letter-spacing:.1em;color:#FF9470;text-transform:uppercase;margin-bottom:6px}
+.pa .irow span{font-size:14.5px;color:#D6DEEA}
+
+.pa footer{padding:36px 44px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--stone-soft);border-top:1px solid var(--line)}
+
+@media(max-width:900px){
+  .pa nav .m{display:none}
+  .pa .nav-cta{display:none}
+  .pa .nav-toggle{display:flex}
+  .pa .wrap{padding:0 24px}
+  .pa .csplit{grid-template-columns:1fr;gap:36px}
+  .pa .row2{grid-template-columns:1fr}
+  .pa footer{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+<div class="pa">
+<nav>
+<b>PRIME<span>ASSET</span></b>
+<div class="m">
+<a href="/compare">실시간 보험비교</a>
+<a href="/claim">보험금 청구</a>
+<a href="/careers">입사지원</a>
+<a href="/contact" class="active">문의하기</a>
+</div>
+<a href="/contact" class="nav-cta">무료 상담 신청</a>
+<button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/compare">실시간 보험비교</a>
+<a href="/claim">보험금 청구</a>
+<a href="/careers">입사지원</a>
+<a href="/contact">문의하기</a>
+<a href="/contact" class="m-cta">무료 상담 신청</a>
+</div>
+
+<section class="page-hero"><div class="wrap">
+<div class="eyebrow">GET IN TOUCH</div>
+<h1>무엇이든 편하게 문의하세요</h1>
+<p>보험 상담, 청구, 채용 문의까지 — 남겨주신 내용 확인 후 빠르게 연락드립니다.</p>
+</div></section>
+
+<section class="section-pad"><div class="wrap csplit">
+<form class="reveal" onsubmit="event.preventDefault(); this.querySelector('.ok').style.display='block';">
+<div class="row2">
+<div class="field"><label>이름</label><input type="text" placeholder="홍길동" required></div>
+<div class="field"><label>연락처</label><input type="tel" placeholder="010-0000-0000" required></div>
+</div>
+<div class="field"><label>문의 유형</label>
+<select required>
+<option value="" disabled selected>선택해주세요</option>
+<option>실시간 보험비교</option>
+<option>보험금 청구</option>
+<option>입사지원</option>
+<option>기타 문의</option>
+</select>
+</div>
+<div class="field"><label>문의 내용</label><textarea placeholder="궁금하신 내용을 편하게 남겨주세요." required></textarea></div>
+<button class="submit" type="submit">문의 남기기</button>
+<p class="ok">문의가 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.</p>
+</form>
+
+<div class="info-card reveal">
+<h3>바로 연락하시려면</h3>
+<div class="irow"><b>Phone</b><span>1588-0000 (평일 09:00 – 18:00)</span></div>
+<div class="irow"><b>Kakao</b><span>@프라임에셋</span></div>
+<div class="irow"><b>Email</b><span>contact@primeasset.co.kr</span></div>
+<div class="irow"><b>Address</b><span>서울특별시 강남구 테헤란로 000, 프라임에셋빌딩</span></div>
+</div>
+</div></section>
+
+<footer>
+<span>© PRIME ASSET</span>
+<span>실시간 보험비교 · 보험금 청구 · 문의하기</span>
+</footer>
+</div>
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.classList.remove('open'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold:.15 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body></html>
